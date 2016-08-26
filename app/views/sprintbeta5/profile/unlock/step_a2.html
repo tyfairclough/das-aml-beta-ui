@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <!--li><a href="/">Breadcrumb here ></a></li-->
+    </ol>
+
+  </div>
+
+  <h1 class="heading-xlarge">Enter your unlock code</h1>
+
+  <p>
+An unlock code has been sent to <strong class="bold-small">pete.kowalczyk@gmail.com</strong>.
+    </p>
+
+
+<form action="step_a3">
+  <fieldset>
+    <legend class="visuallyhidden">email address</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="email-address">Enter unlock code
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="email-address" type="text">
+      </div>
+    </fieldset>
+    <input class="button" id="getUnlockCode" type="submit" value="Unlock">
+</form>    
+    <br>
+    <h3 class="heading-small">Not received your unlock code?</h3>
+    <p>You can <a href="#">request another unlock code</a>.</p>
+</main>
+
+<script>
+
+</script>
+
+{% endblock %}
