@@ -3726,3 +3726,8 @@ input.text {
     line-height: 1.25;
   }
 }
+
+#userControl {
+  background: white;
+  border-bottom: 1px solid red;
+}

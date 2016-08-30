@@ -20,14 +20,14 @@
 
 <script>
 
-    if ( JSON.parse(localStorage.getItem('authSet')) == "true" ) {
+    if ( JSON.parse(localStorage.getItem('authSet')) == 'true' ) {
     //if you're logged in
     //alert("auth is true")
     window.location.replace("profile");
     } else {
     // if you're not or its not set
     //alert("auth is false")
-    window.location.replace("inform");
+    window.location.replace("register/start");
     }
 
     

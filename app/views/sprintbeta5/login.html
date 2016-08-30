@@ -22,7 +22,7 @@
 
 
 <main id="content" role="main">
-{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/phase_banner_beta.html" %}
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
@@ -31,13 +31,21 @@
 
   </div>
 
+    
+       <div class="govuk-box-highlight hidden">
+          <h2 class="bold-large">
+Account unlocked
+        </h2>
+           <p>You can now sign in</p>
+        </div>
+
   <h1 class="heading-xlarge">Sign in</h1>
 
   <p>
-   Sign in or <a href="#">create an account</a> to manage your apprenticeship levy account.
+   Sign in or <a href="profile/register">create an account</a> to manage your apprenticeship levy account.
   </p>
 
-<form action="login-choose-accounts">
+<form action="profile">
   <fieldset>
     <legend class="visuallyhidden">email address and password to sign in</legend>
       <div class="form-group">
@@ -53,9 +61,11 @@
     </fieldset>
     <input class="button" id="createAccountButton" type="submit" value="Sign in">
 </form>
-<p style="padding-top:20px">
- <a href="#">Forgotten your password?</a>
-</p>
+<br>
+    <ul class="list list-links">
+    <li> <a href="profile/forgot">Forgot your password</a></li>
+    <li> <a href="profile/unlock">Unlock your account</a></li>
+    </ul>
 </main>
 
 <script>
@@ -73,6 +83,12 @@ EventUtil.addHandler(createButton, 'click', function(){
               localStorage.setItem("login", JSON.stringify(userDetails));
 
     });
+    
+    if ( JSON.parse(localStorage.getItem('unlockStatus')) == "unlock" ) {
+        $(".govuk-box-highlight").removeClass("hidden");
+    } else {
+        //alert("still locked")
+    } 
 </script>
 
 {% endblock %}

@@ -31,16 +31,25 @@
 
   </div>
 
-  <h1 class="heading-xlarge">You’ve been locked out</h1>
+  <h1 class="heading-xlarge">Request unlock code</h1>
 
   <p>
-   You need to unlock your profile to access your accounts.
+   Enter your email address to get an unlock code.
   </p>
 
 
-<p>
- <a href="unlock/step_a1.html" class="button">Unlock profile</a>
-</p>
+<form action="unlock/step_a2">
+  <fieldset>
+    <legend class="visuallyhidden">email address</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="email-address">Email
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="email-address" type="text">
+      </div>
+    </fieldset>
+    <input class="button" id="getUnlockCode" type="submit" value="Get unlock code">
+</form>    
 </main>
 
 <script>
