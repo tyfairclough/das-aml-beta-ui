@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/account">change me</a></li>
+        <li>Register</li>
+    </ol>
+  </div>
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+<h1 class="heading-xlarge">Enter access code</h1>
+
+    <p>An access code has been sent to <strong class="bold-small">pete.kowalczyk@gmail.com</strong>.</p>
+    <p>You have until <span>Tuesday, September 6, 2016 at 1:34 PM</span></p>
+    <form action="../">
+  <fieldset>
+    <legend class="visuallyhidden">Enter code</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="email-code">Enter code
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="email-code" type="text">
+      </div>
+     
+             <div class="form-group">
+
+    <input class="button" id="submit-email-code" type="submit" value="Continue">
+      </div>
+</form>
+
+        <h4 class="heading-small">Not received your code?</h4>
+        
+        <p>You can <a href="#">request another access code</a>.</p>
+        
+
+</main>
+
+    <script>
+        $("#submit-email-code").click(function(e){
+            e.preventDefault();
+            window.location.href='../profile';
+            localStorage.setItem("accountActivatedMsg", 'true');                  
+        })
+    </script>
+    
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

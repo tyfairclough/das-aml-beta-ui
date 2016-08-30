@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/account">change me</a></li>
+        <li>Register</li>
+    </ol>
+  </div>
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+<h1 class="heading-xlarge">Create your profile</h1>
+
+    <form action="accesscode">
+  <fieldset>
+    <legend class="visuallyhidden">Name</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="users-name">Name
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="users-name" type="text">
+      </div>
+      <div class="form-group">
+          <label class="form-label-bold" for="email-address">Email address</label>
+          <input class="form-control" id="email-address" type="text">
+      </div>
+    </fieldset>
+        
+        <h2 class="heading-small">Create your password</h2>
+        <p>Your password must:</p>
+        <ul class="list list-bullet">
+            <li>be 8 to 12 characters long</li>
+            <li>have at least one uppercase and one lowercase letter</li>
+            <li>have at least one number</li>
+        </ul>
+        
+        <fieldset>
+             <div class="form-group">
+          <label class="form-label-bold" for="user-password">Create password
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="user-password" type="password">
+      </div>
+      <div class="form-group">
+          <label class="form-label-bold" for="user-password_confirm">Re-type password</label>
+          <input class="form-control" id="user-password_confirm" type="password">
+      </div>     
+                  <div class="form-group">
+
+            <label class="block-label" for="confirm-terms">
+      <input id="confirm-terms" name="terms" type="checkbox" value="confirm-terms">
+I accept the <a href="#" rel="external">terms of use</a>.    </label>
+            </div>
+        </fieldset>
+        
+        
+    <input class="button" id="createAccountButton" type="submit" value="Continue">
+</form>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/userControl.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+        <li><a href="#">change me</a></li>
+      <li>Profile</li>
+    </ol>
+
+  </div>
+
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                   <h1 class="heading-xlarge">Register your apprenticeship account</h1>
+                    <p>Use this service to:</p>
+                    <ul class="list list-bullet">
+                        <li>Create an apprenticeship account for your organisation</li>
+                        <li>Access and manage your levy funds</li>
+                    </ul>
+                    
+                    <h3 class="heading-medium">Before you start</h3>
+                    <p>You need to know</p>
+                    <ul class="list list-bullet">
+                        <li>The Government Gateaway ID of each PAYE scheme</li>
+                        <li>Your organisation's Companies House number</li>
+                        <li>How your organisation's PAYE schemes will be linked to the apprenticeship</li>
+                        <li>Your organisation's PAYE schemes</li>
+                        <li>The number of apprenticeship accounts your organisation will need</li>
+                    </ul>
+                </div>
+          </div>  
+
+</main>
+
+<script>
+  
+</script>
+
+{% endblock %}
