@@ -23,21 +23,19 @@
 
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
+{% include "includes/userControl.html" %}
 
 
-  <div class="breadcrumbs">
 
-      transaction nav - back to team
-  </div>
+    <a href="../team/" class="link-back">Back to team members</a>
 
     
    <div class="grid-row">
             <div class="column-two-thirds">
-                <div class="hgroup">
-                    <h1 class="heading-xlarge">John Stevens
-                                <span class="heading-secondary">(john.s@tesco.co.uk)</span></h2>
-                    </h1>
-                </div>
+    <h1 class="heading-xlarge">
+
+
+Susan Hamazaki<!--span class="heading-secondary" style="padding-top:0px">rob.edwards@acmecoventryltd.com</span--></h1>
             </div>
         </div>
     
@@ -45,31 +43,34 @@
     <div class="grid-row">
             <div class="column-two-thirds">
 
+                                 <table class=" form-group">
+            
+                                     
+                        <tbody>
+                            <tr>
+                                <td class="rjTableName">Email</td>
+                                <td class="">susan.hamazaki@acmecoventry.com</td>
+
+
+                            </tr>
+                            <tr>
+                                <td class="rjTableName">What they can do</td>
+                                <td class="">Create and stop payments and view financial information</td>
+
+
+                            </tr>
+                        <!--    <tr>
+                                <td class="rjTableName">Status</td>
+                                <td class="">Active</td>
+
+
+                            </tr>-->
+                        </tbody>
+                    </table>  
                 
-                <form>
-                    <fieldset>
-
-                        <h3 class="heading-medium">Do you want to cancel this invitation?</h3>
-
-                        <label class="block-label" for="radio-1">
-                            <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland"> Yes, cancel this invitation
-                        </label>
-                        <label class="block-label" for="radio-2">
-                            <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands"> No I want to keep this invitation
-                        </label>
-
-                    </fieldset>
-                </form>
-                <br clear="all">
-                <br>
-                <a class="button" href="../team/?justremoved=y">Finish</a>
-
-            </div>
-            <div class="column-third">
-
-
-
-            </div>
+                <a href="../team/?justremoved=y" class="button">Cancel invitation</a>
+                <a href="#" class="button text-link">Resend invitation</a>
+        </div>
         </div>
     
 </main>

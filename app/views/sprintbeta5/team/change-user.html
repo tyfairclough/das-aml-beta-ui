@@ -25,13 +25,8 @@
 {% include "includes/phase_banner_beta.html" %}
 {% include "includes/userControl.html" %}
 
-  <div class="breadcrumbs">
-    <ol role="breadcrumbs">
-        <li><a href="#">change me</a></li>
-      <li>User</li>
-    </ol>
+    <a href="../team/" class="link-back">Back to team members</a>
 
-  </div>
 
  
 <div class="grid-row">
@@ -47,44 +42,20 @@ Susan Hamazaki<!--span class="heading-secondary" style="padding-top:0px">rob.edw
                     <form>
                         <fieldset>
                             <legend class="visuallyhidden">Access to the service</legend>
-                            <label class="form-label-bold" for="full-name">Team member access</label>
-
-                            <p>
-                                You need to select which access level this user should have.
-                            </p>
-
+                            <label class="form-label" for="full-name">Choose what you allow this team member to do.</label>
+<br>
                             <label class="rj-roles-choice block-label " for="radio-1">
-                                <input id="radio-1" type="radio" name="radio-group" value="Viewer"> Viewer
-                                <span class="form-hint">
-          A "viewer" is a team member with limited access to the organisation's
-          account. They can view contracts and account information, but not
-          make changes to it.
-        </span>
+                                <input id="radio-1" type="radio" name="radio-group" value="Viewer">
+          View account information but can't make changes
                             </label>
 
                             <label class="block-label rj-roles-choice" for="radio-2">
-                                <input id="radio-2" type="radio" name="radio-group" value="Doer" checked=""> Transactor
-                                <span class="form-hint">
-          A "transactor" is a team member who can:
-          <ul>
-            <li>- create new contracts</li>
-            <li>- approve in-progress contracts</li>
-            <li>- pause training payments</li>
-            <li>- stop training payments</li>
-          </ul>
-        </span>
+                                <input id="radio-2" type="radio" name="radio-group" value="Doer"> 
+                            Amend apprenticeship agreements and payments
                             </label>
 
                             <label class="block-label rj-roles-choice" for="radio-3">
-                                <input id="radio-3" type="radio" name="radio-group" value="Owner"> Owner
-                                <span class="form-hint">
-          An "owner" is a team member with full access to the organisation's
-          account. They can do everything a viewer or doer can and also
-          <ol>
-            <li>- manage team members</li>
-            <li>- manage PAYE schemes</li>
-          </ol>
-        </span>
+                                <input id="radio-3" type="radio" name="radio-group" value="Owner">Amend apprenticeship agreements and payments. PAYE schemes and team accounts
                             </label>
                         </fieldset>
                     </form>
@@ -95,7 +66,7 @@ Susan Hamazaki<!--span class="heading-secondary" style="padding-top:0px">rob.edw
                     <br clear="all">
                     <br clear="all">
 
-                    <a class="button" href="../team/?rolechange=y">Update user role</a>
+                    <a class="button" href="../team/?rolechange=y">Update</a>
 
                     
 

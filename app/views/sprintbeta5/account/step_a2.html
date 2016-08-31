@@ -26,31 +26,31 @@
 </style>
 
 <main id="content" role="main">
-{% include "includes/phase_banner_beta.html" %}
+    <div class="service-info ">
+    
+    <div class="logo">
+        <span class="organisation-logo organisation-logo-medium">HM Revenue &amp; Customs</span>
+    </div>
+    
+    <div class="last-login float--right">
+        <p class="flush text--right h3-heading"></p>
+    </div>
 
-
-  <div class="breadcrumbs">
-    <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
-        <li>Account</li>
-        <li>Acme Ltd Coventry</li>
-    </ol>
-  </div>
-
+</div>
     
     <div class="grid-row">
         <div class="column-two-thirds">
 
             <h1 class="heading-large">Authority to interact with HMRC on your behalf</h1>
             
-            <p>The <strong class="bold-small">DAS Test</strong> software application is requesting to do the following:</p>
+            <p>The <strong class="bold-small"><span class="company-name">ACME Test Ltd</span></strong> software application is requesting to do the following:</p>
             <ul class="list list-bullet">
                 <li>access levy data</li>
             </ul>
             <p>It will be able to do the above for 10 hours from when you grant authority.</p>
             
             <div class="form-group">
-            <a class="button" href="step_a3">Grant authority</a> <a href="#">Do not grant authority</a>
+            <a class="button" href="step_a3">Grant authority</a> <a href="#" class="button text-link">Do not grant authority</a>
             </div>
             
             <p>You can <a rel="external" href="#">remove this authority</a> at any time.</p>

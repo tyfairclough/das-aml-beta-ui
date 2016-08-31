@@ -25,20 +25,13 @@
 {% include "includes/phase_banner_beta.html" %}
 {% include "includes/userControl.html" %}
 
-  <div class="breadcrumbs">
-    <ol role="breadcrumbs">
-        <li><a href="#">change me</a></li>
-      <li>Profile</li>
-    </ol>
-
-  </div>
 
  
     <section id="notifications">
     
     <div class="govuk-box-highlight profileCreatedMsg hidden">
           <h2 class="bold-large">
-You've sucessfully created a profile
+You've created your profile
         </h2>
         </div>
     
@@ -55,49 +48,64 @@ You've sucessfully created a profile
   <i class="icon icon-important">
     <span class="visuallyhidden">Warning</span>
   </i>
- <strong>You have no accounts registered to <span class="user-email">rob @acmeltd.com</span></strong>
-</div>
+                          <strong>You don't have access to any levy accounts.
+                              
+                          </strong>
+                        
+</div>  
                     
+                  <br>You need to be invited to an account or create a new one.  
+                    <br>
                     <br>
 
                     
-                    <div class="accounts many">
-                  <p>Please choose the account you wish to view. </p>
+                    <div class="accounts many form-group hidden">
+                  <p>Select an account or add a new one. </p>
                       <table class="table-19-font">
                           <thead>
                             <tr>
                               <th scope="col">Account name</th>
-                              <th scope="col" class="">Account number</th>
+                              <!--<th scope="col" class="">Account number</th>-->
+                            <th class="">What you can do</th>
+
                                <th scope="col"></th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
                               <td class="rjTabWidth">Acme Ltd Coventry High St</td>
-                              <td class="">DF9 0832 778</td>
-                              <td><a href="/{% include "includes/sprint-link.html" %}/account">View</a></td>
+                             <!-- <td class="">DF9 0832 778</td>-->
+                          <td class="">Everything - you're the owner</td>
+
+                              <td><a href="/{% include "includes/sprint-link.html" %}/account">Open</a></td>
                             </tr>
                              <tr>
                               <td class="rjTabWidth">Acme Ltd Headquarters</td>
-                              <td class="">JJ1 9983 222</td>
-                              <td class="looks-like-a-link-underline">View</td>
+                            <!--  <td class="">JJ1 9983 222</td>-->
+                           <td class="">Create and stop payments and view financial information</td>
+
+                              <td class="looks-like-a-link-underline">Open</td>
                             </tr>
                             <tr>
                               <td class="rjTabWidth">Acme Oxford St, London</td>
-                              <td class="">ZZ1 7634 826</td>
-                              <td class="looks-like-a-link-underline">View</td>
+<!--                              <td class="">ZZ1 7634 826</td>-->
+                              <td class="">View apprenticeship and financial information</td>
+
+                              <td class="looks-like-a-link-underline">Open</td>
+                                     
                             </tr>
                             <tr>
                               <td class="rjTabWidth">Acme Ltd, Cheletenham High St</td>
-                              <td class="">FF9 1647 842</td>
-                              <td class="looks-like-a-link-underline">View</td>
+                              <!--<td class="">FF9 1647 842</td>-->
+                              <td class="">View apprenticeship and financial information</td>
+                              <td class="looks-like-a-link-underline">Open</td>
                             </tr>
                           </tbody>
                       </table>
 
                     </div>
 
-                                                <a class="button" href="account/inform">Add an account</a>
+                                                <a class="button" href="/{% include "includes/sprint-link.html" %}/account/inform">Add new account</a>
 
                     </div>
                 
@@ -118,11 +126,11 @@ You've sucessfully created a profile
         <div class="column-two-thirds">
                                 <h4 class="heading-medium">Invitiations</h4>
 
-            <section class="no-invites">
-                <p>You have no pending invitations</p>
+            <section class="invites-none">
+                <p>You have <strong class="bold-small">no</strong> invitations to levy accounts.</p>
             </section>
             
-            <section class="pending-invites">
+            <section class="invites-pending hidden">
                     <p>You have <span class="bold-small">4</span> pending invitations to employer accounts.</p>
                     <a href="invitations.html">View invitations</a>
                 </section>

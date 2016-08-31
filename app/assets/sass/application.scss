@@ -1591,4 +1591,61 @@ only screen and (min-resolution: 2dppx) {
         margin: 0 0 5px 0;
     }
 }
+
+
+// my additional element styles
+
+
+    .button.text-link {
+            background-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    color: #005ea5;
+    border: none;
+    }
+
+
+
+// my additional layout styles
+
+.column-third aside.related {
+    margin-top: 60px;
+}
+
+// hmrc styles
+
+
+.service-info {
+     //   border-top: 10px solid #005ea5;
+    //padding-bottom: 0.5em;
+    .logo {
+            margin-top: 0.78947em;
+    }
+    
+    .organisation-logo {
+        font-family: Helvetica, Arial;
+    font-weight: 400;
+    display: block;
+    position: relative;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 3px 0 2px 0; 
+    text-decoration: none;
+    padding: 3px 0 2px 30px;
+    background-image: url("https://www.tax.service.gov.uk/assets/2.141.0/images/icons/crests/hmrc_crest_18px.png");
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    border-left: 2px solid #009390;
+    }
+    .organisation-logo-medium {
+            font-size: 18px;
+    line-height: 22px;
+    padding: 3px 0 2px 38px;
+    background-image: url("../images/icons/crests/hmrc_crest_18px_x2.png");
+    background-size: auto 26px;
+
+    border-left: 2px solid #009390;
+    white-space: nowrap;
+    }
+}
     
