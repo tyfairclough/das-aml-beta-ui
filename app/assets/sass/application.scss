@@ -1582,6 +1582,13 @@ only screen and (min-resolution: 2dppx) {
 
 #userControl {
     background: white;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid $grey-2;
+    padding-top: 5px;
+    overflow: auto;
+    p {
+        text-align: right;
+        float: right;
+        margin: 0 0 5px 0;
+    }
 }
     

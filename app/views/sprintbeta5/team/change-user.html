@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/userControl.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+        <li><a href="#">change me</a></li>
+      <li>User</li>
+    </ol>
+
+  </div>
+
+ 
+<div class="grid-row">
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge">
+
+
+Susan Hamazaki<!--span class="heading-secondary" style="padding-top:0px">rob.edwards@acmecoventryltd.com</span--></h1>
+                <div>
+
+
+
+                    <form>
+                        <fieldset>
+                            <legend class="visuallyhidden">Access to the service</legend>
+                            <label class="form-label-bold" for="full-name">Team member access</label>
+
+                            <p>
+                                You need to select which access level this user should have.
+                            </p>
+
+                            <label class="rj-roles-choice block-label " for="radio-1">
+                                <input id="radio-1" type="radio" name="radio-group" value="Viewer"> Viewer
+                                <span class="form-hint">
+          A "viewer" is a team member with limited access to the organisation's
+          account. They can view contracts and account information, but not
+          make changes to it.
+        </span>
+                            </label>
+
+                            <label class="block-label rj-roles-choice" for="radio-2">
+                                <input id="radio-2" type="radio" name="radio-group" value="Doer" checked=""> Transactor
+                                <span class="form-hint">
+          A "transactor" is a team member who can:
+          <ul>
+            <li>- create new contracts</li>
+            <li>- approve in-progress contracts</li>
+            <li>- pause training payments</li>
+            <li>- stop training payments</li>
+          </ul>
+        </span>
+                            </label>
+
+                            <label class="block-label rj-roles-choice" for="radio-3">
+                                <input id="radio-3" type="radio" name="radio-group" value="Owner"> Owner
+                                <span class="form-hint">
+          An "owner" is a team member with full access to the organisation's
+          account. They can do everything a viewer or doer can and also
+          <ol>
+            <li>- manage team members</li>
+            <li>- manage PAYE schemes</li>
+          </ol>
+        </span>
+                            </label>
+                        </fieldset>
+                    </form>
+
+
+                    <div style="margin-top:35px"></div>
+
+                    <br clear="all">
+                    <br clear="all">
+
+                    <a class="button" href="../team/?rolechange=y">Update user role</a>
+
+                    
+
+                </div>
+
+            </div>
+
+        
+        </div>
+    
+</main>
+
+<script>
+
+    
+    
+  
+</script>
+
+{% endblock %}

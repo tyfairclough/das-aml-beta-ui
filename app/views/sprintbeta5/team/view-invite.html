@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="breadcrumbs">
+
+      transaction nav - back to team
+  </div>
+
+    
+   <div class="grid-row">
+            <div class="column-two-thirds">
+                <div class="hgroup">
+                    <h1 class="heading-xlarge">John Stevens
+                                <span class="heading-secondary">(john.s@tesco.co.uk)</span></h2>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    
+
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+                
+                <form>
+                    <fieldset>
+
+                        <h3 class="heading-medium">Do you want to cancel this invitation?</h3>
+
+                        <label class="block-label" for="radio-1">
+                            <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland"> Yes, cancel this invitation
+                        </label>
+                        <label class="block-label" for="radio-2">
+                            <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands"> No I want to keep this invitation
+                        </label>
+
+                    </fieldset>
+                </form>
+                <br clear="all">
+                <br>
+                <a class="button" href="../team/?justremoved=y">Finish</a>
+
+            </div>
+            <div class="column-third">
+
+
+
+            </div>
+        </div>
+    
+</main>
+
+<script>
+  if ( justadded == "y") {
+     $(".justadded").removeClass("hidden");
+  } else if ( justremoved == "y") {
+           $(".justremoved").removeClass("hidden");
+  } else if ( userdeleted == "y") {
+      $(".userdeleted").removeClass("hidden");
+  } else if ( rolechange == "y" ) {
+      $(".rolechange").removeClass("hidden");
+  }
+</script>
+
+{% endblock %}

@@ -33,6 +33,20 @@
     </ol>
   </div>
 
+    
+    rolechange
+
+    <div class="govuk-box-highlight rolechange hidden">
+                <h2 class="bold-large">
+            Team member role updated
+          </h2>
+                <p>
+                    Your changed <span class="bold-small">john (john@tesco.co.uk)</span> user roll to <span class="bold-small">Viewer</span> successfully.
+                </p>
+            </div>
+
+    
+    
 <div class="govuk-box-highlight justadded hidden">
                 <h2 class="bold-large">
             Invitation sent
@@ -58,7 +72,7 @@
             Team member deleted
           </h2>
                 <p>
-                    Your deleted <span class="bold-small">john (john@tesco.co.uk)</span> successfully.
+                    You deleted <span class="bold-small">john (john@tesco.co.uk)</span> successfully.
                 </p>
             </div>
     
@@ -145,7 +159,7 @@
                                 </td>
                                 <td>Transactor</td>
                                 <td>Expired</td>
-                                <td><a href="view-user">View</a></td>
+                                <td><a href="view-expired-user">View</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -168,6 +182,10 @@
      $(".justadded").removeClass("hidden");
   } else if ( justremoved == "y") {
            $(".justremoved").removeClass("hidden");
+  } else if ( userdeleted == "y") {
+      $(".userdeleted").removeClass("hidden");
+  } else if ( rolechange == "y" ) {
+      $(".rolechange").removeClass("hidden");
   }
 </script>
 

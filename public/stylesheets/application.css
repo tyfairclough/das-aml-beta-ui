@@ -3729,5 +3729,13 @@ input.text {
 
 #userControl {
   background: white;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #bfc1c3;
+  padding-top: 5px;
+  overflow: auto;
+}
+
+#userControl p {
+  text-align: right;
+  float: right;
+  margin: 0 0 5px 0;
 }
