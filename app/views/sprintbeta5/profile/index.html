@@ -23,6 +23,7 @@
 
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
+{% include "includes/userControl.html" %}
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
@@ -33,25 +34,34 @@
   </div>
 
  
+    <section id="notifications">
+    
     <div class="govuk-box-highlight profileCreatedMsg hidden">
           <h2 class="bold-large">
-You've created a profile
+You've sucessfully created a profile
         </h2>
         </div>
     
+        </section>
+    
+    
+    
             <div class="grid-row">
                 <div class="column-two-thirds">
-                   <h1 class="heading-xlarge rj-headings-border">Accounts</h1>
+                   <h1 class="heading-large">Levy accounts</h1>
 
                     
-                    <div class="accounts empty">
-                    <p>You have no accounts registered to <span class="user-email">rob @acmeltd.com</span></p>
-                        
-                        <a class="button" href="../account/add.html">Add an account</a>
-                    </div>
+                      <div class="notice">
+  <i class="icon icon-important">
+    <span class="visuallyhidden">Warning</span>
+  </i>
+ <strong>You have no accounts registered to <span class="user-email">rob @acmeltd.com</span></strong>
+</div>
                     
-                    <div class="accounts many hidden">
-                  <p>You have several accounts registered to: rob@acmeltd.com</p>
+                    <br>
+
+                    
+                    <div class="accounts many">
                   <p>Please choose the account you wish to view. </p>
                       <table class="table-19-font">
                           <thead>
@@ -84,11 +94,40 @@ You've created a profile
                             </tr>
                           </tbody>
                       </table>
-                        <a class="button">Add an account</a>
-                </div>
+
                     </div>
+
+                                                <a class="button" href="account/inform">Add an account</a>
+
+                    </div>
+                
+                <div class="column-third">
+                <aside class="related">
+                    <h4 class="heading-small">Profile settings</h4>
+                    <ul class="list list-links">
+                        <li><a href="#">Reset password</a></li>
+                        <li><a href="#">Change email</a></li>
+                        <li><a href="#">Delete profile</a></li>
+                    </ul>
+                    </aside>
+                </div>
           </div>  
 
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+                                <h4 class="heading-medium">Invitiations</h4>
+
+            <section class="no-invites">
+                <p>You have no pending invitations</p>
+            </section>
+            
+            <section class="pending-invites">
+                    <p>You have <span class="bold-small">4</span> pending invitations to employer accounts.</p>
+                    <a href="invitations.html">View invitations</a>
+                </section>
+        </div>
+    </div>
 </main>
 
 <script>

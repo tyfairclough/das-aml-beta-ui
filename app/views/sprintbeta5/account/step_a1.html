@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+        <li>Account</li>
+        <li>Acme Ltd Coventry</li>
+    </ol>
+  </div>
+
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-large">Sign in with your test account</h1>
+            
+            <p>This page is a replication of the government gateway account you can use to test your application through the test APIs</p>
+            
+            <p>Test credentials are: user1/password1</p>
+            
+            <form action="step_a2">
+            
+                <fieldset>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="user-id">User ID
+                        <!--span class="form-hint">Here is a hint for this form field.</span-->
+                        </label>
+                        <input class="form-control" id="user-id" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="user-password">Password
+                        <!--span class="form-hint">Here is a hint for this form field.</span-->
+                        </label>
+                        <input class="form-control" id="user-password" type="password">
+                    </div>                    
+                </fieldset>
+                
+                <input class="button" id="user-signin" type="submit" value="Sign in">
+                
+            </form>
+        
+        </div>
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

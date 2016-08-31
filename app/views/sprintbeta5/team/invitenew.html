@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+        <li>change me</li>
+        <li>Team</li>
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+            <div class="column-two-thirds">
+                <div class="hgroup">
+                    <h1 class="heading-xlarge">Invite a team member</h1>
+
+                    <p>
+                        Invite another user to access your organisation's account. You can limit their actions by setting an appropriate access level.
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+
+               <form action="user-confirmation">
+            <fieldset>
+                <legend class="visuallyhidden">password</legend>
+
+                <div class="form-group">
+
+                    <label class="form-label-bold" for="full-name">Email address</label>
+                    <div class="grid-row">
+                        <div class="column-two-thirds">
+                            <span class="form-hint">
+          Enter the email address of the person you want to join your team. An
+          invitation message will be sent to this email addresss.
+        </span>
+                        </div>
+                    </div>
+
+                    <input class="form-control" id="email-address" type="email">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label-bold" for="full-name">Full name</label>
+                    <div class="grid-row">
+                        <div class="column-two-thirds">
+                            <span class="form-hint">
+          Enter the name that will be used in the email invitation. It will
+          also appear on your team members list while the invited person has a
+          "pending" status.
+        </span>
+                        </div>
+                    </div>
+                    <input class="form-control" id="name" type="text">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="visuallyhidden">Access to the service</legend>
+                <label class="form-label-bold" for="full-name">Team member access</label>
+
+                <p>
+                    You need to select which access level this user should have.
+                </p>
+
+                <label class="rj-roles-choice block-label " for="radio-1">
+                    <input id="radio-1" type="radio" name="radio-group" value="Viewer"> Viewer
+                    <span class="form-hint">
+          A "viewer" is a team member with limited access to the organisation's
+          account. They can view contracts and account information, but not
+          make changes to it.
+        </span>
+                </label>
+
+                <label class="block-label rj-roles-choice" for="radio-2">
+                    <input id="radio-2" type="radio" name="radio-group" value="Doer"> Transactor
+                    <span class="form-hint">
+          A "transactor" is a team member who can:
+          <ul>
+            <li>- create new contracts</li>
+            <li>- approve in-progress contracts</li>
+            <li>- pause training payments</li>
+            <li>- stop training payments</li>
+          </ul>
+        </span>
+                </label>
+
+                <label class="block-label rj-roles-choice" for="radio-3">
+                    <input id="radio-3" type="radio" name="radio-group" value="Owner"> Owner
+                    <span class="form-hint">
+          An "owner" is a team member with full access to the organisation's
+          account. They can do everything a viewer or doer can and also
+          <ol>
+            <li>- manage team members</li>
+            <li>- manage PAYE schemes</li>
+          </ol>
+        </span>
+                </label>
+            </fieldset>
+
+
+
+            <div style="margin-top:20px"></div>
+            <br clear="all">
+            <br clear="all">
+
+
+            <a class="button" href="../team/?justadded=y">Invite a new team member</a>
+        </form>
+
+            </div>
+            <div class="column-third">
+
+
+
+            </div>
+        </div>
+    
+
+</main>
+
+<script>
+  
+</script>
+
+{% endblock %}

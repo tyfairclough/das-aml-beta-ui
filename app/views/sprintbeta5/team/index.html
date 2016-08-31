@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+        <li>change me</li>
+        <li>Team</li>
+    </ol>
+  </div>
+
+<div class="govuk-box-highlight justadded hidden">
+                <h2 class="bold-large">
+            Invitation sent
+          </h2>
+                <p>
+                    Your invite to <span class="bold-small">john (john@tesco.co.uk)</span> was successful.
+                </p>
+            </div>
+
+    
+            <div class="govuk-box-highlight justremoved hidden">
+                <h2 class="bold-large">
+            Invitation cancelled
+          </h2>
+                <p>
+                    Your invite to <span class="bold-small">john (john@tesco.co.uk)</span> has been cancelled successfully.
+                </p>
+            </div>
+    
+    
+    <div class="govuk-box-highlight userdeleted hidden">
+                <h2 class="bold-large">
+            Team member deleted
+          </h2>
+                <p>
+                    Your deleted <span class="bold-small">john (john@tesco.co.uk)</span> successfully.
+                </p>
+            </div>
+    
+    
+    <div class="grid-row">
+            <div class="column-two-thirds">
+                <div class="hgroup">
+                    <h1 class="heading-xlarge">Team</h1>
+                </div>
+            </div>
+            <div class="column-third">
+                <a class="button" style="margin-top: 60px;" href="invitenew">Invite a new user</a>
+            </div>
+        </div>
+    
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+
+                <section id="invitations">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col" style="padding-top:0">User name</th>
+                                <th scope="col" style="padding-top:0">What they can do</th>
+                                <th scope="col" style="padding-top:0">Status</th>
+                                <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!--quick hack, will fix -->
+                                <td class="">Stephens, John
+                                    <br><span class="text-secondary">john.s@tesco.co.uk</span>
+                                </td>
+                                <td>Everything</td>
+                                <td>Invite pending</td>
+                                <td><a href="view-invite">View</a></td>
+                            </tr>
+                            <tr>
+                                <td class="">Blanco, Adriana
+                                    <br><span class="text-secondary">adriana.bbs@tesco.es</span>
+                                </td>
+                                <td>Viewer</td>
+                                <td>Active</td>
+                                <td><a href="view-user">View</a></td>
+                            </tr>
+                            <tr>
+                                <td class="">White, Sunni
+                                    <br><span class="text-secondary">sunni.w@tesco.co.uk</span>
+                                </td>
+                                <td>Viewer</td>
+                                <td>Active</td>
+                                <td><a href="view-user">View</a></td>
+                            </tr>
+                            <tr>
+                                <td class="">Chrysanthos, Georgia
+                                    <br><span class="text-secondary">georgia.c@tesco.com</span>
+                                </td>
+                                <td>Transactor</td>
+                                <td>Expired</td>
+                                <td><a href="view-user">View</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                      <section id="expired-invitations">
+                                              <h2 class="heading-medium">Expired user</h1>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col" style="padding-top:0">User name</th>
+                                <th scope="col" style="padding-top:0">What they can do</th>
+                                <th scope="col" style="padding-top:0">Status</th>
+                                <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="">Chrysanthos, Georgia
+                                    <br><span class="text-secondary">georgia.c@tesco.com</span>
+                                </td>
+                                <td>Transactor</td>
+                                <td>Expired</td>
+                                <td><a href="view-user">View</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                
+            </div>
+            <div class="column-third">
+
+
+
+            </div>
+        </div>
+    
+
+</main>
+
+<script>
+  if ( justadded == "y") {
+     $(".justadded").removeClass("hidden");
+  } else if ( justremoved == "y") {
+           $(".justremoved").removeClass("hidden");
+  }
+</script>
+
+{% endblock %}
