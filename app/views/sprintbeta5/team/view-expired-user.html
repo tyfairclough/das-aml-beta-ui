@@ -27,10 +27,12 @@
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-        <li><a href="#">change me</a></li>
-      <li>User</li>
-    </ol>
+      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/account">Levy account</a></li>
+        <li><span class="company-name"></span></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
 
+    </ol>
   </div>
 
  
@@ -45,35 +47,29 @@ Susan Hamazaki<!--span class="heading-secondary" style="padding-top:0px">rob.edw
 
 
 
-                    <table class="table-19-font">
-                        <thead>
-                            <tr>
-                                <th colspan="3">
-                                    <h2 class="heading-medium" style="margin-top:0">Overview</h2></th>
-                            </tr>
-                        </thead>
+                    <table>
                         <tbody>
                             <tr>
                                 <td class="rjTableName">Email</td>
                                 <td class="">susan.hamazaki@acmecoventry.com</td>
-                                <td class=""></td>
 
                             </tr>
                             <tr>
-                                <td class="rjTableName">Role</td>
-                                <td class="">Transactor</td>
+                                <td class="rjTableName">What they can do</td>
+                                <td class="">Create and stop payments and view financial information</td>
 
                             </tr>
                             <tr>
                                 <td class="rjTableName">Status</td>
-                                <td class="">Expired</td>
+                                <td class="">Invitation expired</td>
 
                             </tr>
                         </tbody>
                     </table>
                     <div style="margin-top:35px"></div>
 
-
+<a class="button" href="/{% include "includes/sprint-link.html" %}/team/?justadded=y">Resend invitation</a>
+<a class="button text-link" href="/{% include "includes/sprint-link.html" %}/team/remove-user">Remove team member</a>
                     
 
                 </div>

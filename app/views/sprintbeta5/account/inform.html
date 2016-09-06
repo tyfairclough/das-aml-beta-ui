@@ -25,7 +25,7 @@
 {% include "includes/phase_banner_beta.html" %}
 
 
-<a href="../profile/" class="link-back">Back to profile</a>      
+<a href="/{% include "includes/sprint-link.html" %}/profile" class="link-back">Back to profile</a>      
 
 
             <div class="grid-row">
@@ -46,7 +46,19 @@
                         
                     </ul>
                     
-                    <a class="button" rel="external" href="step_a1">Start</a>
+                    
+            <form action="step_a1">
+  <fieldset>
+      <div class="form-group">
+    <label class="block-label" for="paye-terms">
+      <input id="paye-terms" name="paye-terms" type="checkbox" value="yes" />
+I understand that all account users will be able to see financial information from any PAYE schemes I add.
+      </label>
+          </div>
+  </fieldset>
+                
+                <button type="submit" class="button">Start</button>
+</form>
                 </div>
           </div>  
 

@@ -28,6 +28,8 @@
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/account">Levy account</a></li>
+        <li><span class="company-name"></span></li>
         <li>Manage team members</li>
 
     </ol>
@@ -110,22 +112,22 @@
                                 </td>
                                 <td>Everything - they're the owner</td>
                                 <td>Invitation awaiting response</td>
-                                <td><a href="view-invite">Edit</a></td>
+                                <td><a href="/{% include "includes/sprint-link.html" %}/team/view-invite">Edit</a></td>
                             </tr>
                             <tr>
                                 <td class="">Akpom, Chuba
                                     <br><span class="text-secondary">chuba.akpom@tesco.es</span>
                                 </td>
                                 <td>View financial information</td>
-                                <td>Account active</td>
-                                <td><a href="view-user">Edit</a></td>
+                                <td>Profile active</td>
+                                <td><a href="/{% include "includes/sprint-link.html" %}/team/view-user">Edit</a></td>
                             </tr>
                             <tr>
                                 <td class="">White, Sunni
                                     <br><span class="text-secondary">sunni.w@tesco.co.uk</span>
                                 </td>
                                 <td>View financial information</td>
-                                <td>Account removed</td>
+                                <td>Profile removed</td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -142,7 +144,7 @@
                                 </td>
                                 <td>Create or stop payment and view financial information</td>
                                 <td>Invitation expired</td>
-                                <td><a href="../team/?justadded=y">Resend invitation</a></td>
+                                <td><a href="/{% include "includes/sprint-link.html" %}/team/view-expired-user">Edit</a></td>
                             </tr>
                         </tbody>
                     </table>

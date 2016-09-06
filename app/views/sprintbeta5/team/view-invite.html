@@ -26,9 +26,15 @@
 {% include "includes/userControl.html" %}
 
 
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/account">Levy account</a></li>
+        <li><span class="company-name"></span></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
 
-    <a href="../team/" class="link-back">Back to team members</a>
-
+    </ol>
+  </div>
     
    <div class="grid-row">
             <div class="column-two-thirds">
@@ -58,18 +64,19 @@ Susan Hamazaki<!--span class="heading-secondary" style="padding-top:0px">rob.edw
                                 <td class="">Create and stop payments and view financial information</td>
 
 
+
                             </tr>
-                        <!--    <tr>
+                            <tr>
                                 <td class="rjTableName">Status</td>
-                                <td class="">Active</td>
+                                <td class="">Invitation pending</td>
 
 
-                            </tr>-->
+                            </tr>
                         </tbody>
                     </table>  
-                
-                <a href="../team/?justremoved=y" class="button">Cancel invitation</a>
-                <a href="#" class="button text-link">Resend invitation</a>
+                <a href="/{% include "includes/sprint-link.html" %}/team/?justadded=y" class="button">Resend invitation</a>                
+                <a href="/{% include "includes/sprint-link.html" %}/team/remove-user" class="button text-link">Remove team member</a>
+      
         </div>
         </div>
     
