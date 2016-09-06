@@ -38,26 +38,12 @@
             <h2 class="heading-xlarge">123/AB12345</h2>
             <p>The <span class="company-name bold-small">ACME Training Ltd</span> levy account will stop receiving funds through this PAYE scheme.</p>
             
-            
-            <form action="index">
-            
-            <fieldset>
-<div class="form-group">
-                <label class="block-label" for="radio1">
-                    <input id="radio1" type="radio" name="yes" value="yes">
-                    Yes, remove scheme
-                </label>
-      
     
-                <label class="block-label" for="radio1">
-                    <input id="radio1" type="radio" name="no" value="no">
-                    No, don't remove
-                </label>
-            </div>
-                </fieldset>
-            </form>
-            
-            <a href="/{% include "includes/sprint-link.html" %}/account/paye?PAYEremoved=y" class="button">Continue</a>
+                <a class="button" rel="external" href="/{% include "includes/sprint-link.html" %}/account/paye/?PAYEremoved=y">Yes, remove scheme</a>
+                
+                <a href="/{% include "includes/sprint-link.html" %}/account/paye/" class="button text-link">No, don't remove</a>
+                
+           
         
         </div>
     </div>
