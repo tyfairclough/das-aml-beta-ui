@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a class="link-back" href="/{% include "includes/sprint-link.html" %}/account/paye">Back to manage PAYE schemes</a>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <h1 class="heading-large">Remove this scheme?</h1>
+            <h2 class="heading-xlarge">123/AB12345</h2>
+            <p>The <span class="company-name bold-small">ACME Training Ltd</span> levy account will stop receiving funds through this PAYE scheme.</p>
+            
+            
+            <form action="index">
+            
+            <fieldset>
+<div class="form-group">
+                <label class="block-label" for="radio1">
+                    <input id="radio1" type="radio" name="yes" value="yes">
+                    Yes, remove scheme
+                </label>
+      
+    
+                <label class="block-label" for="radio1">
+                    <input id="radio1" type="radio" name="no" value="no">
+                    No, don't remove
+                </label>
+            </div>
+                </fieldset>
+            </form>
+            
+            <a href="/{% include "includes/sprint-link.html" %}/account/paye?PAYEremoved=y" class="button">Continue</a>
+        
+        </div>
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+    
+
+</script>
+
+{% endblock %}
+

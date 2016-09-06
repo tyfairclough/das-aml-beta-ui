@@ -18,7 +18,8 @@ var userdeleted = getQueryVariable("userdeleted");
 var noinvite = getQueryVariable("noinvite");
 // defines url variables as global vars 
 //var accepted = Number(getQueryVariable("accepted"));
-
+var PAYEremoved = getQueryVariable("PAYEremoved");
+var PAYEadded = getQueryVariable("PAYEadded");
 
 
 
@@ -176,18 +177,27 @@ breadyCrumb();
 // This sets a default company name if its not been set on the proto admin page
 var CompanyName = function() {
  var compName = JSON.parse(localStorage.getItem('company-name-header'));
- console.log(compName);
+ console.log("Company name is " + compName);
     if (compName == null) {
-      compName = "Acme Ltd Coventry";
+      compName = 'FIFA';
       localStorage.setItem("company-name-header", JSON.stringify(compName));
+      console.log("Company name is " + compName);
   } else {
   }
 };
 CompanyName();
 
+
+
 /* To determine if the to do list has been done - only dates works for now - this breaks because of the URl change below if it is in the page...it should live in /sprint11/contracts/new-contract/provider-interface/add-apprenticeship */
 
 $( document ).ready(function() {
+    
+    
+$(".company-name").text(JSON.parse(localStorage.getItem('company-name-header')));
+    
+    
+    
 var addedOrNor = function() {
   var hasDatesAdded = JSON.parse(localStorage.getItem('apprenticeship-dates-added'));
    console.log(hasDatesAdded)

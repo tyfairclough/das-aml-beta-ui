@@ -1758,7 +1758,6 @@ input[type=number] {
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  display: block;
   clear: both;
   margin: 0;
   padding: 5px 0 7px 0;
@@ -3748,7 +3747,7 @@ input.text {
   border: none;
 }
 
-.column-third aside.related {
+.rhtm, .column-third aside.related {
   margin-top: 60px;
 }
 

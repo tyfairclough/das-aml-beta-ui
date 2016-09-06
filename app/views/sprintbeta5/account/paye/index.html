@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+        <li><a href="/{% include "includes/sprint-link.html" %}/account">Levy account</a></li>
+        <li>Acme Ltd Coventry</li>
+        <li>Manage PAYE schemes</li>
+    </ol>
+  </div>
+    
+<div class="govuk-box-highlight hidden PAYEremoved">
+          <h2 class="bold-large">
+            You've removed 123/AB12345
+          </h2>
+        </div>
+    
+    
+    <div class="govuk-box-highlight hidden PAYEadded">
+          <h2 class="bold-large">
+            PAYE scheme added
+          </h2>
+        </div>
+    
+    <div class="grid-row">
+    <div class="column-two-thirds">
+                    <div class="hgroup">
+            <h1 class="heading-large">Manage PAYE schemes</h1>
+            <p>Add PAYE schemes to allow levy funds to be added to your account.</p>
+  </div>
+
+        </div>
+        <div class="column-third">
+                        <a class="button rhtm" href="/{% include "includes/sprint-link.html" %}/account/paye/step_a1">Add new scheme</a>
+        
+        </div>
+    </div>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+
+            
+            
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col" style="padding-top:0">Scheme ID</th>
+                                <th scope="col" style="padding-top:0"></th>
+                      
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="">123/AB12345
+                                </td>
+<td><a href="/{% include "includes/sprint-link.html" %}/account/paye/remove-paye">Remove</a></td>                            </tr>
+                            <tr>
+                                <td class="">123/AB12345
+                                </td>
+<td><a href="/{% include "includes/sprint-link.html" %}/account/paye/remove-paye">Remove</a></td>                            </tr>
+                        </tbody>
+                    </table>            
+ 
+            
+            
+            
+        </div>
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+        if ( PAYEremoved == "y" ) {
+        $(".PAYEremoved").removeClass("hidden");
+    }  else if ( PAYEadded == "y" ) {
+        $(".PAYEadded").removeClass("hidden");
+    } 
+</script>
+
+{% endblock %}
+
