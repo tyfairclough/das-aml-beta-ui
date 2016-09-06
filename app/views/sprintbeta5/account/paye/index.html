@@ -60,7 +60,7 @@
 
         </div>
         <div class="column-third">
-                        <a class="button rhtm" href="/{% include "includes/sprint-link.html" %}/account/paye/step_a1">Add new scheme</a>
+                        <a class="button rhtm" href="/{% include "includes/sprint-link.html" %}/account/paye/step_a0">Add new scheme</a>
         
         </div>
     </div>
@@ -86,7 +86,7 @@
                                 </td>
 <td><a href="/{% include "includes/sprint-link.html" %}/account/paye/remove-paye">Remove</a></td>                            </tr>
                             <tr>
-                                <td class="">123/AB12345
+                                <td class="">680/cacb268
                                 </td>
 <td><a href="/{% include "includes/sprint-link.html" %}/account/paye/remove-paye">Remove</a></td>                            </tr>
                         </tbody>
@@ -104,10 +104,13 @@
  <!--button class="button">Do the thing</button-->
 
 <script>
+    $("table tr + tr").hide();
+    
         if ( PAYEremoved == "y" ) {
         $(".PAYEremoved").removeClass("hidden");
     }  else if ( PAYEadded == "y" ) {
         $(".PAYEadded").removeClass("hidden");
+        $("table tr + tr").show();
     } 
 </script>
 

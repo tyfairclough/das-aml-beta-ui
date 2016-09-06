@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a class="link-back">Back to Manage PAYE schemes</a>
+    
+<div class="govuk-box-highlight hidden PAYEremoved">
+          <h2 class="bold-large">
+            You've removed 123/AB12345
+          </h2>
+        </div>
+    
+    
+    <div class="govuk-box-highlight hidden PAYEadded">
+          <h2 class="bold-large">
+            PAYE scheme added
+          </h2>
+        </div>
+    
+    <div class="grid-row">
+    <div class="column-two-thirds">
+                    <div class="hgroup">
+            <h1 class="heading-large">Add a PAYE scheme</h1>
+            <p>You need the Government Gateway ID login details for the PAYE scheme you want touse to access levy funds.</p>
+  </div>
+
+        </div>
+        
+    </div>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+
+            <form action="step_a1">
+  <fieldset>
+      <div class="form-group">
+    <label class="block-label" for="paye-terms">
+      <input id="paye-terms" name="paye-terms" type="checkbox" value="yes" />
+I understand that all account users will be able to see financial information from any PAYE schemes I add.
+      </label>
+          </div>
+  </fieldset>
+                
+                <button type="submit" class="button">Continue</button>
+</form>
+            
+            
+        </div>
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+    $("table tr + tr").hide();
+    
+        if ( PAYEremoved == "y" ) {
+        $(".PAYEremoved").removeClass("hidden");
+    }  else if ( PAYEadded == "y" ) {
+        $(".PAYEadded").removeClass("hidden");
+        $("table tr + tr").show();
+    } 
+</script>
+
+{% endblock %}
+
