@@ -43,7 +43,10 @@
             
             <fieldset>
                 <div class="form-group">
-                <label class="form-label" for="ch-number">Companies House number</label>
+                <label class="form-label-bold" for="ch-number">
+                    <span class="form-label-bold">Companies House number</span>
+                    <span class="error-message hidden">No company was found with that entry, please try again.</span>
+                    </label>
                 <input class="form-control" id="ch-number" type="text" name="ch-number">
                 </div>
                 </fieldset>
@@ -62,56 +65,19 @@
 
 <script type="text/javascript">
  
-    
-    var CompaniesHouseAPI = require('companies-house-api');
-var async = require('async');
- 
-var chapi = new CompaniesHouseAPI({apiKey: API_KEY});
- 
-async.waterfall(
-    [
-        function(next) {
-            chapi.company('07296558', function(err, company) {
-                next(err, company);
-            });
-        },
-        function(company, next) {
-            company.registeredOfficeAddress(function(err, registeredOfficeAddress) {
-                next(err, company, registeredOfficeAddress);
-            });
-        },
-        function(company, registeredOfficeAddress, next) {
-            company.officers(function(err, officers) {
-                next(err, company, registeredOfficeAddress, officers);
-            });
-        },
-        function(company, registeredOfficeAddress, officers, next) {
-            company.filingHistory(function(err, filingHistory) {
-                next(err, company, registeredOfficeAddress, officers, filingHistory);
-            });
-        },
-        function(company, registeredOfficeAddress, officers, filingHistory, next) {
-            company.insolvency(function(err, insolvency) {
-                next(err, company, registeredOfficeAddress, officers, filingHistory, insolvency);
-            });
-        }
-    ],
-    function(err, company, registeredOfficeAddress, officers, filingHistory, insolvency) {
-        if (err) {
-            console.log('Error: ' + err);
-        }
-        else {
-            console.log('Company name: ' + company.company_name);
-            console.log('Postcode: ' + registeredOfficeAddress.postal_code);
-            console.log('Total officers: ' + officers.total_results);
-            console.log('Total filing history count: ' + filingHistory.total_count);
-            console.log('Insolvency dump: ' + insolvency);
-        }
+    $("a.button").click(function(e){
+e.preventDefault();
+        if ( $("#ch-number").val() == "" ) {
+        alert("no number validation");
+            $("form .form-group").addClass("error");
+            $("form div .error-message").removeClass("hidden")
+    } else {
+        window.open("step_b2","_self");
     }
-);
-    
-	var API_KEY = "0IJg_twH_cNHRQ4TufRhHhKW72_W8xdgijXsHDyI";
 
+    })
+    
+    
 
 </script>
 
