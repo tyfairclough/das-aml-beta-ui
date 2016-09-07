@@ -75,7 +75,21 @@
 
  <!--button class="button">Do the thing</button-->
 
+<script>
 
+    
+    var userEmail = JSON.parse(localStorage.getItem('email-address'));        
+
+    
+    $("#user-signin").click(function(e){
+    var userId = $("#user-id").val();
+        e.preventDefault();
+    if (userId != userEmail) {
+        window.open("step_b2_error","_self")
+    } else {
+        window.open("step_b3","_self");
+    }
+    })
 </script>
 
 {% endblock %}
