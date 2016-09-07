@@ -284,7 +284,13 @@ showDoneAlert();
 $(document).ready(function() {
       var urlToBeChanged = JSON.parse(localStorage.getItem('sprint-number'));
       $("body").html($("body").html().replace(/change-me-url/g, urlToBeChanged));
-  });
+
+
+for (var i = 0; i < localStorage.length; i++){
+    console.log(localStorage.getItem(localStorage.key(i)));
+}
+
+});
 
 
 

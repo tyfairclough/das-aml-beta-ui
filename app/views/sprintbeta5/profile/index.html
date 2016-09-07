@@ -43,21 +43,15 @@ You've created your profile
                 <div class="column-two-thirds">
                    <h1 class="heading-large">Levy accounts</h1>
 
-                    
-                      <div class="notice">
-  <i class="icon icon-important">
-    <span class="visuallyhidden">Warning</span>
-  </i>
-                          <strong>You don't have access to any levy accounts.
-                              
-                          </strong>
-                        
-</div>  
-                    
-                  <br>You need to be invited to an account or create a new one.  
-                    <br>
-                    <br>
 
+                    <p>With levy accounts you can:</p>
+                    <ul class="list list-bullet">
+                        <li>view financial information</li>
+                        <li>create or amend apprenticeships</li>
+                        <li>spend money</li>
+                    </ul>
+                    
+                  <p>At the moment, you don't have access to any levy accounts. You need to be invited to an account or add a new one.</p>
                     
                     <div class="accounts many form-group hidden">
                   <p>Select an account or add a new one. </p>
@@ -109,7 +103,7 @@ You've created your profile
 
                     </div>
                 
-                <div class="column-third">
+                <div class="column-third hidden">
                 <aside class="related">
                     <h4 class="heading-small">Profile settings</h4>
                     <ul class="list list-links">
@@ -127,7 +121,7 @@ You've created your profile
                                 <h4 class="heading-medium">Invitiations</h4>
 
             <section class="invites-none">
-                <p>You have <strong class="bold-small">no</strong> invitations to levy accounts.</p>
+                <p>You currently have <strong class="bold-small">no</strong> invitations to levy accounts. But you can contact your account admin to request an invitation.</p>
             </section>
             
             <section class="invites-pending hidden">
@@ -139,10 +133,11 @@ You've created your profile
 </main>
 
 <script>
-  if (localStorage.getItem("accountActivatedMsg") == "true") {
+ /* if (localStorage.getItem("accountActivatedMsg") == "true") {
       $(".profileCreatedMsg").removeClass("hidden");
       localStorage.setItem("accountActivatedMsg",'false');
   }
+  */
 //store details entered into the form in local storage
 var createButton = document.getElementById('createAccountButton');
 

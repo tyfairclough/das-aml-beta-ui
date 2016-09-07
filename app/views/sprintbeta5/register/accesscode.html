@@ -33,10 +33,16 @@
 
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+    <div class="govuk-box-highlight">
+          <h2 class="bold-large">
+Access code sent          </h2>
+        <p>An acccess code has been sent to <strong class="bold-small userId">pete.kowalczyk@gmail.com</strong></p>
+        </div>
+    
 <h1 class="heading-xlarge">Enter access code</h1>
 
-    <p>An access code has been sent to <strong class="bold-small">pete.kowalczyk@gmail.com</strong>.</p>
-    <form action="../">
+
+    <form action="href="/{% include "includes/sprint-link.html" %}/profile>
   <fieldset>
     <legend class="visuallyhidden">Enter code</legend>
       <div class="form-group">
@@ -54,7 +60,7 @@
 
         <h4 class="heading-small">Not received your code?</h4>
         
-        <p>You can <a href="#">request another access code</a>.</p>
+        <p>You can <a href="#" id="newCode">request another access code</a>.</p>
         
 
 </main>
@@ -64,6 +70,12 @@
             e.preventDefault();
             window.location.href='../profile';
             localStorage.setItem("accountActivatedMsg", 'true');                  
+        })
+        
+        $("#newCode").click(function(e){
+            e.preventDefault();
+            $(".govuk-box-highlight h2").text("A new access code sent");
+            $(".govuk-box-highlight p").html("A new acccess code has been sent to <strong class='bold-small'>pete.kowalczyk@gmail.com</span>");
         })
     </script>
     

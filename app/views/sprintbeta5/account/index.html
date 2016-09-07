@@ -54,21 +54,35 @@
             <script>document.getElementById('company-Name').innerText = JSON.parse(localStorage.getItem('company-name-header'));</script>
 
 
- <div class="grid-row">
-           <div class="column-two-thirds">
-            <!--h2 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Funding</h2-->
-         <div style="max-width:90%">
-          <div class="grid-row">
-            <div class="column-half ">
+
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+                <div class="grid-row">
+              <div class="column-two-thirds">
               <h3 class="heading-medium" style="margin-top:0 "><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></h3>
               <p class="rj-home-spacer">Manage your funds including how much you have <a href="/{% include "includes/sprint-link.html" %}/forecast">available to spend</a>, your <a href="/{% include "includes/sprint-link.html" %}/history">transactions</a> and <a href="/{% include "includes/sprint-link.html" %}/expire">funds you could lose</a></p>
             </div>
+        </div>
+          <div class="grid-row">
+  
 
             <div class="column-half">
-              <h3 class="heading-medium rj-top-border-mobile" style="margin-top:0;  " ><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></h3>
+              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px" ><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></h3>
                <p class="rj-home-spacer"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">Search for and update the status</a> of  your apprentices or <span class="looks-like-a-link-underline">recruit new apprentices</span></p>
             </div>
+              
+                                         <div class="column-half ">
+              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/account/oragnisation/">Manage organisations</a></h3>
+              <!--<p class="rj-home-spacer rj-bottom-border-mobile"><a href="/{% include "includes/sprint-link.html" %}/contracts">Invite members</a> to this organisations.</p>-->
+                                <p>Add new legal entities to your levy account.</p>
+            </div>
           </div> 
+    
+    
+    
+    
           <div class="grid-row">
             <div class="column-half ">
               <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/training">Training</a></h3>
@@ -78,6 +92,12 @@
               <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Commitments</a></h3>
               <p class="rj-home-spacer rj-bottom-border-mobile"><a href="/{% include "includes/sprint-link.html" %}/contracts">Review commitments</a> with your training providers, <span class="looks-like-a-link-underline">view in progress</span> or <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">add a new commitment</a></p>
             </div>
+    </div>
+                        
+    
+    
+    <div class="grid-row">
+
               <div class="column-half ">
               <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/account/agreements">SFA contracts</a></h3>
               <p class="rj-home-spacer rj-bottom-border-mobile">
@@ -85,21 +105,32 @@
               </p>
             </div>
               
+       
+              <div class="column-half ">
+              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/account/paye/">Manage PAYE schemes members</a></h3>
+              <!--<p class="rj-home-spacer rj-bottom-border-mobile"><a href="/{% include "includes/sprint-link.html" %}/contracts">Invite members</a> to this organisations.</p>-->
+                                <p>Add PAYE schemes to allow levy funds to beadded to your account.</p>
+            </div>
+              </div>
+    
+    
+                        <div class="grid-row">
+
+              
                             <div class="column-half ">
               <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/team/">Manage team members</a></h3>
               <!--<p class="rj-home-spacer rj-bottom-border-mobile"><a href="/{% include "includes/sprint-link.html" %}/contracts">Invite members</a> to this organisations.</p>-->
                                 <p>Control who can access your levy account.</p>
             </div>
               
+       
               
-              <div class="column-half ">
-              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/account/paye/">Manage PAYE schemes members</a></h3>
-              <!--<p class="rj-home-spacer rj-bottom-border-mobile"><a href="/{% include "includes/sprint-link.html" %}/contracts">Invite members</a> to this organisations.</p>-->
-                                <p>Add PAYE schemes to allow levy funds to beadded to your account.</p>
-            </div>
+              
+ 
          </div>
 
-       </div>
+   
+
 
 
           </div>
@@ -137,8 +168,7 @@
             </div>
 
         </div>
-
-
+    </div>
 
 </main>
 
