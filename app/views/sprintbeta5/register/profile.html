@@ -115,7 +115,12 @@
           </label>
           <input class="form-control" id="user-password_confirm" type="password">
       </div>     
-                  <div class="form-group">
+                  
+                 
+                 <div class="form-group" id="checkTerms">
+                  <legend>                     <span class="error-message hidden">
+          You need to accept the terms of use to continue.
+        </span></legend>
 
             <label class="block-label" for="confirm-terms">
       <input id="confirm-terms" name="terms" type="checkbox" value="confirm-terms">
@@ -125,7 +130,7 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
         
         <p>To confirm your identity, you'll need an access code to continue.</p>
         
-    <input class="button" id="createAccountButton" type="submit" value="Continue">
+    <input class="button" id="createAccountButton" type="submit" value="Get access code">
 </form>
 
 <div id="result">
@@ -137,20 +142,34 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
 
     
     $(".error-message").hide();
-$("#createAccountButton").click(function(e){
-        e.preventDefault();
-
-
-       
-    validateEmail();
-    passwordsMatch();
-    nameComplete();
-    passwordComplete();
-    setNames()
     
-    window.open("accesscode","_self");
+    
+    $("#createAccountButton").click(function(e){
+    e.preventDefault();   
+        
+        nameComplete();
+        validateEmail();
+        passwordComplete();
+        passwordsMatch();
+        termsChecked();
 
-});
+        if (nameComplete() && validateEmail() && passwordComplete() && passwordsMatch() && termsChecked() === true) {
+            console.log("success");
+            setNames()
+            window.open("accesscode","_self");
+        }
+    });
+    
+    function termsChecked() {
+        if($('#confirm-terms').is(":checked")) {
+        return true;
+        } else {
+            //console.log("terms not checked");
+        $("#checkTerms").addClass("error");
+        $("#checkTerms > legend .error-message").removeClass("hidden").show();
+
+        }
+    }
     
     
     function setNames() {
@@ -190,8 +209,9 @@ $("#createAccountButton").click(function(e){
             $("#confirmPassword").addClass("error");
             $("#confirmPassword label #error1.error-message").show();   
         }
-        else if ( password =! confirmPassword ) {
+        else if ( password != confirmPassword ) {
             // fire error
+            //console.log("passwords don't match")
             $("#confirmPassword").addClass("error");
             $("#confirmPassword label #error2.error-message").show();
             
@@ -212,6 +232,7 @@ function validateEmail() {
     if (validateEmailString(email)) {
     //$("#result").text(email + " is valid :)");
     //$("#result").css("color", "green");
+        return true;
   } else {
     //$("#result").text(email + " is not valid :(");
     //$("#result").css("color", "red");
@@ -222,22 +243,11 @@ function validateEmail() {
 }
     
 
-     
-    $("input#fileUpload:file").change(function (){
-        timerId1 = setTimeout(function() {
-            alert("file uploaded")
-        },3000);
-    });
+    
 
-    $(".toggle-details").click(function(e){
-        e.preventDefault();
-        $(".popover.details").toggle();
-    })
-
-   // $('.textarea').wysihtml5();
-
-//    alert("hello");
-
+    
+    
+    
     i = 0;
 
     $("#password input").keyup(function(e){

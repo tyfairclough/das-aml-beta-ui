@@ -62,7 +62,13 @@
 </main>
 
  <!--button class="button">Do the thing</button-->
-
+<script>
+    
+        if (flow == "addOrg") {
+        $(".link-back").replaceWith("<a class='link-back' href='../account/organisation/'>Back to organisations</a>");
+            $("a").attr("href","step_a6?flow=addOrg");
+    }
+ 
 
 </script>
 

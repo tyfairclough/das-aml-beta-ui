@@ -38,10 +38,12 @@
     </ol>
   </div>
 
-    <div class="govuk-box-highlight">
+    <div class="govuk-box-highlight hidden" id="as">
           <h2 class="bold-large">
-            New levy account created
+Account created for <span class="company-name">FIFA Holdings ltd</span>
           </h2>
+        <p class="hidden asNotSigned">To spend levy funds somebody needs to <a href="/{% include "includes/sprint-link.html" %}/account/organisation/view?agreementState=not-signed">sign the agreement</a></p>
+        <p class="hidden asSigned">This account can now spend levy funds</p>
         </div>
     
     
@@ -74,7 +76,7 @@
             </div>
               
                                          <div class="column-half ">
-              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/account/oragnisation/">Manage organisations</a></h3>
+              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/account/organisation/">Manage organisations</a></h3>
               <!--<p class="rj-home-spacer rj-bottom-border-mobile"><a href="/{% include "includes/sprint-link.html" %}/contracts">Invite members</a> to this organisations.</p>-->
                                 <p>Add new legal entities to your levy account.</p>
             </div>
@@ -174,7 +176,16 @@
 
  <!--button class="button">Do the thing</button-->
 
-
+<script>
+    
+    if (newLevyAccount && newOrgSigned == "y") {
+     //   alert("signed and done")
+        $("#as, .asSigned").removeClass("hidden");
+    } else if ( newLevyAccount == "y" && newOrgSigned != "y" ) {
+   //     alert("done but not signed");
+        $("#as, .asNotSigned").removeClass("hidden");
+    }
+    
 </script>
 
 {% endblock %}

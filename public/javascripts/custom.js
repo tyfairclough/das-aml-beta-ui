@@ -20,6 +20,11 @@ var noinvite = getQueryVariable("noinvite");
 //var accepted = Number(getQueryVariable("accepted"));
 var PAYEremoved = getQueryVariable("PAYEremoved");
 var PAYEadded = getQueryVariable("PAYEadded");
+var flow = getQueryVariable("flow");
+var newOrg = getQueryVariable("newOrg");
+var newOrgSigned = getQueryVariable("newOrgSigned");
+var agreementState = getQueryVariable("agreementState");
+var newLevyAccount = getQueryVariable("newLevyAccount");
 
 
 

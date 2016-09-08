@@ -64,15 +64,25 @@
  <!--button class="button">Do the thing</button-->
 
 <script type="text/javascript">
+    
+    if (flow == "addOrg") {
+        $(".link-back").replaceWith("<a class='link-back' href='../account/organisation/'>Back to organisations</a>");
+    }
  
     $("a.button").click(function(e){
 e.preventDefault();
         if ( $("#ch-number").val() == "" ) {
-        alert("no number validation");
+        //alert("no number validation");
             $("form .form-group").addClass("error");
             $("form div .error-message").removeClass("hidden")
     } else {
+        var chNumber = $("#ch-number").val();
+        localStorage.setItem("chNumber", JSON.stringify(chNumber));
+        if ( flow == "addOrg") {
+        window.open("step_a5?flow=addOrg","_self")    
+        } else {
         window.open("step_b2","_self");
+            }
     }
 
     })
