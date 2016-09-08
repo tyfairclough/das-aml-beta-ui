@@ -40,10 +40,10 @@
   </div>
     
 <div class="govuk-box-highlight hidden" id="org">
-          <h2 class="bold-large">
-            New organisation added
-          </h2>
-    <p></p>
+          <h2 class="bold-large"><span class="company-name">FIFA Holdings ltd</span>  has been added</h2>
+
+    <p class="asNotSigned hidden">To spend levy funds somebody needs to <a href="/{% include "includes/sprint-link.html" %}/account/organisation/view?agreementState=not-signed">sign the agreement</a></p>    
+    <p class="asSigned">This account can now spend levy funds</p>
         </div>
 
     
@@ -112,7 +112,8 @@ if (newOrg == "y" ) {
     
     if (newOrgSigned != "y") {
         console.log("its not signed");
-        $("#org p").text("You need to get this signed");
+        $("#org .asNotSigned").removeClass("hidden");
+        $("#org .asSigned").addClass("hidden");
     } else {
         
     }
