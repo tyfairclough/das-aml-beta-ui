@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+        <li>change me</li>
+        <li>Team</li>
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+            <div class="column-two-thirds">
+                <div class="hgroup">
+                    <h1 class="heading-xlarge">Cancel invitation</h1>
+                    <p>You are about to this invitation. Lorem ipsum.</p>
+                </div>
+            </div>
+        </div>
+    
+    
+<div class="grid-row">
+            <div class="column-two-thirds">
+
+                <h2 class="heading-large">John Stephens
+            <span class="heading-secondary">(john.s@tesco.co.uk)</span></h2>
+                
+                <form>
+                    <fieldset>
+
+                        <h3 class="heading-medium">Do you want to cancel this invitation?</h3>
+
+                        <label class="block-label" for="radio-1">
+                            <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland"> Yes, cancel this invitation
+                        </label>
+                        <label class="block-label" for="radio-2">
+                            <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands"> No I want to keep this invitation
+                        </label>
+
+                    </fieldset>
+                </form>
+                <br clear="all">
+                <br>
+                <a class="button" href="invite.html?justremoved=y">Finish</a>
+
+            </div>
+            <div class="column-third">
+
+
+
+            </div>
+        </div>
+
+</main>
+
+<script>
+  
+</script>
+
+{% endblock %}

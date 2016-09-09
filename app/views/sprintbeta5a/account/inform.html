@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a href="/{% include "includes/sprint-link.html" %}/profile" class="link-back">Back to profile</a>      
+
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                   <h1 class="heading-large">What you need</h1>
+                   <!-- <p>Use this service to:</p>
+                    <ul class="list list-bullet">
+                        <li>Create an apprenticeship account for your organisation</li>
+                        <li>Access and manage your levy funds</li>
+                    </ul>
+                    
+                    <h3 class="heading-medium">Before you start</h3>-->
+                    <p>To add a levy account you need:</p>
+                    <ul class="list list-bullet">
+                        <li>the Companies House number for your organisation</li>
+                        
+                        <li>the Government Gateaway login details for the PAYE scheme you want to use to claim levy funds</li>
+                    </ul>
+                    <div class="form-group">
+                    <a href="#" rel="external">What's Government Gateway</a>
+                    </div>
+                    
+            <form action="step_b1">
+  <fieldset>
+      <div class="form-group">
+    <label class="block-label" for="paye-terms">
+      <input id="paye-terms" name="paye-terms" type="checkbox" value="yes" />
+I understand that all account users will be able to see financial information from any PAYE schemes I add.
+      </label>
+          </div>
+  </fieldset>
+                
+                <button type="submit" class="button">Start</button>
+</form>
+                </div>
+          </div>  
+
+</main>
+
+<script>
+  
+</script>
+
+{% endblock %}

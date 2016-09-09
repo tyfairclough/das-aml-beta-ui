@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a class="link-back" href="/{% include "includes/sprint-link.html" %}/profile">Back to profile</a>
+
+    
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <div class="hgroup">
+            <h1 class="heading-xlarge">Sign agreement</h1>
+              <p>You can't access levy funds and hire an apprentice through <span class="company-name">Acme Ltd</span> until you sign the following agreement.</p>
+        </div>
+    </div>
+</div>
+
+    <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">TESCO STORES LIMITED</h1>
+        <h2>Tesco House Shire Park, Kestrel Way, AL7 1GA</h2>
+        <hr />
+    </div>
+</div>
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nunc eros, posuere at lectus sollicitudin, efficitur malesuada odio. Curabitur varius mauris sit amet fringilla consequat. Integer porta id augue eu pretium. Sed quis sem vitae orci tincidunt vehicula. Nam sit amet ante metus. Suspendisse et elit varius, euismod odio quis, elementum erat. Nam imperdiet at ipsum vitae molestie. Mauris nisl diam, congue ultrices pretium vitae, congue vitae magna.
+
+Nam ut hendrerit velit. Nam vitae quam rhoncus, tempor eros nec, sagittis quam. Etiam aliquet lectus in varius sodales. Vestibulum volutpat orci eu dui faucibus rutrum ut sed ante. Etiam molestie, quam ac ultricies lacinia, erat nunc tempus enim, vitae elementum libero tortor vitae urna. Integer eu eros mattis, euismod ligula in, venenatis nisi. Praesent ultricies nulla sed enim tristique accumsan. Etiam bibendum nulla vel bibendum facilisis. Suspendisse et tellus in dui vehicula ullamcorper nec nec libero. Curabitur ac ex eget elit aliquet rutrum. Ut lacinia, tellus vitae mattis eleifend, metus arcu pharetra massa, vitae placerat velit sapien sit amet nulla. Fusce id mi egestas, facilisis justo in, scelerisque leo. Vivamus lorem nisl, egestas in pulvinar at, facilisis et leo.
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla consequat ac justo eu accumsan. Duis viverra pharetra elit ut mollis. Ut ultricies viverra mollis. Praesent vel nunc nec magna scelerisque lobortis. Pellentesque tempor venenatis nisl ut scelerisque. Mauris pharetra sapien quis metus dictum suscipit. Morbi mattis velit ante, id ullamcorper sapien tempus vel. In consequat aliquam elit, in congue purus tempor non. Fusce sit amet ligula erat.
+
+Nunc ut lectus vitae mi varius viverra porta at tortor. Fusce cursus nunc ac neque maximus, a sollicitudin lectus cursus. Phasellus in purus augue. Suspendisse egestas commodo dolor, tempor rutrum tortor gravida in. Ut feugiat in ligula nec malesuada. Pellentesque posuere imperdiet mi. Cras sed odio ante. Aliquam rutrum consectetur urna, eget dictum massa maximus vitae. Donec in pretium metus, sed porta tortor.
+
+Mauris purus nisl, fermentum et est sit amet, dapibus pretium massa. Fusce ultrices massa vitae diam varius, eu pharetra felis gravida. Quisque interdum ac est vitae ultricies. Nunc efficitur nibh et urna varius, nec ullamcorper quam faucibus. Nunc vel lectus rhoncus, faucibus lectus ac, rhoncus nisi. Donec tempor id erat in condimentum. Sed volutpat elementum neque sed sagittis. Aliquam erat volutpat. Maecenas sit amet sapien ut mi ornare imperdiet nec ac diam. Nullam eleifend dictum tellus, luctus convallis ligula. Pellentesque in tortor a libero posuere pellentesque. Donec consectetur lacus at dignissim egestas. Fusce gravida rutrum ex a cursus.</p>
+    </div>
+</div>
+    
+    <div class="grid-row">
+    <div class="column-two-thirds">
+            <form action="/{% include "includes/sprint-link.html" %}/account" method="GET">
+                <input type="hidden" id="accountId" name="accountId" value="13">
+                <input type="hidden" id="agreementId" name="agreementId" value="13">
+                <input type="hidden" id="legalEntityName" name="legalEntityName" value="TESCO STORES LIMITED">
+                <legend class="heading-medium">Sign the agreement now?</legend>
+                <div class="form-group">
+                <label class="block-label" for="understood">
+                    
+                    <input class="checkbox" id="understood" name="understood" type="checkbox" value="understood">
+                I've been authorised by my organisation to sign this agreement</label>
+
+                    </div>
+                <input class="button" id="signAgreement" type="submit" value="Sign and add account">
+                <a href="/{% include "includes/sprint-link.html" %}/account?newLevyAccount=y&newOrgSigned=n" class="button text-link">Add account, but don't sign</a>
+            </form>
+    </div>
+</div>
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+        
+        if (flow == "addOrg") {
+            $(".text-link").text("Add organisation, but don't sign");   
+            $("#signAgreement").attr("value","Sign, and add organisation");
+
+            //$(".text-link").attr("href","organisation?newOrg=y&newOrgSigned=n");   
+              var newOrg = $("<input>").attr("type","hidden").attr("name","newOrg").val("y");
+                    $('form').append($(newOrg));  
+            var newOrgSigned = $("<input>").attr("type","hidden").attr("name","newOrgSigned").val("y");
+                    $('form').append($(newOrgSigned)); 
+
+            $("form").attr("action","organisation?newOrg=y&newOrgSigned=y");
+            
+            //back link
+            $(".link-back").replaceWith("<a class='link-back' href='../account/organisation/'>Back to organisations</a>");
+            
+            
+            $(".text-link").click(function(e){
+                e.preventDefault();
+                window.open("../account/organisation?newOrg=y&newOrgSigned=n","_self")
+            });
+    } else {
+                      var newLevyAccount = $("<input>").attr("type","hidden").attr("name","newLevyAccount").val("y");
+                    $('form').append($(newLevyAccount));  
+                    var newOrgSigned = $("<input>").attr("type","hidden").attr("name","newOrgSigned").val("y");
+                    $('form').append($(newOrgSigned)); 
+    }
+    
+
+    
+    
+    
+    
+    
+</script>
+
+{% endblock %}
+

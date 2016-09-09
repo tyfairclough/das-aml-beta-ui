@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a class="link-back" href="/{% include "includes/sprint-link.html" %}/profile">Back to profile</a>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <h1 class="heading-large">Search for your organisation</h1>
+
+            <p>Use the companies house number for an organisation you want to hire apprentices through.</p>
+            <!--<p>We need to add a company name to the contract between you and the Skills Funding Agency. To find your company enter the company number of your organisation that is registered with Companies House.</p>-->
+            
+            <form action="step_a5">
+            
+            <fieldset>
+                <div class="form-group">
+                <label class="form-label-bold" for="ch-number">
+                    <span class="form-label-bold">Companies House number</span>
+                    <span class="error-message hidden">No company was found with that entry, please try again.</span>
+                    </label>
+                <input class="form-control" id="ch-number" type="text" name="ch-number">
+                </div>
+                </fieldset>
+            </form>
+            
+            <a rel="external" href="step_b2" class="button">Continue</a>
+        
+        </div>
+    </div>
+
+    
+    
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script type="text/javascript">
+    
+    if (flow == "addOrg") {
+        $(".link-back").replaceWith("<a class='link-back' href='../account/organisation/'>Back to organisations</a>");
+    }
+ 
+    $("a.button").click(function(e){
+e.preventDefault();
+        if ( $("#ch-number").val() == "" ) {
+        //alert("no number validation");
+            $("form .form-group").addClass("error");
+            $("form div .error-message").removeClass("hidden")
+    } else {
+        var chNumber = $("#ch-number").val();
+        localStorage.setItem("chNumber", JSON.stringify(chNumber));
+        if ( flow == "addOrg") {
+        window.open("step_a5?flow=addOrg","_self")    
+        } else {
+        window.open("step_b2","_self");
+            }
+    }
+
+    })
+    
+    
+
+</script>
+
+{% endblock %}
+

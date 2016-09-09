@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/userControl.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/account">Levy account</a></li>
+        <li><span class="company-name"></span></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
+
+    </ol>
+  </div>
+    
+   <div class="grid-row">
+            <div class="column-two-thirds">
+    <h1 class="heading-xlarge">
+
+
+Susan Hamazaki<!--span class="heading-secondary" style="padding-top:0px">rob.edwards@acmecoventryltd.com</span--></h1>
+            </div>
+        </div>
+    
+
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+                                 <table class=" form-group">
+            
+                                     
+                        <tbody>
+                            <tr>
+                                <td class="rjTableName">Email</td>
+                                <td class="">susan.hamazaki@acmecoventry.com</td>
+
+
+                            </tr>
+                            <tr>
+                                <td class="rjTableName">What they can do</td>
+                                <td class="">Create and stop payments and view financial information</td>
+
+
+
+                            </tr>
+                            <tr>
+                                <td class="rjTableName">Status</td>
+                                <td class="">Invitation pending</td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>  
+                <a href="/{% include "includes/sprint-link.html" %}/team/?justadded=y" class="button">Resend invitation</a>                
+                <a href="/{% include "includes/sprint-link.html" %}/team/remove-user" class="button text-link">Remove team member</a>
+      
+        </div>
+        </div>
+    
+</main>
+
+<script>
+  if ( justadded == "y") {
+     $(".justadded").removeClass("hidden");
+  } else if ( justremoved == "y") {
+           $(".justremoved").removeClass("hidden");
+  } else if ( userdeleted == "y") {
+      $(".userdeleted").removeClass("hidden");
+  } else if ( rolechange == "y" ) {
+      $(".rolechange").removeClass("hidden");
+  }
+</script>
+
+{% endblock %}
