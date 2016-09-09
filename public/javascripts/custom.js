@@ -198,12 +198,13 @@ CompanyName();
 
 $( document ).ready(function() {
     
-    
+$(".ch-number").text(JSON.parse(localStorage.getItem('chNumber')));
+            
 $(".company-name").text(JSON.parse(localStorage.getItem('company-name-header')));
     
+
     
-    
-var addedOrNor = function() {
+    var addedOrNor = function() {
   var hasDatesAdded = JSON.parse(localStorage.getItem('apprenticeship-dates-added'));
    console.log(hasDatesAdded)
     if (hasDatesAdded == "yes") {
@@ -219,6 +220,8 @@ var addedOrNor = function() {
 addedOrNor();
 
 });
+
+
 
 /* To determine if an apprenticeship has been added to the contract - this breaks because of the URl change below if it is in the page...it should live in /sprint11/contracts/new-contract/provider-interface/individual-contract */
 

@@ -42,11 +42,13 @@ Access code sent          </h2>
 <h1 class="heading-xlarge">Enter access code</h1>
 
 
-    <form action="href="/{% include "includes/sprint-link.html" %}/profile>
+    <form action="/{% include "includes/sprint-link.html" %}/profile">
   <fieldset>
     <legend class="visuallyhidden">Enter code</legend>
-      <div class="form-group">
-          <label class="form-label-bold" for="email-code">Enter code
+      <div class="form-group" id="enterCode">
+          <label for="email-code" class="form-label-bold">
+              <span class="form-label-bold">Enter code</span>
+              <span class="error-message">This field can't be blank</span>
           <!--span class="form-hint">Here is a hint for this form field.</span-->
         </label>
           <input class="form-control" id="email-code" type="text">
@@ -54,7 +56,7 @@ Access code sent          </h2>
      
              <div class="form-group">
 
-    <input class="button" id="submit-email-code" type="submit" value="Continue">
+                 <button type="submit" class="button" id="submit-email-code" value="Continue">Continue</button>
       </div>
 </form>
 
@@ -66,17 +68,43 @@ Access code sent          </h2>
 </main>
 
     <script>
-        $("#submit-email-code").click(function(e){
-            e.preventDefault();
-            window.location.href='../profile';
-            localStorage.setItem("accountActivatedMsg", 'true');                  
-        })
+        $(".error-message").hide();
+        
+        $("#submit-email-code").click(function(e) {
+            if ( ($("#email-code").val()) != "" ) {
+                        localStorage.setItem("accountActivatedMsg", 'true'); 
+                console.log("rredict");
+                //return true;
+                } else {
+                e.preventDefault();
+                $("#enterCode.form-group").addClass("error");
+                $("#enterCode.form-group .error-message").show();        
+            }
+        });
+    
+        
+        
+        var userId = JSON.parse(localStorage.getItem('email-address'));
+
+        
+        //$("#submit-email-code").click(function(e){
+        //    e.preventDefault();
+        //    window.location.href='../profile';
+        //    localStorage.setItem("accountActivatedMsg", 'true');                  
+        //})
         
         $("#newCode").click(function(e){
+                    var userId = JSON.parse(localStorage.getItem('email-address'));
+
             e.preventDefault();
             $(".govuk-box-highlight h2").text("A new access code sent");
-            $(".govuk-box-highlight p").html("A new acccess code has been sent to <strong class='bold-small'>pete.kowalczyk@gmail.com</span>");
+            $(".govuk-box-highlight p").html("A new acccess code has been sent to <strong class='bold-small'>"+ userId +"</span>");
+
         })
+
+        
+
+        $(".userId").text(JSON.parse(localStorage.getItem('email-address')));
     </script>
     
  <!--button class="button">Do the thing</button-->
