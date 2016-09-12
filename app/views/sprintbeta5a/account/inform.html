@@ -46,13 +46,13 @@
                         <li>the Government Gateaway login details for the PAYE scheme you want to use to claim levy funds</li>
                     </ul>
                     <div class="form-group">
-                    <a href="#" rel="external">What's Government Gateway</a>
+                    <a href="#" rel="external">What's Government Gateway?</a>
                     </div>
                     
             <form action="step_b1">
   <fieldset>
       <div class="form-group" id="termsCheck">
-          <span class="error-message">You must signify you understand what you're about to do.</span>
+          <span class="error-message">Check this statement to continue</span>
     <label class="block-label" for="paye-terms">
       <input id="paye-terms" name="paye-terms" type="checkbox" value="yes" />
 I understand that all account users will be able to see financial information from any PAYE schemes I add.
@@ -73,7 +73,6 @@ I understand that all account users will be able to see financial information fr
         if ( $("#paye-terms").is(":checked")) {
         } else {
             e.preventDefault();
-            alert("error");
             $("#termsCheck.form-group").addClass("error");
             $(".error-message").show();
         }
