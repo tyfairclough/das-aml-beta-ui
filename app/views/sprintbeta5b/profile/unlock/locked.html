@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <!--li><a href="/">Breadcrumb here ></a></li-->
+    </ol>
+
+  </div>
+
+  <h1 class="heading-xlarge">You’ve been locked out</h1>
+
+  <p>
+   You need to unlock your profile to access your accounts.
+  </p>
+
+
+<p>
+ <a href="unlock/step_a1.html" class="button">Unlock profile</a>
+</p>
+</main>
+
+<script>
+
+</script>
+
+{% endblock %}

@@ -298,7 +298,20 @@ for (var i = 0; i < localStorage.length; i++){
     console.log(localStorage.getItem(localStorage.key(i)));
 }
 
+    
+    $("#signOut").click(function(e){
+        
+        var sprintNo = JSON.parse(localStorage.getItem("sprint-number"));
+        e.preventDefault();
+        window.open('/'+sprintNo+'/register/start','_self');
+        JSON.parse(localStorage.setItem("authSet","true"));
+    });
+    
+    
+    setTimeout(function() {
+        localStorage.setItem("authSet","false");
+                
+        var sprintNo = JSON.parse(localStorage.getItem("sprint-number"));
+        window.open('/'+sprintNo+'/register/start','_self');
+    },300000);
 });
-
-
-

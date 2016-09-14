@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <!--li><a href="/">Breadcrumb here ></a></li-->
+    </ol>
+
+  </div>
+    
+    <div class="govuk-box-highlight success hidden">
+          <h2 class="bold-large">
+New unlock code sent
+        </h2>
+        <p>change me - something about checking email and spam no?</p>
+        </div>
+    
+    <div class="govuk-box-highlight error hidden" style="background-color:#b10e1e;">
+          <h2 class="bold-large">
+Unlock code has expired
+        </h2>
+        <p>You can request a new unlock code</p>
+        </div>
+
+  <h1 class="heading-xlarge">Enter your unlock code</h1>
+
+  <p>
+An unlock code has been sent to <strong class="bold-small">pete.kowalczyk@gmail.com</strong>.
+    </p>
+
+
+<form action="../../login">
+  <fieldset>
+    <legend class="visuallyhidden">email address</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="email-address">Enter unlock code
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="email-address" type="text">
+      </div>
+    </fieldset>
+    <input class="button" id="getUnlockCode" type="submit" value="Unlock">
+</form>    
+    <br>
+    <h3 class="heading-small">Not received your unlock code?</h3>
+    <p>You can <a href="#" class="resendCode">request another unlock code</a>.</p>
+</main>
+
+<script>
+
+    $(".resendCode").click(function(e){
+        e.preventDefault();
+        $(".govuk-box-highlight.success").removeClass("hidden");
+       // $(".govuk-box-highlight.error").removeClass("show");
+});
+    
+
+    // initially set the unlock code to active
+localStorage.setItem("unlockStatus", JSON.stringify("unlocked"));               
+
+    // after 2 minutes lock the code
+    setTimeout(function(){
+        console.log("code timed out");
+        localStorage.setItem("unlockStatus", 'expired');                  
+    }, (2 * 60 * 100));
+
+    $("#getUnlockCode").click(function(e){
+        // 2 minute timeout 2 * 60 * 1000
+        e.preventDefault();              
+        if ( localStorage.getItem('unlockStatus') == "expired") {
+            $(".govuk-box-highlight.error").removeClass("hidden");
+        } else {
+                        window.location.href='../../login';
+        };
+    });
+
+
+    
+</script>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+
+    <div class="service-info ">
+    
+    <div class="logo">
+        <span class="organisation-logo organisation-logo-medium">HM Revenue &amp; Customs</span>
+    </div>
+    
+    <div class="last-login float--right">
+        <p class="flush text--right h3-heading"></p>
+    </div>
+
+</div>
+
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-large">Government Gateway login</h1>
+            
+         <!--   <p>This page is a replication of the government gateway account you can use to test your application through the test APIs</p>            -->
+            <form action="step_a2">
+            
+                <fieldset>
+                    <div class="form-group">
+                        <label class="form-label" for="user-id">User ID
+                        <!--span class="form-hint">Here is a hint for this form field.</span-->
+                        </label>
+                        <input class="form-control" id="user-id" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="user-password">Password
+                        <!--span class="form-hint">Here is a hint for this form field.</span-->
+                        </label>
+                        <input class="form-control" id="user-password" type="password">
+                    </div>                    
+                </fieldset>
+                
+                <input class="button" id="user-signin" type="submit" value="Sign in">
+                
+            </form>
+        
+        </div>
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/userControl.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+        <li>Levy account</li>
+        <li><span class="company-name">company name</span></li>
+    </ol>
+  </div>
+
+   <h1 class="heading-large company-name">FIFA</h1>
+<div class="grid-row">
+    <div class="column-half">
+    <p>Get and spend your levy funds for your apprenticeship programme</p>
+        <h3 class="heading-medium">Setup a new </h3>
+        <div class="grid-row">
+        <div class="column-half">
+            <ul class="list list-links">
+            <li><a href="#">Add an organisation</a></li>
+            <li><a href="#">Add a contract</a></li>
+        </ul>
+    </div>
+        <div class="column-half">
+            <ul class="list list-links">
+            <li><a href="#">Find a training provider</a></li>
+            <li><a href="#">Add an apprentice</a></li>
+        </ul>
+    </div>
+        </div>
+        
+        </div>
+    
+    <div class="column-half">
+    <div id="myChart"></div>
+    </div>
+</div>    
+    
+    <div class="grid-row">
+    <div class="column-two-thirds">
+            <h3 class="heading-medium">Check funds</h3>
+<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro </p>
+<div class="grid-row">
+        <div class="column-half">        
+            
+            <div class="data rj-top-border">
+          <h2 class="bold-xlarge">£5,250</h2>
+          <p class="bold-xsmall">Money in</p>
+        </div>
+            
+            <div class="data rj-top-border">
+          <h2 class="bold-xlarge">£45,190</h2>
+          <p class="bold-xsmall">Committed spending</p>
+        </div>
+            <a href="#">View levy spending forecast</a>
+         
+            
+        </ul></div>
+        <div class="column-half">        <ul class="list list-bullet">
+            <li><a href="#">Money available</a></li>
+            <li><a href="#">Current balance</a></li>
+            <li><a href="#">Outgoings</a></li>
+   
+            
+        </ul>
+           
+            <ul class="list list-bullet">
+
+            <li><a href="#">Money in</a></li>
+            <li><a href="#">English fraction/%</a></li>
+            <li><a href="#">PAYE</a></li>
+            <li><a href="#">Forecast/committed spending</a></li>
+        </div>
+        </div>
+        </div>
+    <div class="column-third related">
+        <div class="grid-row">
+        <h3 class="heading-medium">Review apprenticeships</h3>
+        <div class="column-half">   
+            <div class="data">
+          <h2 class="bold-xlarge">23</h2>
+          <p class="bold-xsmall">Apprentices hired to date</p>
+        </div>
+            </div>
+        <div class="column-half">
+            <div class="data">
+          <h2 class="bold-xlarge">4</h2>
+          <p class="bold-xsmall">Apprenticeship programmes</p>
+        </div>
+
+            </div>
+        </div>
+        <ul class="list list-bullet">
+            <li><a href="#">Organisations</a></li>
+            <li><a href="#">Commitments</a></li>
+            <li><a href="#">Apprentices</a></li>
+
+        </ul>
+        
+        
+        </div>
+        
+    </div>
+    
+    <div class="grid-row">
+        <h3 class="heading-medium">Administration</h3>
+        <ul class="list list-links">
+            <li><a href="#">Manage team members</a></li>
+            <li><a href="#">SFA contracts</a></li>
+            <li><a href="#">Change account name</a></li>
+            <li><a href="#">Add / remove PAYE</a></li>
+        </ul>
+    </div>
+ 
+    
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+    
+    if (newLevyAccount && newOrgSigned == "y") {
+     //   alert("signed and done")
+        $("#as, .asSigned").removeClass("hidden");
+    } else if ( newLevyAccount == "y" && newOrgSigned != "y" ) {
+   //     alert("done but not signed");
+        $("#as, .asNotSigned").removeClass("hidden");
+    }
+    
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June","July","August","September","October","November","December"],
+        datasets: [{
+            label: 'Levy paid',
+            data: [, , , , 1000, 1500,1500,1500,1700,1700,1900],
+            backgroundColor: [
+                'rgba(9, 127, 150, 0)'
+            ],
+            borderColor: [
+                'rgba(9, 127, 150, 1)'
+            ],
+            borderWidth: 2,
+                        tension: 0
+        }]
+    },
+    options: {
+        line: {
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false
+                }
+            }]
+        }
+    }
+});
+
+    
+</script>
+
+{% endblock %}
+

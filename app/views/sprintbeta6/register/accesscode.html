@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a href="start.html" class="link-back">Back</a>
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+    <div class="govuk-box-highlight">
+          <h2 class="bold-large">
+Access code sent          </h2>
+        <p>An acccess code has been sent to <strong class="bold-small userId">pete.kowalczyk@gmail.com</strong></p>
+        </div>
+    
+<h1 class="heading-xlarge">Enter access code</h1>
+
+
+    <form action="/{% include "includes/sprint-link.html" %}/profile">
+  <fieldset>
+    <legend class="visuallyhidden">Enter code</legend>
+      <div class="form-group" id="enterCode">
+          <label for="email-code" class="form-label-bold">
+              <span class="form-label-bold">Enter code</span>
+              <span class="error-message">Enter your code here</span>
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="email-code" type="text">
+      </div>
+     
+             <div class="form-group">
+
+                 <button type="submit" class="button" id="submit-email-code" value="Continue">Continue</button>
+      </div>
+</form>
+
+        <h4 class="heading-small">Not received your code?</h4>
+        
+        <p>You can <a href="#" id="newCode">request another access code</a>.</p>
+        
+
+</main>
+
+    <script>
+        $(".error-message").hide();
+        
+        $("#submit-email-code").click(function(e) {
+            if ( ($("#email-code").val()) != "" ) {
+                        localStorage.setItem("accountActivatedMsg", 'true'); 
+                console.log("rredict");
+                //return true;
+                } else {
+                e.preventDefault();
+                $("#enterCode.form-group").addClass("error");
+                $("#enterCode.form-group .error-message").show();        
+            }
+        });
+    
+        
+        
+        var userId = JSON.parse(localStorage.getItem('email-address'));
+
+        
+        //$("#submit-email-code").click(function(e){
+        //    e.preventDefault();
+        //    window.location.href='../profile';
+        //    localStorage.setItem("accountActivatedMsg", 'true');                  
+        //})
+        
+        $("#newCode").click(function(e){
+                    var userId = JSON.parse(localStorage.getItem('email-address'));
+
+            e.preventDefault();
+            $(".govuk-box-highlight h2").text("A new access code sent");
+            $(".govuk-box-highlight p").html("A new acccess code has been sent to <strong class='bold-small'>"+ userId +"</span>");
+
+        })
+
+        
+
+        $(".userId").text(JSON.parse(localStorage.getItem('email-address')));
+    </script>
+    
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+<a class="link-back" href="/{% include "includes/sprint-link.html" %}/account/paye">Back to Manage PAYE schemes</a>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <h1 class="heading-large">Confirm PAYE scheme</h1>
+
+            <h2 class="bold-xlarge">680/cacb268
+            </h2>
+            
+          
+              <h3 class="heading-medium">
+  Is this the correct paye scheme?
+</h3>
+
+<!--<form>
+  <fieldset class="inline">
+
+    <legend class="visuallyhidden">
+  Is this the correct paye scheme?      
+      </legend>
+
+    <label class="block-label" for="radio-inline-1">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+      Yes
+    </label>
+    <label class="block-label" for="radio-inline-2">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+      No
+    </label>
+
+  </fieldset>
+</form>-->
+            
+            
+            <a rel="external" href="/{% include "includes/sprint-link.html" %}/account/paye/?PAYEadded=y" class="button">Yes, continue</a>
+            <a href="step_a1" class="button text-link">No, use different details</a>
+        </div>
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

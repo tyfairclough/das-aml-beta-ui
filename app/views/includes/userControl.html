@@ -1,10 +1,19 @@
 <div class="logged-in" id="userControl">
     <div class="column-two-thirds">&nbsp;</div>
     <div>
-        <p class="font-xsmall">Hi <span class="users-name">Ian Russele</span>, <a href="#"><i class="fa fa-sign-out"></i> Sign out</a></p>
-        <p class="font-xsmall"><a href="#">Back to levy accounts</a></p>
+        <p class="font-xsmall">Hi <span class="users-name">Ian Russele</span>, <a href="#" id="signOut"><i class="fa fa-sign-out"></i> Sign out</a></p>
+        <p class="font-xsmall" id="backToLevy"><a href="/{% include "includes/sprint-link.html" %}/profile">Back to levy accounts</a></p>
     </div>
 </div>
 <script>
 $(".users-name").text(JSON.parse(localStorage.getItem('users-name')));
+    
+    var currentURL = window.location.href;
+    var strippedURL = currentURL.replace(/^(?:\/\/|[^\/]+)*\//, "");
+    var redirectURL = strippedURL.startsWith(JSON.parse(localStorage.getItem("sprint-number"))+"/profile");
+    if (redirectURL == true ) {
+        $("#backToLevy").hide();
+    } else {
+        console.log("nothing");
+    }
 </script>

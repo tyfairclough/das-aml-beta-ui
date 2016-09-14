@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a class="link-back" href="/{% include "includes/sprint-link.html" %}/profile">Back to profile</a>
+
+
+    
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+<table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+            <h1 class="heading-large">Check details</h1>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Organisation
+        </td>
+        <td>
+          Name: <span class="company-name">Tescos Stores Plc</span><br>
+          Companies House number: <span class="ch-number">0736876</span><br>
+        </td>
+        <td class="change-answer">
+          <a href="step_b1">
+            Change <span class="visuallyhidden">Legal entity</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          PAYE scheme
+        </td>
+        <td>
+          123/AB12345	
+        </td>
+        <td class="change-answer">
+          <a href="step_b2">
+            Change <span class="visuallyhidden">PAYE scheme</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+            
+<br>
+        <a rel="external" href="step_a6" class="button">These details are correct</a>
+
+        </div>
+        
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

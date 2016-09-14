@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+<div class="hgroup">
+    <h1 class="heading-xlarge">Page not found</h1>
+
+    <p>If you entered a web address please check it was correct.</p>
+    <p>You can return to the <a href="#">start page</a> to try again.</p>
+</div>
+
+</main>
+
+    <script>
+        $("#submit-email-code").click(function(e){
+            e.preventDefault();
+            window.location.href='../profile';
+            localStorage.setItem("accountActivatedMsg", 'true');                  
+        })
+        
+        $("#newCode").click(function(e){
+            e.preventDefault();
+            $(".govuk-box-highlight h2").text("A new access code sent");
+            $(".govuk-box-highlight p").html("A new acccess code has been sent to <strong class='bold-small'>pete.kowalczyk@gmail.com</span>");
+        })
+    </script>
+    
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

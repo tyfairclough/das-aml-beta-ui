@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/userControl.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
+        <li>Levy account</li>
+        <li><span class="company-name">company name</span></li>
+    </ol>
+  </div>
+
+   <h1 class="heading-large company-name">FIFA</h1>
+<div class="grid-row">
+    <div class="column-half">
+    <p>Get and spend your levy funds for your apprenticeship programme</p>
+        <h3 class="heading-medium">Shorcuts</h3>
+        <div class="grid-row">
+        <div class="column-half">
+            <ul class="list list-links">
+            <li><a href="#">Add an organisation</a></li>
+            <li><a href="#">Add a contract</a></li>
+        </ul>
+    </div>
+        <div class="column-half">
+            <ul class="list list-links">
+            <li><a href="#">Find a training provider</a></li>
+            <li><a href="#">Add an apprentice</a></li>
+
+
+        </ul>
+    </div>
+        </div>
+        
+        </div>
+    <div class="column-half">
+        <h3 class="heading-medium">Funding forecast</h3>
+        
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    </div>
+</div>    
+    
+    <div class="grid-row">
+    <div class="column-third">
+        <h3 class="heading-medium">Today's errands</h3>
+<div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Forecast: not completed  </h2>
+                  <p style="width:85%; margin: 5px 10px 5px 20px" to-do-action=""><a href="/sprintbeta5a&#10;&#10;&#10;&#10;/forecast/">Calculate your available spend</a></p>
+                </div>
+            </div>
+        <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Applications received: 16</h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:88%; margin: 5px 10px 5px 20px">Process your applications</p>
+                </div>
+            </div>
+        <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Contracts awaiting review: 7 </h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Review your contracts</p>
+                </div>
+            </div>
+        <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Staff with access to account: 1 </h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Grant access to others</p>
+                </div>
+            </div>
+    </div>
+        <div class="column-two-thirds">
+        <h3 class="heading-medium">Check funds</h3>
+            
+            <div class="grid-row">
+                <div class="column-half">
+                    <p class="rj-home-spacer">Manage your funds including how much you have <a href="/sprintbeta5a&#10;&#10;&#10;&#10;/forecast">available to spend</a>, your <a href="/sprintbeta5a&#10;&#10;&#10;&#10;/history">transactions</a> and <a href="/sprintbeta5a&#10;&#10;&#10;&#10;/expire">funds you could lose</a></p>
+                    
+                    <ul class="list list-bullet">
+                    <li><a href="#">View funds available to spend</a></li>
+                    <li><a href="#">View funds expiring soon</a></li>
+                    <li><a href="#">View your transaction history</a></li>
+                    <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="column-half">
+                <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    <div class="data rj-top-border">
+          <h2 class="bold-xlarge">£5,250</h2>
+          <p class="bold-xsmall">Incoming funds</p>
+        </div>
+                    <div class="data rj-top-border" style="position: relative;">
+          <h2 class="bold-xlarge">£2,250</h2>
+          <p class="bold-xsmall">Budget balance</p>
+                        <i style="position: absolute; top: 20px; right: 20px; color: red;" class="fa fa-exclamation-triangle fa-2x"></i>
+        </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+    
+    if (newLevyAccount && newOrgSigned == "y") {
+     //   alert("signed and done")
+        $("#as, .asSigned").removeClass("hidden");
+    } else if ( newLevyAccount == "y" && newOrgSigned != "y" ) {
+   //     alert("done but not signed");
+        $("#as, .asNotSigned").removeClass("hidden");
+    }
+    
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June","July","August","September","October","November","December"],
+        datasets: [{
+            label: 'Levy paid',
+            data: [, , , , 1000, 1500,1500,1500,1700,1700,1900],
+            backgroundColor: [
+                'rgba(9, 127, 150, 0)'
+            ],
+            borderColor: [
+                'rgba(9, 127, 150, 1)'
+            ],
+            borderWidth: 2,
+                        tension: 0
+        }]
+    },
+    options: {
+        line: {
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false
+                }
+            }]
+        }
+    }
+});
+
+    
+</script>
+
+{% endblock %}
+

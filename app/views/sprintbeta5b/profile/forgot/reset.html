@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <!--li><a href="/">Breadcrumb here ></a></li-->
+    </ol>
+
+  </div>
+
+    
+
+
+  <h1 class="heading-xlarge">Create a new password</h1>
+
+  <p>
+Your password must:  </p>
+    <ul class="list list-bullet">
+    <li>be 8 to 12 characters long</li>
+    <li>have at least one uppercase and one lowercase letter</li>
+    <li>have at least one number</li>
+    </ul>
+
+<form action="../../login">
+  <fieldset>
+    <legend class="visuallyhidden">create password</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="email-address">Create a password
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="email-address" type="text">
+      </div>
+           <div class="form-group">
+          <label class="form-label-bold" for="email-address">Re-type password
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="email-address" type="text">
+      </div>
+     </fieldset>
+    <input class="button" id="createAccountButton" type="submit" value="Continue">
+</form>
+</main>
+
+<script>
+
+//store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+    });
+    
+    if ( JSON.parse(localStorage.getItem('unlockStatus')) == "unlock" ) {
+        $(".govuk-box-highlight").removeClass("hidden");
+    } else {
+        //alert("still locked")
+    } 
+</script>
+
+{% endblock %}
