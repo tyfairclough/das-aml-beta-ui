@@ -25,6 +25,7 @@
 {% include "includes/phase_banner_beta.html" %}
 {% include "includes/userControl.html" %}
 
+
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
@@ -34,62 +35,63 @@
 
     </ol>
   </div>
-
- 
-<div class="grid-row">
+    
+   <div class="grid-row">
             <div class="column-two-thirds">
-                <h1 class="heading-xlarge">
+    <h1 class="heading-xlarge users-name">
 
 
 Susan Hamazaki<!--span class="heading-secondary" style="padding-top:0px">rob.edwards@acmecoventryltd.com</span--></h1>
-                <div>
+            </div>
+        </div>
+    
 
+    <div class="grid-row">
+            <div class="column-two-thirds">
 
-
-
-                    <table>
+                                 <table class=" form-group">
+            
+                                     
                         <tbody>
                             <tr>
                                 <td class="rjTableName">Email</td>
-                                <td class="">susan.hamazaki@acmecoventry.com</td>
+                                <td class="users-email">susan.hamazaki@acmecoventry.com</td>
+
 
                             </tr>
                             <tr>
                                 <td class="rjTableName">What they can do</td>
                                 <td class="">Create and stop payments and view financial information</td>
 
+
+
                             </tr>
-                         <!--   <tr>
+                           <!-- <tr>
                                 <td class="rjTableName">Status</td>
-                                <td class="">Invitation expired</td>
+                                <td class="">Invitation pending</td>
+
 
                             </tr>-->
                         </tbody>
-                    </table>
-                    <div style="margin-top:35px"></div>
-
-<a class="button" href="/{% include "includes/sprint-link.html" %}/team/?justadded=y">Resend invitation</a>
-<a class="button text-link" href="/{% include "includes/sprint-link.html" %}/team/remove-user">Cancel invitation</a>
-                    
-
-                </div>
-                <div style="margin-top:35px">
-
-                </div>
-
-            </div>
-
-       
-    
+                    </table>  
+                <a href="/{% include "includes/sprint-link.html" %}/team/?justadded=y" class="button">Resend invitation</a>                
+                <a href="/{% include "includes/sprint-link.html" %}/team/cancelinvite" class="button text-link">Cancel invitation</a>
+      
+        </div>
         </div>
     
 </main>
 
 <script>
-
-    
-    
-  
+  if ( justadded == "y") {
+     $(".justadded").removeClass("hidden");
+  } else if ( justremoved == "y") {
+           $(".justremoved").removeClass("hidden");
+  } else if ( userdeleted == "y") {
+      $(".userdeleted").removeClass("hidden");
+  } else if ( rolechange == "y" ) {
+      $(".rolechange").removeClass("hidden");
+  }
 </script>
 
 {% endblock %}

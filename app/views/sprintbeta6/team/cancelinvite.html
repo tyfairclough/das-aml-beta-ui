@@ -23,64 +23,73 @@
 
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
+{% include "includes/userControl.html" %}
 
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
-        <li>change me</li>
-        <li>Team</li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/account">Levy account</a></li>
+        <li><span class="company-name"></span></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
+        <li><a href="/{% include "includes/sprint-link.html" %}/team/view-user"><span class="users-name">Susan Hamazaki</span></a></li>
+
     </ol>
   </div>
+    
+
+    
+
+    <div class="grid-row">
+<div class="column-two-thirds">
+            
 
 
+            <h2 class="heading-xlarge">Cancel invitation
+            </h2>
+            
+          
+              <h3 class="heading-medium">
+Are you sure you want to cancel <span class="users-name">Susan Hamazaki</span>'s invitation?
+</h3>
 
-<div class="grid-row">
-            <div class="column-two-thirds">
-                <div class="hgroup">
-                    <h1 class="heading-xlarge">Cancel invitation</h1>
-                    <p>You are about to this invitation. Lorem ipsum.</p>
-                </div>
-            </div>
+<!--<form>
+  <fieldset class="inline">
+
+    <legend class="visuallyhidden">
+  Is this the correct paye scheme?      
+      </legend>
+
+    <label class="block-label" for="radio-inline-1">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+      Yes
+    </label>
+    <label class="block-label" for="radio-inline-2">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+      No
+    </label>
+
+  </fieldset>
+</form>-->
+            
+            
+            <a rel="external" href="/{% include "includes/sprint-link.html" %}/team/?justremoved=y" class="button">Yes, cancel invitation</a>
+            <a href="/{% include "includes/sprint-link.html" %}/team/" class="button text-link">No, don't cancel invitation</a>
+        </div>
         </div>
     
-    
-<div class="grid-row">
-            <div class="column-two-thirds">
-
-                <h2 class="heading-large">John Stephens
-            <span class="heading-secondary">(john.s@tesco.co.uk)</span></h2>
-                
-                <form>
-                    <fieldset>
-
-                        <h3 class="heading-medium">Do you want to cancel this invitation?</h3>
-
-                        <label class="block-label" for="radio-1">
-                            <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland"> Yes, cancel this invitation
-                        </label>
-                        <label class="block-label" for="radio-2">
-                            <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands"> No I want to keep this invitation
-                        </label>
-
-                    </fieldset>
-                </form>
-                <br clear="all">
-                <br>
-                <a class="button" href="invite.html?justremoved=y">Finish</a>
-
-            </div>
-            <div class="column-third">
-
-
-
-            </div>
-        </div>
-
 </main>
 
 <script>
-  
+  if ( justadded == "y") {
+     $(".justadded").removeClass("hidden");
+  } else if ( justremoved == "y") {
+           $(".justremoved").removeClass("hidden");
+  } else if ( userdeleted == "y") {
+      $(".userdeleted").removeClass("hidden");
+  } else if ( rolechange == "y" ) {
+      $(".rolechange").removeClass("hidden");
+  }
 </script>
 
 {% endblock %}

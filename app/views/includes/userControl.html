@@ -7,6 +7,7 @@
 </div>
 <script>
 $(".users-name").text(JSON.parse(localStorage.getItem('users-name')));
+$(".users-email").text(JSON.parse(localStorage.getItem('email-address')));
     
     var currentURL = window.location.href;
     var strippedURL = currentURL.replace(/^(?:\/\/|[^\/]+)*\//, "");

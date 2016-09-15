@@ -32,6 +32,8 @@
       <li><a href="/{% include "includes/sprint-link.html" %}/account">Levy account</a></li>
         <li><span class="company-name"></span></li>
       <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
+        
+        <li><a href="/{% include "includes/sprint-link.html" %}/team/view-user"><span class="users-name">Susan Hamazaki</span></a></li>
 
     </ol>
   </div>
@@ -42,14 +44,14 @@
     <div class="grid-row">
 <div class="column-two-thirds">
             
-            <h1 class="heading-large">Confirm removal</h1>
 
-            <h2 class="bold-xlarge">Susan Hamazaki
+
+            <h2 class="heading-xlarge">Remove team member
             </h2>
             
           
               <h3 class="heading-medium">
-Are you sure you want to remove this profile?
+                  Are you sure you want to remove <span class="users-name">Susan Hamazaki</span>?
 </h3>
 
 <!--<form>
@@ -72,7 +74,7 @@ Are you sure you want to remove this profile?
 </form>-->
             
             
-            <a rel="external" href="/{% include "includes/sprint-link.html" %}/team/?userdeleted=y" class="button">Yes, remove this profile</a>
+            <a rel="external" href="/{% include "includes/sprint-link.html" %}/team/?userdeleted=y" class="button">Yes, remove now</a>
             <a href="/{% include "includes/sprint-link.html" %}/team/" class="button text-link">No, cancel</a>
         </div>
         </div>
