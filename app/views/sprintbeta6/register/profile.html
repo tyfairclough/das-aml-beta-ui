@@ -31,23 +31,58 @@
 
 <a href="start" class="link-back">Back</a>
 
+    <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    You need to fix the errors on this page before continuing.
+
+
+  </h1>
+<p>Check the following details:</p>
+
+  <ul class="error-summary-list">
+    <li><a href="#name">First name</a></li>
+    <li><a href="#lastNane">Last name</a></li>
+    <li><a href="#example-personal-details">Email</a></li>
+    <li><a href="#example-personal-details">Password</a></li>
+    <li><a href="#example-personal-details">Re-type password</a></li>
+    <li><a href="#example-personal-details">Accept the terms of use</a></li>
+  </ul>
+
+</div>
+    
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 <h1 class="heading-xlarge">Create your account</h1>
 
+    
+    
+    
     <form id="profileSetup" action="accesscode">
   <fieldset>
     <legend class="visuallyhidden">Name</legend>
       <div class="form-group" id="name">
           <label class="form-label-bold" for="users-name">
           <!--span class="form-hint">Here is a hint for this form field.</span-->
-          <span class="form-label-bold">Name</span>
+          <span class="form-label-bold">First name</span>
           <span class="error-message hidden">
-          Please enter a name to continue
+          Enter a name to continue
         </span>
         </label>
               
-          <input class="form-control" id="users-name" type="text">
+          <input aria-invalid="true" class="form-control" id="users-name" type="text"  aria-required="true" >
+      </div>
+      
+      <div class="form-group" id="lastNameField">
+          <label class="form-label-bold" for="lastName">
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+          <span class="form-label-bold">Last name</span>
+          <span class="error-message hidden">
+          Enter your last name to continue
+        </span>
+        </label>
+              
+          <input class="form-control" id="lastName" type="text"  aria-required>
       </div>
       <div class="form-group" id="emailGroup">
           <label class="form-label-bold" for="email-address">
@@ -64,7 +99,7 @@
               <span class="form-label-bold">Create password</span>
           <!--span class="form-hint">Here is a hint for this form field.</span-->
                         <span class="error-message hidden">
-          Please enter a name to continue
+          Enter a name to continue
         </span>
         </label>        <p>Your password must:</p>
  <!--       <ul class="list list-bullet">
@@ -78,9 +113,9 @@
                                     <div class="arrow"></div>
                                     <div class="popover-content">
                                         <ul>
-                                            <li id="8num" class="success"><i class="fa fa-times"></i> be 8 to 12 characters long</li>
-                                            <li id="1cap" class="success"><i class="fa fa-times"></i> have at least one uppercase and one lowercase letter</li>
-                                            <li id="1num" class="success"><i class="fa fa-times"></i> have at least one number</li>
+                                            <li id="8num" class="success"><i class="fa fa-circle"></i> be 8 to 12 characters long</li>
+                                            <li id="1cap" class="success"><i class="fa fa-circle"></i> have at least one uppercase and one lowercase letter</li>
+                                            <li id="1num" class="success"><i class="fa fa-circle"></i> have at least one number</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -98,7 +133,7 @@
                                     <span class="medium"></span>
                                     <span class="strong"></span>
                                 </div>
- <p>Password Strength: <span class="pw-strength"></span></p>
+ <p>Password strength: <span class="pw-strength"></span></p>
                             </div>
                 
                  
@@ -152,6 +187,7 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
         passwordComplete();
         passwordsMatch();
         termsChecked();
+        lastNameComplete();
 
         if (nameComplete() && validateEmail() && passwordComplete() && passwordsMatch() && termsChecked() === true) {
             console.log("success");
@@ -191,6 +227,16 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
             //alert("name empty");
                   $("#name").addClass("error");
       $("#name .error-message").removeClass("hidden").show();
+        } else {
+            return true;
+        }
+    }
+    
+    function lastNameComplete() {
+        if ($("#lastName").val() == "") {
+            //alert("name empty");
+                  $("#lastNameField").addClass("error");
+      $("#lastNameField .error-message").removeClass("hidden").show();
         } else {
             return true;
         }
@@ -269,10 +315,10 @@ function validateEmail() {
 
         } else if (mediumRegex.test($(this).val())) {
             $("#1char").removeClass("danger").addClass("success");
-            $("#1char .fa").removeClass("fa-times").addClass("fa-check")
+            $("#1char .fa").removeClass("fa-circle").addClass("fa-check-circle")
         } else if (len > 8 ) {
             $("#8num").removeClass("danger").addClass("success");
-            $("#8num .fa").removeClass("fa-times").addClass("fa-check")
+            $("#8num .fa").removeClass("fa-circle").addClass("fa-check-circle")
         } else {
 
         }
@@ -291,37 +337,37 @@ function validateEmail() {
         //validate the length
         if ( password.length < 8 ) {
             $('#8num').removeClass('success').addClass('danger');
-            $("#8num i").removeClass("fa-check").addClass("fa-times");
+            $("#8num i").removeClass("fa-check-circle").addClass("fa-circle");
         } else {
             $('#8num').removeClass('danger').addClass('success');
-            $("#8num i").removeClass("fa-times").addClass("fa-check");
+            $("#8num i").removeClass("fa-circle").addClass("fa-check-circle");
         }
 
 //validate letter
         if ( password.match(/[A-z]/) ) {
             $('#1char').removeClass('danger').addClass('success');
-            $("#1char i").removeClass("fa-times").addClass("fa-check");
+            $("#1char i").removeClass("fa-circle").addClass("fa-check-circle");
         } else {
             $('#1char').removeClass('success').addClass('danger');
-            $("#1char i").removeClass("fa-check").addClass("fa-times");
+            $("#1char i").removeClass("fa-check-circle").addClass("fa-circle");
         }
 
 //validate capital letter
         if ( password.match(/[A-Z]/) ) {
             $('#1cap').removeClass('danger').addClass('success');
-            $("#1cap i").removeClass("fa-times").addClass("fa-check");
+            $("#1cap i").removeClass("fa-circle").addClass("fa-check-circle");
         } else {
             $('#1cap').removeClass('success').addClass('danger');
-            $("#1cap i").removeClass("fa-check").addClass("fa-times");
+            $("#1cap i").removeClass("fa-check-circle").addClass("fa-circle");
         }
 
 //validate number
         if ( password.match(/\d/) ) {
             $('#1num').removeClass('danger').addClass('success');
-            $("#1num i").removeClass("fa-times").addClass("fa-check");
+            $("#1num i").removeClass("fa-circle").addClass("fa-check-circle");
         } else {
             $('#1num').removeClass('success').addClass('danger');
-            $("#1num i").removeClass("fa-check").addClass("fa-times");
+            $("#1num i").removeClass("fa-check-circle").addClass("fa-circle");
         }
 
 
@@ -334,16 +380,16 @@ function validateEmail() {
         if (false == enoughRegex.test(password)) {
             console.log("pass");
             $('.password-strength .tooweak').fadeIn();
-            $(".pw-strength").text("Incomplete");
+            $(".pw-strength").text("incomplete");
         } else if (strongRegex.test($(this).val())) {
             $('.password-strength .strong').fadeIn();
-            $(".pw-strength").text("Strong");
+            $(".pw-strength").text("strong");
         } else if (mediumRegex.test($(this).val())) {
             $('.password-strength .medium').fadeIn();
-            $(".pw-strength").text("Moderate");
+            $(".pw-strength").text("moderate");
         } else {
             $('.password-strength .weak').fadeIn();
-            $(".pw-strength").text("Weak");
+            $(".pw-strength").text("weak");
         }
         return true;
 

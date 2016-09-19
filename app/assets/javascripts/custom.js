@@ -25,6 +25,7 @@ var newOrg = getQueryVariable("newOrg");
 var newOrgSigned = getQueryVariable("newOrgSigned");
 var agreementState = getQueryVariable("agreementState");
 var newLevyAccount = getQueryVariable("newLevyAccount");
+var signedOut = getQueryVariable("signedOut");
 
 
 
@@ -312,6 +313,6 @@ for (var i = 0; i < localStorage.length; i++){
         localStorage.setItem("authSet","false");
                 
         var sprintNo = JSON.parse(localStorage.getItem("sprint-number"));
-        window.open('/'+sprintNo+'/register/start','_self');
+        window.open('/'+sprintNo+'/register/start?signedOut=y','_self');
     },300000);
 });

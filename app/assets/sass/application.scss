@@ -124,12 +124,16 @@
 
 // end of adding new users inline
 
-.fa-check {
+.fa-check-circle {
   color:#00823b;
 }
 
-.fa-times {
-  color:#a1acb2;
+.fa-circle {
+    color: black;
+    font-size: 0.35em !important;
+    top: -4px;
+    position: relative;
+    margin: 0 5px 0 5px;
 }
 
 .align-center-columns {
@@ -1626,10 +1630,11 @@ only screen and (min-resolution: 2dppx) {
 
 // my additional layout styles
 
+@media (min-width: 641px) {
 .rhtm, .column-third aside.related {
     margin-top: 60px;
 }
-
+}
 
 
 // hmrc styles
@@ -1669,3 +1674,28 @@ only screen and (min-resolution: 2dppx) {
     }
 }
     
+
+// notice
+
+.notice {
+        position: relative;
+    overflow: hidden;
+    border: 1px solid #bfc1c3;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 30px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    
+}
+
+
+@media (min-width: 641px) {
+    .notice {
+        padding-top: 45px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+    }
+}
