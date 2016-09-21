@@ -202,7 +202,8 @@ $( document ).ready(function() {
 $(".ch-number").text(JSON.parse(localStorage.getItem('chNumber')));
             
 $(".company-name").text(JSON.parse(localStorage.getItem('company-name-header')));
-    
+$(".user-name").text(JSON.parse(localStorage.getItem('users-name')));
+$(".current-page").text($("h1").text());    
 
     
     var addedOrNor = function() {

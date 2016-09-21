@@ -31,6 +31,7 @@
     "grunt-sync": "^0.5.1",
     "hogan.js": "3.0.2",
     "minimist": "0.0.8",
+    "hopscotch": "0.2.6",
     "nunjucks": "*",
     "portscanner": "^1.0.0",
     "prompt": "^0.2.14",

@@ -24,24 +24,14 @@
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
 {% include "includes/userControl.html" %}
-
-
-  <div class="breadcrumbs">
-    <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/account">Levy account</a></li>
-        <li><span class="company-name"></span></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
-
-    </ol>
-  </div>
+{% include "includes/breadcrumbStart.html" %}
+    <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
+{% include "includes/breadcrumbEnd.html" %}
+    
     
    <div class="grid-row">
             <div class="column-two-thirds">
-    <h1 class="heading-xlarge users-name">
-
-
-Susan Hamazaki<!--span class="heading-secondary" style="padding-top:0px">rob.edwards@acmecoventryltd.com</span--></h1>
+    <h1 class="heading-xlarge user-name">Susan</h1>
             </div>
         </div>
     

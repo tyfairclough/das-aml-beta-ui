@@ -29,15 +29,9 @@
 {% include "includes/phase_banner_beta.html" %}
 {% include "includes/userControl.html" %}
 
-
-  <div class="breadcrumbs">
-    <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
-        <li><a href="/{% include "includes/sprint-link.html" %}/account">Levy account</a></li>
-        <li class="company-name">Acme Ltd Coventry</li>
-        <li>Manage PAYE schemes</li>
-    </ol>
-  </div>
+{% include "includes/breadcrumbStart.html" %}
+{% include "includes/breadcrumbEnd.html" %}
+    
     
 <div class="govuk-box-highlight hidden PAYEremoved">
           <h2 class="bold-large">

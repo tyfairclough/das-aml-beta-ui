@@ -28,16 +28,9 @@
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
 {% include "includes/userControl.html" %}
-
-
-  <div class="breadcrumbs">
-    <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
-        <li><a href="/{% include "includes/sprint-link.html" %}/account">Levy account</a></li>
-        <li class="company-name">Acme Ltd Coventry</li>
-        <li>Your organisations</li>
-    </ol>
-  </div>
+{% include "includes/breadcrumbStart.html" %}
+{% include "includes/breadcrumbEnd.html" %}
+    
     
 <div class="govuk-box-highlight hidden" id="org">
           <h2 class="bold-large"><span class="company-name">FIFA Holdings ltd</span>  has been added</h2>
@@ -125,6 +118,7 @@ if (newOrg == "y" ) {
         
     }
      
+
 </script>
 
 {% endblock %}

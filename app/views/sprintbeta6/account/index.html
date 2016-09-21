@@ -29,15 +29,6 @@
 {% include "includes/phase_banner_beta.html" %}
 {% include "includes/userControl.html" %}
 
-
-  <div class="breadcrumbs">
-    <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/profile">Profile</a></li>
-        <li>Levy account</li>
-        <li><span class="company-name">company name</span></li>
-    </ol>
-  </div>
-
     <div class="govuk-box-highlight hidden" id="as">
           <h2 class="bold-large">
 Account created for <span class="company-name">FIFA Holdings ltd</span>
@@ -46,96 +37,39 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
         <p class="hidden asSigned">This account can now spend levy funds</p>
         </div>
     
-    
-<!--h1 class="heading-large">Levy account</h1-->
- <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
-
-    
-    
-            <h1 class="heading-xlarge" id="company-Name" >{% include "includes/account-name-number.html" %}</h1>
-            <script>document.getElementById('company-Name').innerText = JSON.parse(localStorage.getItem('company-name-header'));</script>
-
-
-
-    
     <div class="grid-row">
         <div class="column-two-thirds">
-            
-                <div class="grid-row">
-              <div class="column-two-thirds">
-              <h3 class="heading-medium" style="margin-top:0 "><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></h3>
-              <p class="rj-home-spacer">Manage your funds including how much you have <a href="/{% include "includes/sprint-link.html" %}/forecast">available to spend</a>, your <a href="/{% include "includes/sprint-link.html" %}/history">transactions</a> and <a href="/{% include "includes/sprint-link.html" %}/expire">funds you could lose</a></p>
-            </div>
+        <h1 class="heading-large company-name" id="company-Name" >{% include "includes/account-name-number.html" %}</h1>
+
+<p>Get and spend your levy funds for your apprenticeship programme</p>
+                    <a href="/{% include "includes/sprint-link.html" %}/profile" class="link-back">change levy account</a>
+            <h3 class="heading-medium">Your last places</h3>
+<ul class="list list-links">
+            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funding</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/expire">View expiring funds</a></li>
+            <li><a href="#">Find a training provider</a></li>       
+            <li><a href="#">Add an apprentice</a></li>
+</ul>
         </div>
-          <div class="grid-row">
-  
+        <div class="column-third">
 
-            <div class="column-half">
-              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px" ><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></h3>
-               <p class="rj-home-spacer"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">Search for and update the status</a> of  your apprentices or <span class="looks-like-a-link-underline">recruit new apprentices</span></p>
-            </div>
-                      <div class="column-half ">
-              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/training">Training</a></h3>
-              <p class="rj-home-spacer"><span class="looks-like-a-link-underline">View your saved</span> or <span class="looks-like-a-link-underline">search for new</span> apprenticeship training</p>
-            </div>
-   
-          </div> 
-    
-    
-    
+            <aside class="related">
+            <h3 class="heading-medium">Help</h3>
+                <p>Need help go use these links to get it, or take the tour</p>
+                <a href="#" class="button">Take the tour</a>
+            </aside>
             
-              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Commitments</a></h3>
-            <div class="grid-row">
-                <div class="column-two-thirds">
-                <p class="rj-home-spacer rj-bottom-border-mobile"><a href="/{% include "includes/sprint-link.html" %}/contracts">Review commitments</a> with your training providers, <span class="looks-like-a-link-underline">view in progress</span> or <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">add a new commitment</a></p>
-  
-              
-                </div>
-            </div>
-                
-                        
-    
-    
+        </div>
+    </div>
+    <hr/>
     <div class="grid-row">
-       
-              <div class="column-half ">
-              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/account/paye/">Manage PAYE schemes members</a></h3>
-              <!--<p class="rj-home-spacer rj-bottom-border-mobile"><a href="/{% include "includes/sprint-link.html" %}/contracts">Invite members</a> to this organisations.</p>-->
-                                <p>Add PAYE schemes to allow levy funds to beadded to your account.</p>
-            </div>
-        
-                                              <div class="column-half ">
-              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/account/organisation/">Manage organisations</a></h3>
-              <!--<p class="rj-home-spacer rj-bottom-border-mobile"><a href="/{% include "includes/sprint-link.html" %}/contracts">Invite members</a> to this organisations.</p>-->
-                                <p>Add new legal entities to your levy account.</p>
-            </div>
-              </div>
-    
-    
-                        <div class="grid-row">
-
-              
-                            <div class="column-half ">
-              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/team/">Manage team members</a></h3>
-              <!--<p class="rj-home-spacer rj-bottom-border-mobile"><a href="/{% include "includes/sprint-link.html" %}/contracts">Invite members</a> to this organisations.</p>-->
-                                <p>Control who can access your levy account.</p>
-            </div>
-              
-       
-              
-              
- 
-         </div>
-
-   
+                <div class="column-third">
+                    
 
 
-
-          </div>
-
-            <div class="column-one-third">
-
-            <h2 class="heading-medium" style="margin-top:0">To do:</h2>
+                    
+                    <section id="todo">
+       <h2 class="heading-medium" style="margin-top:0">To do:</h2>
 
             <div class="rj-alert-wrapper">
                 <div class="rj-alert-copy">
@@ -144,10 +78,11 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
                 </div>
             </div>
 
-            <div class="rj-alert-wrapper">
+<div class="rj-alert-wrapper rj-number-complete">
                 <div class="rj-alert-copy">
-                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Applications received: 16</h2>
-                  <p class="looks-like-a-link-underline to-do-action" style="width:88%; margin: 5px 10px 5px 20px">Process your applications</p>
+                    <span class="visually-hidden">Task complete</span>
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">16 applications waiting</h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:88%; margin: 5px 10px 5px 20px">Review your applications now</p>
                 </div>
             </div>
 
@@ -164,9 +99,130 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
                   <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Grant access to others</p>
                 </div>
             </div>
+</section>
+                    
+                    
+<section id="employerRank">
 
+                                              <h4 class="heading-medium">Employer rank</h4>
+                                              <div class="data">
+          <h2 class="bold-xlarge">132<sup class="bold-small">nd</sup><i class="fa fa-chevron-down" style="font-size:0.75em; color: #B10E1E; margin-left: 15px"><span class="visually-hidden">down from last week</span></i>
+        </h2>
+          <p class="bold-xsmall">of 1,452</p>
+                                                  <details>
+<summary>More information</summary>                                                      
+                                                      Your employer rank is calculated by combining the number of apprentices you  hire over your total employee count times by last years average pass rate.
+                                                  </details>
+
+        </div>                    
+</section>                    
         </div>
+        <div class="column-two-thirds">
+            <section id="finance">
+                
+                <h2 class="heading-large">Finance</h2>
+                <p>Get and spend your levy funds for your apprenticeship programme</p>
+                
+                <div class="grid-row">
+                    <div class="column-half">
+                        <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                    <div class="column-half">
+                    <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                </div>
+                
+                <h3 class="heading-medium">Services</h3>
+<ul class="list list-links">
+    <li><a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funding</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/expire">View funds you could lose</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/history">Transactions</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/comitted">Committed spending</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/fraction">Your English percentage</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/#">Download your financial information</a></li>
+</ul>
+                <hr />
+            </section>
+            <section id="providers">
+                
+                <h2 class="heading-large">Providers</h2>
+                <p>Get and spend your levy funds for your apprenticeship programme</p>
+                
+                <div class="grid-row">
+                    <div class="column-half">
+                        <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                    <div class="column-half">
+                    <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                </div>
+                
+                <h3 class="heading-medium">Services</h3>
+<ul class="list list-links">
+    <li><a href="/{% include "includes/sprint-link.html" %}/contracts">Approved commitments</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">Start a new commitment</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/contracts/in-progress">Commitments in progress</a></li>
+    <li><a href="#">Find a training provider</a></li>
+</ul>
+                <hr />
+            </section>
+            <section id="recruitment">
+                
+                <h2 class="heading-large">Recruitment and apprentices</h2>
+                <p>Get and spend your levy funds for your apprenticeship programme</p>
+                
+                <div class="grid-row">
+                    <div class="column-half">
+                        <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                    <div class="column-half">
+                    <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                </div>
+                
+                <h3 class="heading-medium">Services</h3>
+<ul class="list list-links">
+    <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">Search your apprentices</a></li>
+    <li><a href="#">Recruit an apprentice</a></li>
+</ul>
+                <hr />
+            </section>
+            <section id="settings">
+                
+                <h2 class="heading-large">Settings</h2>
+                <p>Get and spend your levy funds for your apprenticeship programme</p>
+
+                
+
+                <ul class="list list-links">
+                    <li><a href="account/organisation">SFA contracts</a></li>
+                    <li><a href="account/paye">Manage PAYE schemes</a></li>
+                    <li><a href="team">Manage team members</a></li>
+                </ul>
+                <hr />
+            </section>
+        </div>
+
     </div>
+    
 
 </main>
 
@@ -181,6 +237,32 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
    //     alert("done but not signed");
         $("#as, .asNotSigned").removeClass("hidden");
     }
+    
+    
+$(document).ready(function(){
+         // Define the tour!
+    var tour = {
+      id: "as",
+      steps: [
+        {
+          title: "My Header",
+          content: "This is the header of my page.",
+          target: "header",
+          placement: "right"
+        },
+        {
+          title: "My content",
+          content: "Here is where I put my content.",
+          target: document.querySelector("p"),
+          placement: "bottom"
+        }
+      ]
+    };
+
+    // Start the tour!
+    hopscotch.startTour(tour);
+});
+    
     
 </script>
 

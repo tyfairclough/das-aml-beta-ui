@@ -1728,6 +1728,7 @@ input[type=number] {
 .error .error-message {
   color: #b10e1e;
   font-weight: bold;
+  display: block;
 }
 
 .error .form-control {

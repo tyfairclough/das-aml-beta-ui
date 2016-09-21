@@ -31,7 +31,7 @@
 
 <a href="start" class="link-back">Back</a>
 
-    <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+    <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
   <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
     You need to fix the errors on this page before continuing.
@@ -41,12 +41,12 @@
 <p>Check the following details:</p>
 
   <ul class="error-summary-list">
-    <li><a href="#name">First name</a></li>
-    <li><a href="#lastNane">Last name</a></li>
-    <li><a href="#example-personal-details">Email</a></li>
-    <li><a href="#example-personal-details">Password</a></li>
-    <li><a href="#example-personal-details">Re-type password</a></li>
-    <li><a href="#example-personal-details">Accept the terms of use</a></li>
+    <li class="hidden"><a href="#name">First name</a></li>
+    <li class="hidden"><a href="#lastNane">Last name</a></li>
+    <li class="hidden"><a href="#example-personal-details">Email</a></li>
+    <li class="hidden"><a href="#example-personal-details">Password</a></li>
+    <li class="hidden"><a href="#example-personal-details">Re-type password</a></li>
+    <li class="hidden"><a href="#example-personal-details">Accept the terms of use</a></li>
   </ul>
 
 </div>
@@ -193,6 +193,11 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
             console.log("success");
             setNames()
             window.open("accesscode","_self");
+        } else {
+            $(".error-summary").removeClass("hidden");
+                         $("body").animate({
+        scrollTop: $(".error-summary").offset().top
+    });
         }
     });
     
@@ -203,7 +208,7 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
             //console.log("terms not checked");
         $("#checkTerms").addClass("error");
         $("#checkTerms > legend .error-message").removeClass("hidden").show();
-
+            $(".error-summary li:eq(5)").removeClass("hidden");
         }
     }
     
@@ -227,6 +232,7 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
             //alert("name empty");
                   $("#name").addClass("error");
       $("#name .error-message").removeClass("hidden").show();
+            $(".error-summary li:eq(0)").removeClass("hidden");
         } else {
             return true;
         }
@@ -237,6 +243,7 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
             //alert("name empty");
                   $("#lastNameField").addClass("error");
       $("#lastNameField .error-message").removeClass("hidden").show();
+            $(".error-summary li:eq(1)").removeClass("hidden");
         } else {
             return true;
         }
@@ -247,6 +254,7 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
             //alert("password empty");
                   $("#passwordgroup").addClass("error");
       $("#passwordgroup .error-message").removeClass("hidden").show();
+            $(".error-summary li:eq(3)").removeClass("hidden");
         } else {
             return true;
         }
@@ -260,12 +268,14 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
         if ( confirmPassword == "" ) {
             $("#confirmPassword").addClass("error");
             $("#confirmPassword label #error1.error-message").show();   
-        }
+            $(".error-summary li:eq(4)").removeClass("hidden");
+}
         else if ( password != confirmPassword ) {
             // fire error
             //console.log("passwords don't match")
             $("#confirmPassword").addClass("error");
             $("#confirmPassword label #error2.error-message").show();
+            $(".error-summary li:eq(4)").removeClass("hidden");
             
         } else {
             return true;
@@ -290,6 +300,8 @@ function validateEmail() {
     //$("#result").css("color", "red");
       $("#emailGroup").addClass("error");
       $("#emailGroup .error-message").removeClass("hidden").show();
+        $(".error-summary li:eq(06)").removeClass("hidden");
+            $(".error-summary li:eq(02)").removeClass("hidden");
   }
   return false;
 }

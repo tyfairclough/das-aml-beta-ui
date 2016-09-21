@@ -49,13 +49,22 @@ Account unlocked
   <fieldset>
     <legend class="visuallyhidden">email address and password to sign in</legend>
       <div class="form-group">
-          <label class="form-label-bold" for="email-address">Email address
-          <!--span class="form-hint">Here is a hint for this form field.</span-->
+          <label for="email-address">
+              <span class="form-label-bold" >Email address</span>
+               <span class="error-message hidden">Error message about personal details goes here</span>
+          <!--span class="form-hint">Here is a hint for this form field.
+</span-->
         </label>
           <input class="form-control" id="email-address" type="text">
       </div>
       <div class="form-group">
-          <label class="form-label-bold" for="password">Password</label>
+          <label for="password">
+              <span  class="form-label-bold">Password</span>
+                             <span class="error-message hidden">
+          Error message about personal details goes here
+        </span>
+              </label>
+
           <input class="form-control" id="password" type="password">
       </div>
     </fieldset>
@@ -66,14 +75,23 @@ Account unlocked
     <li> <a href="profile/forgot">Forgot your password</a></li>
     <li> <a href="profile/unlock">Unlock your account</a></li>
     </ul>
+
+<p id="test"></p>
 </main>
 
 <script>
 
+    
+var i = 0;
+
+
+
+    
 //store details entered into the form in local storage
 var createButton = document.getElementById('createAccountButton');
-EventUtil.addHandler(createButton, 'click', function(){
+EventUtil.addHandler(createButton, 'click', function(e){
               // save the form info to local storage by first putting the data into an object
+    e.preventDefault();
               var userDetails = {
                 email: document.getElementById('email-address').value,
                 password: document.getElementById('password').value
@@ -86,23 +104,31 @@ EventUtil.addHandler(createButton, 'click', function(){
     
     
     $("#createAccountButton").click(function(e){
+        
         var Email = JSON.parse(localStorage.getItem("email-address"));
         var Password = JSON.parse(localStorage.getItem("password"));
         
         var inputEmail = $("#email-address").val();
         var inputPassword = $("#password").val();
         
-        if ( Email != inputEmail ) {
-              e.preventDefault();
-      alert("wrong e-mail")
-        } else if ( Password != inputPassword ) {
-             e.preventDefault();
-       alert("wrong password")
+        if ( Email != inputEmail || Password != inputPassword) {
+            e.preventDefault();
+            i++;
+            console.log(i);
+            $(".form-group").addClass("error");
+            $(".form-group span.error-message").removeClass("hidden");
+
+            if (i===3) {
+               window.location.href = ("/" + JSON.parse(localStorage.getItem('sprint-number')) + "/error/lockedout");
+            }
+          
         } else {
-            return true;
+            console.log("log in");  
+               window.location.href = ("/" + JSON.parse(localStorage.getItem('sprint-number')) + "/account/");
+
         }
-        
-    })
+  
+    });
     
     
     if ( JSON.parse(localStorage.getItem('unlockStatus')) == "unlock" ) {
