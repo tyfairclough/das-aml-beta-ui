@@ -788,7 +788,14 @@ vertical-align: top;
 
 #navigation-primary li, #navigation-primary-v2 li {
   list-style:none; list-style-image: none; display: inline; margin:12px 6px 15px 6px; font-size:16px; font-weight:400; 
-  }
+  
+    ul {
+        li {
+            font-weight: normal;
+            font-size: 16px;
+        }
+    }
+    }
 }
 
 // end of navigation

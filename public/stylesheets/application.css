@@ -2762,6 +2762,10 @@ input[type=number] {
     font-size: 16px;
     font-weight: 400;
   }
+  #navigation-primary li ul li, #navigation-primary-v2 li ul li {
+    font-weight: normal;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 640px) {
