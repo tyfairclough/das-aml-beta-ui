@@ -31,6 +31,25 @@
 
 <a href="start.html" class="link-back">Back</a>
 
+    
+    
+<div id="codeError" class="error-summary hidden" role="group" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Message to alert the user to a problem goes here
+  </h1>
+
+  <p>
+    Optional description of the errors and how to correct them
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#email-address">Descriptive link to the question with an error</a></li>
+  </ul>
+
+</div>
+  
+    
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
     <div class="govuk-box-highlight">
@@ -78,7 +97,9 @@ Access code sent          </h2>
                 } else {
                 e.preventDefault();
                 $("#enterCode.form-group").addClass("error");
-                $("#enterCode.form-group .error-message").show();        
+                $("#enterCode.form-group .error-message").show(); 
+                    $("#codeError").removeClass("hidden");
+                    $(".govuk-box-highlight").addClass("hidden");
             }
         });
     
@@ -99,11 +120,12 @@ Access code sent          </h2>
             e.preventDefault();
             $(".govuk-box-highlight h2").text("A new access code sent");
             $(".govuk-box-highlight p").html("A new acccess code has been sent to <strong class='bold-small'>"+ userId +"</span>");
-
+$(".govuk-box-highlight").removeClass("hidden");
+            $("#codeError, .error-message").addClass("hidden");
+            $("#enterCode").removeClass("error");
         })
 
         
-
         $(".userId").text(JSON.parse(localStorage.getItem('email-address')));
     </script>
     

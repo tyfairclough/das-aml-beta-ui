@@ -24,13 +24,24 @@
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
 
-  <div class="breadcrumbs">
-    <ol role="breadcrumbs">
-      <!--li><a href="/">Breadcrumb here ></a></li-->
-    </ol>
 
-  </div>
+    
+    <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Message to alert the user to a problem goes here
+  </h1>
+
+  <p>
+    Optional description of the errors and how to correct them
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#example-personal-details">Descriptive link to the question with an error</a></li>
+  </ul>
+
+</div>
+    
   <h1 class="heading-xlarge">Request unlock code</h1>
 
   <p>
@@ -42,7 +53,9 @@
   <fieldset>
     <legend class="visuallyhidden">email address</legend>
       <div class="form-group">
-          <label class="form-label-bold" for="email-address">Email
+          <label class="form-label" for="email-address">
+              <span class="form-label-bold">Email</span>
+              <span class="error-message hidden">You didn't put a valid e-mail in</span>     
           <!--span class="form-hint">Here is a hint for this form field.</span-->
         </label>
           <input class="form-control" id="email-address" type="text">
@@ -51,9 +64,31 @@
     <input class="button" id="getUnlockCode" type="submit" value="Get unlock code">
 </form>    
 </main>
-
+<div id="result"></div>
 <script>
+    
+    function validateEmail(email) {
+    var re = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+    return re.test(email);
+}
+    
+    
+function validate() {
+  $("#result").text("");
+  var email = $("#email-address").val();
+  if (validateEmail(email)) {
+      localStorage.setItem("email-address", JSON.stringify($("#email-address").val()));
+      window.href.open("step_a2.html");
+  } else {
+    $(".error-message, .error-summary").removeClass("hidden");
+    $(".form-group").addClass("error");
+  }
+  return false;
+}
 
+$("form").bind("submit", validate);
+
+   
 </script>
 
 {% endblock %}

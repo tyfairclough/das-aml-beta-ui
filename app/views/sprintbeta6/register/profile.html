@@ -47,6 +47,7 @@
     <li class="hidden"><a href="#example-personal-details">Password</a></li>
     <li class="hidden"><a href="#example-personal-details">Re-type password</a></li>
     <li class="hidden"><a href="#example-personal-details">Accept the terms of use</a></li>
+    <li class="hidden"><a href="#example-personal-details">This e-mail is already registered, please user another, sign-in or reset your password if you have forgotten it.</a></li>
   </ul>
 
 </div>
@@ -294,14 +295,20 @@ function validateEmail() {
     if (validateEmailString(email)) {
     //$("#result").text(email + " is valid :)");
     //$("#result").css("color", "green");
-        return true;
+        
+        if ( email == "tim@delux.com") {
+      $("#emailGroup").addClass("error");
+      $("#emailGroup .error-message").removeClass("hidden").show();
+            $(".error-summary li:eq(6)").removeClass("hidden");
+        } else {
+            return true;
+        }
   } else {
     //$("#result").text(email + " is not valid :(");
     //$("#result").css("color", "red");
       $("#emailGroup").addClass("error");
       $("#emailGroup .error-message").removeClass("hidden").show();
-        $(".error-summary li:eq(06)").removeClass("hidden");
-            $(".error-summary li:eq(02)").removeClass("hidden");
+        $(".error-summary li:eq(2)").removeClass("hidden");
   }
   return false;
 }

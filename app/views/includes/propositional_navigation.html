@@ -15,3 +15,18 @@
     </nav>
   </div>
 </div>
+
+
+<script>
+var NavigationStatus = function() {
+  var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
+   console.log(navStatus)
+    if (navStatus == "on") {
+      $( "#proposition-links" ).removeClass( "visually-hidden" );
+  } else {
+  $( "#proposition-links" ).addClass( "visually-hidden" );
+
+  }
+};
+NavigationStatus();
+</script>

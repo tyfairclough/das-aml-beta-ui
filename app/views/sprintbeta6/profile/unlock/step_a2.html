@@ -25,9 +25,39 @@
 {% include "includes/phase_banner_beta.html" %}
 
 
+
     
 
-  </div>
+<div id="nocodeNotice" class="error-summary hidden" role="group" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Message to alert the user to a problem goes here
+  </h1>
+
+  <p>
+    Optional description of the errors and how to correct them
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#email-address">Descriptive link to the question with an error</a></li>
+  </ul>
+
+</div>
+    
+    <div id="expired" class="error-summary hidden" role="group" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Unlock code has expired
+  </h1>
+
+        
+
+  <ul class="error-summary-list">
+    <li><a href="#" class="resendCode">You can request a new unlock code</a></li>
+  </ul>
+
+</div>
+    
     
     <div class="govuk-box-highlight success hidden">
           <h2 class="bold-large">
@@ -36,17 +66,11 @@ New unlock code sent
         <p>change me - something about checking email and spam no?</p>
         </div>
     
-    <div class="govuk-box-highlight error hidden" style="background-color:#b10e1e;">
-          <h2 class="bold-large">
-Unlock code has expired
-        </h2>
-        <p>You can request a new unlock code</p>
-        </div>
 
   <h1 class="heading-xlarge">Enter your unlock code</h1>
 
   <p>
-An unlock code has been sent to <strong class="bold-small">pete.kowalczyk@gmail.com</strong>.
+An unlock code has been sent to <strong class="bold-small eMail">pete.kowalczyk@gmail.com</strong>.
     </p>
 
 
@@ -54,13 +78,15 @@ An unlock code has been sent to <strong class="bold-small">pete.kowalczyk@gmail.
   <fieldset>
     <legend class="visuallyhidden">email address</legend>
       <div class="form-group">
-          <label class="form-label-bold" for="email-address">Enter unlock code
+          <label class="form-label" for="email-address">
+              <span class="form-label-bold">Enter unlock code</span>
+              <span class="error-message hidden">You must enter a valid unlock code</span>
           <!--span class="form-hint">Here is a hint for this form field.</span-->
         </label>
           <input class="form-control" id="email-address" type="text">
       </div>
     </fieldset>
-    <input class="button" id="getUnlockCode" type="submit" value="Unlock">
+    <input class="button" id="unlockAccount" type="submit" value="Unlock">
 </form>    
     <br>
     <h3 class="heading-small">Not received your unlock code?</h3>
@@ -72,8 +98,15 @@ An unlock code has been sent to <strong class="bold-small">pete.kowalczyk@gmail.
     $(".resendCode").click(function(e){
         e.preventDefault();
         $(".govuk-box-highlight.success").removeClass("hidden");
+        $("#nocodeNotice,#expired,.error-message").addClass("hidden")
+        $(".form-group").removeClass("error");
        // $(".govuk-box-highlight.error").removeClass("show");
 });
+    
+    
+       var eMail = localStorage.getItem("email-address", JSON.stringify);
+    
+    $(".eMail").text(eMail);
     
 
     // initially set the unlock code to active
@@ -82,19 +115,31 @@ localStorage.setItem("unlockStatus", JSON.stringify("unlocked"));
     // after 2 minutes lock the code
     setTimeout(function(){
         console.log("code timed out");
-        localStorage.setItem("unlockStatus", 'expired');                  
-    }, (2 * 60 * 100));
+        localStorage.setItem("unlockStatus", JSON.stringify("expired"));                  
+    }, (2 * 60 * 50));
 
-    $("#getUnlockCode").click(function(e){
+    
+    
+    $("#unlockAccount").click(function(e){
         // 2 minute timeout 2 * 60 * 1000
-        e.preventDefault();              
+        e.preventDefault();  
         if ( localStorage.getItem('unlockStatus') == "expired") {
-            $(".govuk-box-highlight.error").removeClass("hidden");
-        } else {
+            $("#expired").removeClass("hidden");
+            console.log("this unlock code has expired");
+            };
+        if ($("#email-address").val() == "") {
+            $(".form-group").addClass("error");
+            $(".error-message,#nocodeNotice").removeClass("hidden");
+            console.log("the e-mail is blank" + $("#email-address").text());
+        };
+        if (($("#email-address").val() != "") && (localStorage.getItem('unlockStatus') != "expired"))  {
+                 localStorage.setItem("unlockStatus", JSON.stringify("unlock"));
                         window.location.href='../../login';
         };
     });
 
+    
+    
 
     
 </script>

@@ -24,12 +24,7 @@
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
 
-  <div class="breadcrumbs">
-    <ol role="breadcrumbs">
-      <!--li><a href="/">Breadcrumb here ></a></li-->
-    </ol>
-
-  </div>
+    
 
     
        <div class="govuk-box-highlight hidden">
@@ -83,8 +78,12 @@ Account unlocked
 
     
 var i = 0;
+    
+    var unlockStatus = JSON.parse(localStorage.getItem("unlockStatus"));
 
-
+    if ( unlockStatus == "unlock" ) {
+        $(".govuk-box-highlight").removeClass("hidden");
+    };
 
     
 //store details entered into the form in local storage
@@ -131,11 +130,7 @@ EventUtil.addHandler(createButton, 'click', function(e){
     });
     
     
-    if ( JSON.parse(localStorage.getItem('unlockStatus')) == "unlock" ) {
-        $(".govuk-box-highlight").removeClass("hidden");
-    } else {
-        //alert("still locked")
-    } 
+
 </script>
 
 {% endblock %}

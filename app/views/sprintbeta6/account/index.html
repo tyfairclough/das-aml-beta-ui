@@ -27,7 +27,7 @@
 
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
-{% include "includes/userControl.html" %}
+<!--{% include "includes/userControl.html" %}-->
 
 {% include "includes/primary-nav.html" %}
 
@@ -44,10 +44,17 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
 
     
     <div class="grid-row">
-                <div class="column-third hidden">
+        
+        
+
+
+    
+            
+
+        
+                <div class="column-third">
                     
-
-
+                         
                     
                     <section id="todo">
        <h2 class="heading-medium" style="margin-top:0">To do:</h2>
@@ -96,7 +103,24 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
                                                   </details>
 
         </div>                    
-</section>                    
+</section>   
+                    
+                    
+                    
+   <aside class="related">
+            <h3 class="heading-medium">Help</h3>
+                <p>Need help go use these links to get it, or take the tour</p>
+                <a href="#" class="button" id="startTour">Take the tour</a>
+                
+                
+                            <h3 id="commonLinks" class="heading-medium">Your last places</h3>
+<ul class="list list-links">
+            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funding</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/expire">View expiring funds</a></li>
+            <li><a href="#">Find a training provider</a></li>       
+            <li><a href="#">Add an apprentice</a></li>
+</ul>
+            </aside>                    
         </div>
 
         <div class="column-two-thirds">
@@ -114,7 +138,7 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
                 <h2 class="heading-medium">Finance</h2>
                 <p>Get and spend your levy funds for your apprenticeship programme</p>
                 
-                <div class="grid-row">
+                <div class="grid-row hidden">
                     <div class="column-half">
                         <div class="data">
           <h2 class="bold-xlarge">£31,050</h2>
@@ -135,14 +159,13 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
 <ul class="list list-links">
     <li><a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funding</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/expire">View funds you could lose</a></li>
-<!--
-    <li><a href="/{% include "includes/sprint-link.html" %}/history">Transactions</a></li>
+
+    <li><a href="/{% include "includes/sprint-link.html" %}/history">Transaction history</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/comitted">Committed spending</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/fraction">Your English percentage</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/#">Download your financial information</a></li>
+                    <li><a href="account/paye">Manage PAYE schemes</a></li>
 
--->
-    <li><a href="#" class="bold-small">More Finance details</a></li>
 </ul>
                 <hr />
             </section>
@@ -207,30 +230,11 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
                 <h2 class="heading-medium">Other services</h2>
                 <ul class="list list-links">
                     <li><a href="account/organisation">SFA contracts</a></li>
-                    <li><a href="account/paye">Manage PAYE schemes</a></li>
-                    <li><a href="team">Manage team members</a></li>
                 </ul>
                 <hr />
             </section>
         </div>
-        <div class="column-third">
 
-            <aside class="related">
-            <h3 class="heading-medium">Help</h3>
-                <p>Need help go use these links to get it, or take the tour</p>
-                <a href="#" class="button" id="startTour">Take the tour</a>
-                
-                
-                            <h3 id="commonLinks" class="heading-medium">Your last places</h3>
-<ul class="list list-links">
-            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funding</a></li>
-            <li><a href="/{% include "includes/sprint-link.html" %}/expire">View expiring funds</a></li>
-            <li><a href="#">Find a training provider</a></li>       
-            <li><a href="#">Add an apprentice</a></li>
-</ul>
-            </aside>
-            
-        </div>
     </div>
     
 

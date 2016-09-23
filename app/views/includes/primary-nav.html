@@ -1,32 +1,74 @@
-<nav id="navigation-primary" class="rj-dont-display">
-				<ul class="">
-					<li class="top_nav home-nav"><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
-					<li class="top_nav financial-nav"> <a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
-					<li class="top_nav people-nav"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
-					<li class="top_nav provider-nav"><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Providers</a></li>
-                    
-				<ul class="secondary">
-					<li class="top_nav home-nav"><a href="/{% include "includes/sprint-link.html" %}/balance">Forecast your funds</a></li>
-					<li class="top_nav financial-nav"> <a href="/{% include "includes/sprint-link.html" %}/finance">View funds you could loose</a></li>
-					<li class="top_nav people-nav"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">View your transactions</a></li>
-					<li class="top_nav provider-nav"><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">View committed spending</a></li>
-                    
-
+<nav>
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="/{% include "includes/sprint-link.html" %}/account">Home</a></li>
+					<li><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
+					<li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
+					<li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
+                    <li><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Your organisations</a></li>
 				</ul>
-
+    
+    				<ul class="nav sub-nav">
+					<li><a href="/{% include "includes/sprint-link.html" %}/account">Home</a></li>
+					<li><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
+					<li class="active"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
+					<li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
+                    <li><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Your organisations</a></li>
 				</ul>
     
 </nav>
 
-<nav id="navigation-primary-v2" class="rj-dont-display">
-				<ul class="">
-					<li class="top_nav home-nav"><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
-					<li class="top_nav financial-nav"> <a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
-					<li class="top_nav people-nav"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
-					<li class="top_nav provider-nav"><a href="/{% include "includes/sprint-link.html" %}/training">Training</a></li>
-					<li class="top_nav provider-nav"><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Contracts</a></li>
-					<li class="top nav right-info sign-out-nav">Sign out</li>
-				</ul>
+
+<nav class="utility-menu4">
+<ul style="margin-top: 7px;">
+          <li><span class="user-name">John Doe</span> <span class="fa fa-caret-down"></span>
+            <div class="hide-line"></div>
+            <ul>
+              <a href="#"><li>Change name</li></a>
+              <a href="#"><li>Change e-mail address</li></a>
+              <a href="#"><li>Update password</li></a>
+              <a href="#"><li>Delete account</li></a>
+              <a href="#"><li>View invitations (0)</li></a>
+            </ul>
+          </li>
+          <li>
+            Levy accounts <span class="fa fa-caret-down"></span>
+            <div class="hide-line"></div>
+            <ul>
+                <li><span class="company-name">Acme Ltd</span> <i class="fa fa-check"></i></li>
+              <a href="#"><li>Whitbread</li></a>
+              <a href="#"><li>Costa Coffee</li></a>
+              <a href="#"><li>Premier Inn</li></a>
+            </ul>
+          </li>
+          <li>
+            To do: <span class="fa fa-caret-down"></span>
+            <div class="hide-line"></div>
+            <ul>
+              <a href="#"><li>Calculate your available spend</li></a>
+              <a href="#"><li>See more messages</li></a>
+            </ul>
+          </li>
+          <li>
+            Help <span class="fa fa-caret-down"></span>
+            <div class="hide-line"></div>
+            <ul>
+              <a href="#"><li>Live Web chat</li></a>
+              <a href="#"><li>Phone SFA</li></a>
+              <a href="#"><li>Email SFA</li></a>
+            </ul>
+          </li>
+        </ul>
+</nav>
+
+
+<nav class="primary-nav">
+      <ul>
+        <li><a href="pta-home-1">Account home</a></li>
+        <li><a href="paye-home-v4" class="active-nav-item">Finance</a></li>
+        <li><a href="#">Learners</a></li>
+        <li><a href="#">Manage team members</a></li>
+        <li><a href="#">Manage organisations</a></li>
+      </ul>
 </nav>
 
 
@@ -40,9 +82,9 @@ var NavigationStatus = function() {
   var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
    console.log(navStatus)
     if (navStatus == "on") {
-      $( "#navigation-primary" ).removeClass( "rj-dont-display" );
+      $( ".nav" ).removeClass( "visually-hidden" );
   } else {
-  $( "#navigation-primary" ).addClass( "rj-dont-display" );
+  $( ".nav" ).addClass( "visually-hidden" );
 
   }
 };
@@ -50,27 +92,3 @@ NavigationStatus();
 
 
 </script>
-
-
-<nav id="navigation-secondary" style="display:none">
-				<ul class="finance-nav" style="display:none">
-					<li class="top_nav"><a href="/{% include "includes/sprint-link.html" %}/forecast/">Forecast</a></li>
-					<li class="top_nav"> <a href="/{% include "includes/sprint-link.html" %}/history">Payments</a></li>
-					<li class="top_nav"><a href="/{% include "includes/sprint-link.html" %}/committed">Committed spending</a></li>
-					<li class="top_nav"><a href="/{% include "includes/sprint-link.html" %}/expire">Expiring funds</a></li>
-					<li class="top_navv">Download data</li>
-				</ul>
-				<ul class="people-nav"s style="display:none">
-					<li class="top_nav"><a href="balance">View learners</a></li>
-					<li class="works_nav"> <a href="#works">Recruit</a></li>
-
-				</ul>
-				<ul class="providers-nav" style="display:none">
-					<li class="top_nav"><a href="balance">Review offers</a></li>
-					<li class="works_nav"> <a href="#works">View contracts</a></li>
-					<li class="locations_nav"><a href="#location">Start a new contract</a></li>
-					<li class="contact_nav"><a href="#contact">Find a new provider</a></li>
-					<li class="contact_nav"><a href="#contact">Search standards</a></li>
-				</ul>
-</nav>
-
