@@ -59,7 +59,7 @@
       <ul>
         <li><a href="/{% include "includes/sprint-link.html" %}/account">Home</a></li>
         <li><a href="/{% include "includes/sprint-link.html" %}/finance" class="active-nav-item">Finance</a></li>
-        <li><a href="/{% include "includes/sprint-link.html" %}/training/">Learners</a></li>
+        <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Learners</a></li>
         <li><a href="/{% include "includes/sprint-link.html" %}/training">Training</a></li>
         <li><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Manage organisations</a></li>
         <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
@@ -82,6 +82,7 @@ var NavigationStatus = function() {
   $( ".nav" ).addClass( "visually-hidden" );
 
   }
+    $("#navC, #navB").removeClass("visually-hidden");
 };
 NavigationStatus();
 

@@ -1,0 +1,60 @@
+
+
+
+
+<nav class="nav utility-menu4" id="navB">
+<ul style="margin-top: 7px;">
+          <li><span class="user-name">John Doe</span> <span class="fa fa-caret-down"></span>
+            <div class="hide-line"></div>
+            <ul>
+              <a href="#"><li>View invitations (0)</li></a>
+              <a href="#"><li>Change name</li></a>
+              <a href="#"><li>Change e-mail address</li></a>
+              <a href="#"><li>Update password</li></a>
+             <!-- <a href="#"><li>Delete account</li></a> -->
+<hr />
+                <a href="#"><li>Sign out</li></a>
+            </ul>
+          </li>
+          <li>
+            Levy accounts <span class="fa fa-caret-down"></span>
+            <div class="hide-line"></div>
+            <ul>
+         
+                <li>You have no levy accounts</li>
+            </ul>
+          </li>
+          <li>
+            Help <span class="fa fa-caret-down"></span>
+            <div class="hide-line"></div>
+            <ul>
+              <a href="#"><li>Live Web chat</li></a>
+              <a href="#"><li>Phone SFA</li></a>
+              <a href="#"><li>Email SFA</li></a>
+            </ul>
+          </li>
+        </ul>
+</nav>
+
+
+<script>
+
+
+//Turns navigation on and off depending on local storage variable set at /navigation
+
+
+var NavigationStatus = function() {
+  var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
+   console.log(navStatus)
+    if (navStatus == "on") {
+      $( ".nav" ).removeClass( "visually-hidden" );
+  } else {
+  $( ".nav" ).addClass( "visually-hidden" );
+
+  }
+    $("#navC, #navB").removeClass("visually-hidden");
+};
+NavigationStatus();
+
+
+</script>
