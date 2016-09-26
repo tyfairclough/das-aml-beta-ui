@@ -43,6 +43,7 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
     
 
     
+    
     <div class="grid-row">
         
         
@@ -62,7 +63,7 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
             <div class="rj-alert-wrapper">
                 <div class="rj-alert-copy">
                   <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Forecast: not completed  </h2>
-                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><a href="/{% include "includes/sprint-link.html" %}/forecast/">Calculate your available spend</a></p>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><a href="/{% include "includes/sprint-link.html" %}/forecast/">See your available spend</a></p>
                 </div>
             </div>
 
@@ -115,7 +116,7 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
                 
                             <h3 id="commonLinks" class="heading-medium">Your last places</h3>
 <ul class="list list-links">
-            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funding</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">See your available spend</a></li>
             <li><a href="/{% include "includes/sprint-link.html" %}/expire">View expiring funds</a></li>
             <li><a href="#">Find a training provider</a></li>       
             <li><a href="#">Add an apprentice</a></li>
@@ -153,15 +154,15 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
                     </div>
                 </div>
                 <div class="form-group">
-<a href="#" class="button--secondary">View your transactions</a>
+<a href="/{% include "includes/sprint-link.html" %}/history" class="button--secondary">View your transactions</a>
                </div>
                 
 <ul class="list list-links">
-    <li><a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funding</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/forecast/">Forecast your funding</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/expire">View funds you could lose</a></li>
 
     <li><a href="/{% include "includes/sprint-link.html" %}/history">Transaction history</a></li>
-    <li><a href="/{% include "includes/sprint-link.html" %}/comitted">Committed spending</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/committed">Committed spending</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/fraction">Your English percentage</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/#">Download your financial information</a></li>
                     <li><a href="account/paye">Manage PAYE schemes</a></li>
@@ -171,7 +172,7 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
             </section>
             <section id="providers">
                 
-                <h2 class="heading-medium">Providers</h2>
+                <h2 class="heading-medium"><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/providers">Providers</a></h2>
                 <p>Review commitments with your training providers, view in progress or add a new commitment</p>
                 
                 <div class="grid-row hidden">
@@ -191,10 +192,10 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
                 
 
 <ul class="list list-links">
-    <li><a href="/{% include "includes/sprint-link.html" %}/contracts">Approved commitments</a></li>
-    <li><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">Start a new commitment</a></li>
-    <li><a href="/{% include "includes/sprint-link.html" %}/contracts/in-progress">Commitments in progress</a></li>
-    <li><a href="findapprenticeshiptraining.sfa.bis.gov.uk">Find a training provider</a></li>
+    <li><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts">Approved commitments</a></li>
+    <li><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/new-contract">Start a new commitment</a></li>
+    <li><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/in-progress">Commitments in progress</a></li>
+    <li><a href="https://findapprenticeshiptraining.sfa.bis.gov.uk">Find a training provider</a></li>
 </ul>
                 <hr />
             </section>
@@ -252,6 +253,8 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
         $("#as, .asNotSigned").removeClass("hidden");
     }
     
+    
+
     
 $(document).ready(function(){
          // Define the tour!

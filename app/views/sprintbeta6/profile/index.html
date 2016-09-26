@@ -26,6 +26,22 @@
 {% include "includes/userControl.html" %}
 
 
+    <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" id="govGatewayDenied">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Account not added
+  </h1>
+
+  <p>
+    You need to grant authority to HMRC to add an account.
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="/{% include "includes/sprint-link.html" %}/account/paye">Add new account</a></li>
+  </ul>
+
+</div>
+
  
     <section id="notifications">
     
@@ -133,6 +149,11 @@ You've created your profile
 </main>
 
 <script>
+    
+        
+      if ( govgateway == "denied" ) {
+        $("#govGatewayDenied").removeClass("hidden");
+    }
  /* if (localStorage.getItem("accountActivatedMsg") == "true") {
       $(".profileCreatedMsg").removeClass("hidden");
       localStorage.setItem("accountActivatedMsg",'false');
@@ -153,8 +174,8 @@ var createButton = document.getElementById('createAccountButton');
 
     });
     
+
     
-  
 </script>
 
 {% endblock %}

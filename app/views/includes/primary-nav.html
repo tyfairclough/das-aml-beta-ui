@@ -1,4 +1,4 @@
-<nav>
+<nav id="navA">
 				<ul class="nav nav-tabs">
 					<li class="active"><a href="/{% include "includes/sprint-link.html" %}/account">Home</a></li>
 					<li><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
@@ -18,11 +18,12 @@
 </nav>
 
 
-<nav class="utility-menu4">
+<nav class="utility-menu4" id="navB">
 <ul style="margin-top: 7px;">
           <li><span class="user-name">John Doe</span> <span class="fa fa-caret-down"></span>
             <div class="hide-line"></div>
             <ul>
+              <a href="#"><li>Sign out</li></a>
               <a href="#"><li>Change name</li></a>
               <a href="#"><li>Change e-mail address</li></a>
               <a href="#"><li>Update password</li></a>
@@ -61,13 +62,14 @@
 </nav>
 
 
-<nav class="primary-nav">
+<nav class="primary-nav" id="navC">
       <ul>
-        <li><a href="pta-home-1">Account home</a></li>
-        <li><a href="paye-home-v4" class="active-nav-item">Finance</a></li>
+        <li><a href="/{% include "includes/sprint-link.html" %}/account">Home</a></li>
+        <li><a href="/{% include "includes/sprint-link.html" %}/finance" class="active-nav-item">Finance</a></li>
         <li><a href="#">Learners</a></li>
-        <li><a href="#">Manage team members</a></li>
-        <li><a href="#">Manage organisations</a></li>
+        <li><a href="/{% include "includes/sprint-link.html" %}/training">Training</a></li>
+        <li><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Manage organisations</a></li>
+        <li><a href="/{% include "includes/sprint-link.html" %}/account/team">Manage team members</a></li>
       </ul>
 </nav>
 

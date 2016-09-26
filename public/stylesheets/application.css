@@ -2869,6 +2869,7 @@ input[type=number] {
 
 .primary-nav ul li {
   display: inline-block;
+  float: left;
 }
 
 .primary-nav ul li a {

@@ -31,6 +31,21 @@
 
 <a class="link-back" href="/{% include "includes/sprint-link.html" %}/profile">Back to profile</a>
 
+        <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" id="checkboxError">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Error message
+  </h1>
+
+  <p>
+    Description of error message.
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="/{% include "includes/sprint-link.html" %}/account/paye">Fix checkbox</a></li>
+  </ul>
+
+</div>
     
 <div class="grid-row">
     <div class="column-two-thirds">
@@ -130,6 +145,7 @@ Mauris purus nisl, fermentum et est sit amet, dapibus pretium massa. Fusce ultri
             e.preventDefault();
             //alert("error");
             $("#agreeCheck").addClass("error");
+            $("#checkboxError").removeClass("hidden");
             $(".error-message").show();
         } else {
             return true;

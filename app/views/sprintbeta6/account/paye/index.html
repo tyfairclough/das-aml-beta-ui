@@ -33,6 +33,21 @@
 {% include "includes/breadcrumbEnd.html" %}
     
     
+    <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" id="govGatewayDenied">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Account not added
+  </h1>
+
+  <p>
+    You need to grant authority to HMRC to add an account.
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="/{% include "includes/sprint-link.html" %}/account/paye">Add new account</a></li>
+  </ul>
+
+</div>
 <div class="govuk-box-highlight hidden PAYEremoved">
           <h2 class="bold-large">
             You've removed 680/cacb268	
@@ -62,7 +77,7 @@
     </div>
     
     
-    <div class="grid-row">
+    <div id="emptyState" class="grid-row hidden">
         <div class="column-two-thirds">
             <div class="notice">
             <p class="">There are no PAYE schemes added.</p>
@@ -70,7 +85,7 @@
         </div>
     </div>
     
-    <div class="grid-row hidden">
+    <div class="grid-row">
         <div class="column-two-thirds">
             
 
@@ -109,10 +124,17 @@
  <!--button class="button">Do the thing</button-->
 
 <script>
+    
+          if ( govgateway == "denied" ) {
+        $("#govGatewayDenied").removeClass("hidden");
+    }
+    
+    
     $("table tr + tr").hide();
     
         if ( PAYEremoved == "y" ) {
-        $(".PAYEremoved").removeClass("hidden");
+        $(".PAYEremoved, #emptyState").removeClass("hidden");
+            $("table").addClass("hidden")
     }  else if ( PAYEadded == "y" ) {
         $(".PAYEadded").removeClass("hidden");
         $("table tr + tr").show();

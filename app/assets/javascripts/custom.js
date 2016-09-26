@@ -36,6 +36,7 @@ var newOrgSigned = getQueryVariable("newOrgSigned");
 var agreementState = getQueryVariable("agreementState");
 var newLevyAccount = getQueryVariable("newLevyAccount");
 var signedOut = getQueryVariable("signedOut");
+var govgateway = getQueryVariable("govgateway");
 
 
 
@@ -327,3 +328,10 @@ for (var i = 0; i < localStorage.length; i++){
         window.open('/'+sprintNo+'/register/start?signedOut=y','_self');
     },300000);
 });
+
+
+// Switching navs
+
+$("body").keyup(function(e){
+    
+})
