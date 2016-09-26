@@ -2205,6 +2205,12 @@ input[type=number] {
   }
 }
 
+@media screen and (min-width: 760px) {
+  #todo {
+    margin-top: 45px;
+  }
+}
+
 .rj-alert-wrapper {
   border-left: 4px solid #005EA5;
   width: 100%;
@@ -2665,7 +2671,7 @@ input[type=number] {
   display: table;
 }
 
-.nav, .sub-nav {
+#navA.nav, .sub-nav {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
@@ -2749,6 +2755,10 @@ input[type=number] {
   list-style: none;
 }
 
+.utility-menu4 ul a {
+  text-decoration: none;
+}
+
 .utility-menu4 ul li {
   border: 1px solid white;
   display: inline-block;
@@ -2756,14 +2766,6 @@ input[type=number] {
   padding: 15px 25px 15px 20px;
   background: #fff;
   cursor: default;
-}
-
-.utility-menu4 ul {
-  float: right;
-  display: inline;
-  margin: 0;
-  padding: 0px 0px 0px 0;
-  list-style: none;
 }
 
 .utility-menu4 ul li ul {
@@ -2780,17 +2782,10 @@ input[type=number] {
   border-right: 0;
 }
 
-.utility-menu4 ul a {
-  text-decoration: none;
-}
-
-.utility-menu4 ul li {
-  border: 1px solid white;
-  display: inline-block;
+.utility-menu4 ul li ul hr {
+  margin: 0;
   position: relative;
-  padding: 15px 25px 15px 20px;
-  background: #fff;
-  cursor: default;
+  z-index: 1;
 }
 
 .utility-menu4 ul li ul li {
@@ -2803,18 +2798,11 @@ input[type=number] {
   border-right: 1px solid #DEE0E2;
 }
 
-.hide-line {
-  width: 100%;
-  height: 3px;
-  background: white;
-  bottom: 2px;
-  left: 0;
-  position: absolute;
-  z-index: 1;
-  display: none;
+.utility-menu4 ul li ul li i {
+  float: right;
 }
 
-.utility-menu4 ul li:hover {
+.utility-menu ul li:hover {
   background: #fff;
   color: black;
 }
@@ -2837,6 +2825,17 @@ input[type=number] {
 
 .utility-menu4 ul li ul a li:hover {
   background: #F8F8F8;
+}
+
+.hide-line {
+  width: 100%;
+  height: 3px;
+  background: white;
+  bottom: 2px;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  display: none;
 }
 
 .primary-nav {

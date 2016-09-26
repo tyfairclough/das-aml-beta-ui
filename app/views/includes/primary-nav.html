@@ -18,35 +18,28 @@
 </nav>
 
 
-<nav class="utility-menu4" id="navB">
+<nav class="nav utility-menu4" id="navB">
 <ul style="margin-top: 7px;">
           <li><span class="user-name">John Doe</span> <span class="fa fa-caret-down"></span>
             <div class="hide-line"></div>
             <ul>
-              <a href="#"><li>Sign out</li></a>
+              <a href="#"><li>View invitations (0)</li></a>
               <a href="#"><li>Change name</li></a>
               <a href="#"><li>Change e-mail address</li></a>
               <a href="#"><li>Update password</li></a>
-              <a href="#"><li>Delete account</li></a>
-              <a href="#"><li>View invitations (0)</li></a>
+             <!-- <a href="#"><li>Delete account</li></a> -->
+<hr />
+                <a href="#"><li>Sign out</li></a>
             </ul>
           </li>
           <li>
             Levy accounts <span class="fa fa-caret-down"></span>
             <div class="hide-line"></div>
             <ul>
-                <li><span class="company-name">Acme Ltd</span> <i class="fa fa-check"></i></li>
+                <a href="/{% include "includes/sprint-link.html" %}/account"><li><span class="company-name">Acme Ltd</span> <i class="fa fa-check"></i></li></a>
               <a href="#"><li>Whitbread</li></a>
               <a href="#"><li>Costa Coffee</li></a>
               <a href="#"><li>Premier Inn</li></a>
-            </ul>
-          </li>
-          <li>
-            To do: <span class="fa fa-caret-down"></span>
-            <div class="hide-line"></div>
-            <ul>
-              <a href="#"><li>Calculate your available spend</li></a>
-              <a href="#"><li>See more messages</li></a>
             </ul>
           </li>
           <li>
@@ -62,14 +55,14 @@
 </nav>
 
 
-<nav class="primary-nav" id="navC">
+<nav class="nav primary-nav" id="navC">
       <ul>
         <li><a href="/{% include "includes/sprint-link.html" %}/account">Home</a></li>
         <li><a href="/{% include "includes/sprint-link.html" %}/finance" class="active-nav-item">Finance</a></li>
-        <li><a href="#">Learners</a></li>
+        <li><a href="/{% include "includes/sprint-link.html" %}/training/">Learners</a></li>
         <li><a href="/{% include "includes/sprint-link.html" %}/training">Training</a></li>
         <li><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Manage organisations</a></li>
-        <li><a href="/{% include "includes/sprint-link.html" %}/account/team">Manage team members</a></li>
+        <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
       </ul>
 </nav>
 

@@ -155,6 +155,7 @@ var EventUtil = {
 };
 
 
+
 //back button
 function goBack() {
     window.history.back();
@@ -167,6 +168,17 @@ $( document ).ready(function() {
 }, 550);
   });
 
+
+$(document).ready(function() {
+   
+$("body").keyup(function(event){
+    console.log(event);
+    if ( event.which == 16) {
+      $("#proposition-links").addClass("visually-hidden");  
+      $("#navA").hide();  
+    }
+}); 
+});
 
 // this sets the default sprint number if its not changed on the admin page.
 var defaultSprint = function() {
@@ -332,6 +344,4 @@ for (var i = 0; i < localStorage.length; i++){
 
 // Switching navs
 
-$("body").keyup(function(e){
-    
-})
+
