@@ -2205,12 +2205,6 @@ input[type=number] {
   }
 }
 
-@media screen and (min-width: 760px) {
-  #todo {
-    margin-top: 45px;
-  }
-}
-
 .rj-alert-wrapper {
   border-left: 4px solid #005EA5;
   width: 100%;
@@ -2745,6 +2739,7 @@ input[type=number] {
 .utility-menu4 {
   float: left;
   width: 100%;
+  font-size: 16px;
 }
 
 .utility-menu4 ul {
@@ -2771,7 +2766,7 @@ input[type=number] {
 .utility-menu4 ul li ul {
   padding: 0;
   position: absolute;
-  top: 50px;
+  top: 47px;
   right: -1px;
   display: none;
   width: 300px;
@@ -3807,4 +3802,27 @@ div.hopscotch-bubble .hopscotch-bubble-close::after {
   content: "\f00d";
   font: normal normal normal 16px/1 FontAwesome;
   margin-left: 10px;
+}
+
+/* Responsive YouTube */
+#youTubeResponsive {
+  width: 100% !important;
+  height: auto;
+  margin: 10px 0;
+}
+
+/* Styles from HMRC */
+hr.pta-hr {
+  display: block;
+  height: 5px;
+  border: 0;
+  border-top: 5px solid #005ea5;
+  margin: 10px 0 30px;
+  padding: 0;
+  background: #fff;
+}
+
+/* Account page changes */
+#finance h2 {
+  margin-top: 0;
 }

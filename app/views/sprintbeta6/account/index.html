@@ -43,6 +43,11 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
     
 
     
+                <section id="intro">
+                    <h1 class="heading-large company-name" id="company-Name" >{% include "includes/account-name-number.html" %}</h1>
+                    <hr class="pta-hr" style="margin: 10px 0 30px;">
+            </section>
+    
     
     <div class="grid-row">
         
@@ -62,8 +67,8 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
 
             <div class="rj-alert-wrapper">
                 <div class="rj-alert-copy">
-                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Forecast: not completed  </h2>
-                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><a href="/{% include "includes/sprint-link.html" %}/forecast/">See your available spend</a></p>
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">You are the only member of this levy account</h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><a href="/{% include "includes/sprint-link.html" %}/forecast/">Invite your colleagues</a></p>
                 </div>
             </div>
 
@@ -88,6 +93,8 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
                   <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Grant access to others</p>
                 </div>
             </div>
+                        
+                        <span>1 of 4 completed</span>
 </section>
                     
                     
@@ -121,18 +128,30 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
             <li><a href="#">Find a training provider</a></li>       
             <li><a href="#">Add an apprentice</a></li>
 </ul>
-            </aside>                    
+            </aside>    
+                    
+                    
+   <aside class="related">
+            <h3 class="heading-medium">Assistance</h3>
+                <p>Information pertaining to the configuration of your levy account to reflect your business organisation.</p>
+
+       <iframe id="youTubeResponsive" width="640" height="360" src="https://www.youtube.com/embed/ofbDKGuB0X0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                <a href="#" class="button" id="startTour">Watch the video</a>
+                
+                
+                            <h3 id="commonLinks" class="heading-medium">Your favourite pages</h3>
+<ul class="list list-links">
+            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">See your available spend</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/expire">View expiring funds</a></li>
+            <li><a href="#">Find a training provider</a></li>       
+            <li><a href="#">Add an apprentice</a></li>
+</ul>
+            </aside>                        
         </div>
 
         <div class="column-two-thirds">
             
-            <section id="intro">
-                    <h1 class="heading-large company-name" id="company-Name" >{% include "includes/account-name-number.html" %}</h1>
 
-<p>Get and spend your levy funds for your apprenticeship programme</p>
-                    <a href="/{% include "includes/sprint-link.html" %}/profile" class="link-back">change levy account</a>
-
-            </section>
     
             <section id="finance">
                 
@@ -160,8 +179,6 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
 <ul class="list list-links">
     <li><a href="/{% include "includes/sprint-link.html" %}/forecast/">Forecast your funding</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/expire">View funds you could lose</a></li>
-
-    <li><a href="/{% include "includes/sprint-link.html" %}/history">Transaction history</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/committed">Committed spending</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/fraction">Your English percentage</a></li>
     <li><a href="/{% include "includes/sprint-link.html" %}/#">Download your financial information</a></li>
@@ -216,11 +233,11 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
         </div>
                     </div>
                 </div>
-                
-
+                <div class="form-group">
+<a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/new-contract" class="button--secondary">Start a new commitment</a>
+                </div>
 <ul class="list list-links">
     <li><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts">Approved commitments</a></li>
-    <li><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/new-contract">Start a new commitment</a></li>
     <li><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/in-progress">Commitments in progress</a></li>
     <li><a href="https://findapprenticeshiptraining.sfa.bis.gov.uk">Find a training provider</a></li>
 </ul>
@@ -230,10 +247,18 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
             <section id="settings">
                 
                 <h2 class="heading-medium"><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Manage organisations</a></h2>
-                <p>Lorem ipsum</p>
+                <p>Add the organisations that you want to hire apprentices through.</p>
+                                <div class="form-group">
+<a href="/{% include "includes/sprint-link.html" %}/account/organisation" class="button--secondary">Manage organisations</a>
+                </div>
+                <br clear="all" />
+                <hr />
+                
                 <h2 class="heading-medium"><a href="/{% include "includes/sprint-link.html" %}/account/paye">Manage PAYE schemes</a></h2>
-                <p>Lorem ipsum</p>
-     
+                <p>Add PAYE schemes to allow levy funds to be added to your account.</p>
+                                     <div class="form-group">
+<a href="/{% include "includes/sprint-link.html" %}/account/paye" class="button--secondary">Manage PAYE schemes</a>
+                </div>
 
                 <hr />
             </section>
