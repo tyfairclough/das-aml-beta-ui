@@ -78,11 +78,11 @@
 <script>
 
     
-    var userEmail = JSON.parse(localStorage.getItem('email-address'));        
+    var userEmail = JSON.parse(localStorage.getItem('email-address')).toLowerCase();        
 
     
     $("#user-signin").click(function(e){
-    var userId = $("#user-id").val();
+    var userId = $("#user-id").val().toLowerCase();
         e.preventDefault();
     if (userId != userEmail) {
         window.open("step_b2_error","_self")

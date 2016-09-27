@@ -177,6 +177,9 @@ $("body").keyup(function(event){
       $("#proposition-links").addClass("visually-hidden");  
       $("#navA").hide();  
     }
+        if (event.which == 220) {
+        $("#help1,#help2").toggle();
+    }
 }); 
 });
 
