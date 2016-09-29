@@ -26,7 +26,11 @@
 {% include "includes/secondary-nav.html" %}
 
 
-    <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" id="govGatewayDenied">
+  
+ 
+    <section id="notifications" style="clear: both;">
+    
+          <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" id="govGatewayDenied">
 
   <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
     Account not added
@@ -42,13 +46,18 @@
 
 </div>
 
- 
-    <section id="notifications">
-    
+        
     <div class="govuk-box-highlight profileCreatedMsg hidden">
           <h2 class="bold-large">
 You've created your profile
         </h2>
+        </div>
+        
+        
+        <div class="govuk-box-highlight resetPassword hidden">
+          <h2 class="bold-large">
+Password changed
+            </h2>
         </div>
     
         </section>
@@ -159,6 +168,10 @@ You've created your profile
       localStorage.setItem("accountActivatedMsg",'false');
   }
   */
+    
+    if ( resetPassword == "y") {
+      $(".resetPassword").removeClass("hidden");
+  }
 //store details entered into the form in local storage
 var createButton = document.getElementById('createAccountButton');
 

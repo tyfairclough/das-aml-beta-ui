@@ -30,7 +30,21 @@
 
 <a class="link-back" href="/{% include "includes/sprint-link.html" %}/account/paye">Back to Manage PAYE schemes</a>
 
-    
+      <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Unchecked box
+  </h1>
+
+  <p>
+    Check the following details:
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#paye-terms">Check this statement to continue</a></li>
+  </ul>
+
+</div>
 <div class="govuk-box-highlight hidden PAYEremoved">
           <h2 class="bold-large">
             You've removed 123/AB12345
@@ -62,7 +76,15 @@
             <form action="step_a1">
   <fieldset>
       <div class="form-group">
-          <legend class="heading-medium">Content - TBC</legend>
+          <legend>
+          
+                 <span class="form-label-bold">
+          Are your personal details correct and up-to-date?
+        </span>
+        <span class="error-message">
+          Error message about personal details goes here
+        </span>
+          </legend>
     <label class="block-label" for="paye-terms">
       <input id="paye-terms" name="paye-terms" type="checkbox" value="yes" />
 I understand that all account users will be able to see financial information from any PAYE schemes I add.
@@ -70,7 +92,7 @@ I understand that all account users will be able to see financial information fr
           </div>
   </fieldset>
                 
-                <button type="submit" class="button">Continue</button>
+                <button type="submit" class="button" id="submitForm">Continue</button>
 </form>
             
             
@@ -83,6 +105,8 @@ I understand that all account users will be able to see financial information fr
  <!--button class="button">Do the thing</button-->
 
 <script>
+    
+    $(".error-message,.error-summary").hide();
     $("table tr + tr").hide();
     
         if ( PAYEremoved == "y" ) {
@@ -91,6 +115,18 @@ I understand that all account users will be able to see financial information fr
         $(".PAYEadded").removeClass("hidden");
         $("table tr + tr").show();
     } 
+    
+    $("#submitForm").click(function(e){
+        e.preventDefault();
+        if (! $("#paye-terms").is(':checked') ) {
+            console.log("not checked fire error");
+            $(".error-message,.error-summary").show();
+            $(".form-group").addClass("error");
+        } else {
+            console.log("proceed to next page");
+            window.open('step_a1',"_self");
+        }
+    })
 </script>
 
 {% endblock %}
