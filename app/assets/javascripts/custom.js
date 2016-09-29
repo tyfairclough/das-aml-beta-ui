@@ -38,6 +38,7 @@ var newLevyAccount = getQueryVariable("newLevyAccount");
 var signedOut = getQueryVariable("signedOut");
 var govgateway = getQueryVariable("govgateway");
 var resetPassword = getQueryVariable("resetPassword");
+var ab = getQueryVariable("ab");
 
 
 
