@@ -113,7 +113,6 @@
                         <td class="numeric ">£379</td>
                         <td class="numeric">£5,292</td>
                         <td class="looks-like                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">View</a></td>
-a-link-underline">View</td>
                       </tr>
                        <tr>
                         <td>10 July 2018</td>
@@ -477,13 +476,19 @@ $( document ).ready(function() {
   });
     
     
-    $("body").keyup(function(e){
-         if (e.keyCode === 57 ) {
+
+    
+    
+    
+    $(document).bind('keypress', function(event) {
+
+        if( event.which === 32 && event.shiftKey ) {
              console.log("do something");
              $("#v1").removeClass("hidden");
-             $("#v2").addClass("hidden");
-         }
-    })
+             $("#v2").addClass("hidden");    
+        }
+    });
+
     
     
     $("#v1 table .credit-details").click(function(e){
