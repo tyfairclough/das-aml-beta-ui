@@ -18,8 +18,14 @@
         alert("hello world");
     };
     
-var NavigationOn = function() {
-  var Navigation = 'on';
+var NavigationA = function() {
+  var Navigation = 'a';
+  localStorage.setItem("Navigation-Status", JSON.stringify(Navigation));
+  window.location.href='proto-admin';
+};
+    
+var NavigationB = function() {
+  var Navigation = 'b';
   localStorage.setItem("Navigation-Status", JSON.stringify(Navigation));
   window.location.href='proto-admin';
 };
@@ -64,13 +70,17 @@ $('#authSetValue').val(getAuthSet);
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
   <div class="grid-row">
-
+{% import "includes/primary-nav.html" as activeNav %}
+{{ activeNav.link('WHATTT') }}
+      
+      
     <div class="column-two-thirds">
       <h1 class="heading-xlarge">Prototype simple admin</h1>
 
       <h2 class="heading-medium">Navigation on and off </h2>
 
-      <p class="looks-like-a-link-underline" style="cursor: pointer;" onclick="NavigationOn()"> Navigation ON</p>
+      <p class="looks-like-a-link-underline" style="cursor: pointer;" onclick="NavigationA()"> Navigation A</p>
+      <p class="looks-like-a-link-underline" style="cursor: pointer;" onclick="NavigationB()">Navigation B</p>
       <p class="looks-like-a-link-underline" style="cursor: pointer;" onclick="NavigationOff()">Navigation OFF</p>
 
       <h2 class="heading-medium">Add a company name</h2>

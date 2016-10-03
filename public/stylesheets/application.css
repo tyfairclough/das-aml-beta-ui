@@ -1728,7 +1728,6 @@ input[type=number] {
 .error .error-message {
   color: #b10e1e;
   font-weight: bold;
-  display: block;
 }
 
 .error .form-control {
@@ -1759,6 +1758,7 @@ input[type=number] {
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
+  display: block;
   clear: both;
   margin: 0;
   padding: 5px 0 7px 0;
@@ -2262,6 +2262,73 @@ input[type=number] {
   display: block;
   vertical-align: top;
   width: 100%;
+}
+
+#todo2 .rj-alert-wrapper {
+  border: none;
+  position: relative;
+  height: auto;
+  margin: 10px 0 15px;
+  background: #F8F8F8;
+  border: 1px solid #bfc1c3;
+}
+
+#todo2 .rj-alert-type {
+  width: 20%;
+  float: left;
+  background: #BFC1C3;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  display: flex;
+}
+
+#todo2 .rj-alert-type i {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 4rem;
+  color: white;
+}
+
+#todo2 .rj-alert-type.high {
+  background: #005EA5;
+}
+
+#todo2 .rj-alert-type.medium {
+  background: #2E358B;
+}
+
+#todo2 .rj-alert-type.low {
+  background: #6F72AF;
+}
+
+#todo2 .rj-alert-copy {
+  display: block;
+  width: 80%;
+  margin-left: 20%;
+  height: auto;
+}
+
+#todo2 .rj-alert-copy h2 {
+  padding: 0;
+  margin: 10px 10px 0;
+}
+
+#todo2 .rj-alert-copy p {
+  margin: 0 10px 10px 10px;
+  font-size: 16px;
+}
+
+#todo2 .rj-alert-copy a {
+  margin: 0 10px 10px;
+  display: block;
+}
+
+@media (min-width: 641px) {
+  #todo2 .rj-alert-type i {
+    font-size: 2rem;
+  }
 }
 
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -3829,4 +3896,67 @@ hr.pta-hr {
 
 #help1, #help2 {
   margin-top: 0;
+}
+
+/* Small paging */
+.pager {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 641px) {
+  .pager {
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+}
+
+.pager-items {
+  display: none;
+}
+
+@media (min-width: 641px) {
+  .pager-items {
+    display: inline;
+  }
+  .pager-items li {
+    display: inline;
+    margin: 0 5px;
+  }
+  .pager-items li:first-child {
+    margin-left: 0;
+  }
+  .pager-items li:last-child {
+    margin-right: 0;
+  }
+}
+
+.pager-prev,
+.pager-next {
+  margin-right: 10px;
+}
+
+@media (min-width: 641px) {
+  .pager-prev,
+  .pager-next {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 641px) {
+  .pager-prev {
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 641px) {
+  .pager-next {
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 641px) {
+  .pager-controls {
+    float: right;
+  }
 }

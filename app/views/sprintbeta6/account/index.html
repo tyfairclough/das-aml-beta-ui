@@ -25,7 +25,548 @@
 
 </style>
 
-<main id="content" role="main">
+
+<main id="content" role="main" class="v1 hidden">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/primary-nav.html" %}
+
+    
+    <div class="hgroup">
+       <h1 class="heading-large company-name">FIFA</h1>
+       <p>Get and spend your levy funds for your apprenticeship programme</p>
+       <hr class="pta-hr" style="margin: 10px 0 30px;">
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                   <h3 class="bold-medium">Your tasks</h3>
+
+                <div id="todo2">
+                    <div class="grid-row">
+                    <div class="column-half">
+                        
+                        
+                                    <div class="rj-alert-wrapper">
+                                                                <div class="rj-alert-type high">
+                                    <i class="fa fa-warning"></i>
+                                </div>
+                    <div class="rj-alert-copy">
+                      <h2 class="heading-small">Levy account incomplete</h2>
+                      <p>You can't spend funds until your SFA contract is signed</p>
+                        <a href="/{% include "includes/sprint-link.html" %}/organisation/view?agreementState=not-signed">Sign the SFA contrat</a>
+                    </div>
+                </div>
+                        
+                        
+                            <div class="rj-alert-wrapper">
+                                <div class="rj-alert-type medium">
+                                    <i class="fa fa-area-chart"></i>
+                                </div>
+                    <div class="rj-alert-copy">
+                      <h2 class="heading-small">Forecast: not completed  </h2>
+                      <p>Plan how much funding you will receive over the next 12 months</p>
+                        <a href="/{% include "includes/sprint-link.html" %}/forecast/">Calculate available spend</a>
+                    </div>
+                </div>
+          
+                    </div>
+                    <div class="column-half">
+                
+                        
+                        
+                        
+                      <div class="rj-alert-wrapper">
+                                                <div class="rj-alert-type low">
+                                    <i class="fa fa-user-plus"></i>
+                                </div>
+                    <div class="rj-alert-copy">
+                      <h2 class="heading-small">Build your levy team</h2>
+                      <p>Give colleagues access to your colleagues.</p>
+                        <a href="/{% include "includes/sprint-link.html" %}/team/invitenew">Invite your colleagues</a>
+                    </div>
+                </div>    
+                        
+                        
+            <div class="rj-alert-wrapper">
+                                                <div class="rj-alert-type medium done">
+                                    <i class="fa fa-file-word-o"></i>
+                                </div>
+                    <div class="rj-alert-copy">
+                      <h2 class="heading-small">Missing agreements</h2>
+                        <p>To spend levy funds you need to add your provider agreements</p>
+                        <a href="#">Add a new commitment</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+         <div class="pager">
+    
+    <div class="pager-controls">
+      <a class="pager-prev" href="#">Prev</a>
+
+      <ul class="pager-items">
+        <li>1</li>
+        <li><a href="#">2</a></li>
+      </ul>
+      
+      <a class="pager-next" href="#">Next</a>
+      
+    </div>
+    
+    <div class="pager-summary">Showing 1 &ndash; 4 of 8 tasks</div>
+    
+  </div>
+                </div>
+         <div class="column-third">
+
+                 <aside class="" id="help2">
+            <h3 class="bold-medium">Don't know where to start?</h3>
+                <p>This informational video will give you an overview on the configuration of your levy account to reflect your business organisation.</p>
+
+       <iframe id="youTubeResponsive" width="640" height="360" src="https://www.youtube.com/embed/ofbDKGuB0X0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                <a href="#" class="button" id="startTour">Watch the video</a>
+                <a href="#" class="button text-link">Dismiss</a>
+
+            </aside>   
+                
+<!--<hr />
+             <h3 class="bold-medium">Most used pages</h3>
+                <br>
+                <ul class="list list-bullet">
+                <li><a href="/{% include "includes/sprint-link.html" %}/organisation/step_b1?flow=addOrg">Add an organisation</a></li>
+                <li><a href="findapprenticeshiptraining.sfa.bis.gov.uk">Find a training provider</a></li>
+                <li><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/new-contract">Start a new commitment</a></li>
+            </ul>
+-->
+            </div>
+   
+        </div>
+  <hr />
+  </div>
+
+
+
+        <section id="finance">
+                
+                <h2 class="heading-medium"><a href="/sprintbeta6&#10;&#10;&#10;&#10;/finance">Finance</a></h2>
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <p>Get and spend your levy funds for your apprenticeship programme</p>                
+                </div>
+            </div>
+                
+                       <div class="form-group">
+<a href="/{% include "includes/sprint-link.html" %}/history" class="button--secondary">View your transactions</a>
+               </div>      
+            <div class="grid-row">
+            <div class="column-third">
+    <h4 class="heading-small"><a href="/{% include "includes/sprint-link.html" %}/forecast/">Forecast your funding</a></h4>
+    <p class="font-xsmall">Calculate the amount you have available to spend on apprenticeships</p>
+    
+    <h4 class="heading-small"><a href="/{% include "includes/sprint-link.html" %}/expire">View funds you could lose</a></h4>
+    <p class="font-xsmall">Your funds will expire after 18 months if you don't spend it on apprenticeships</p>
+            </div>
+                            <div class="column-third">
+
+<h4 class="heading-small"><a href="/{% include "includes/sprint-link.html" %}/committed">Committed spending</a></h4>
+    <p class="font-xsmall">Review the amount you've committed to spend on apprenticeships</p>
+<h4 class="heading-small"><a href="/{% include "includes/sprint-link.html" %}/fraction">Your English percentage</a></h4>
+    <p class="font-xsmall">Check the English percentage that's been applied to your levy</p>
+                                
+            </div>
+                <div class="column-third">
+<h4 class="heading-small"><a href="#">Download your financial information</a></h4>
+    <p class="font-xsmall">Download your financial information for your records</p>
+<h4 class="heading-small"><a href="/{% include "includes/sprint-link.html" %}/account/paye">Manage PAYE schemes</a></h4>
+    <p class="font-xsmall">Add PAYE schemes to allow levy funds to beadded to your account.</p>
+            </div>
+                
+     
+
+            
+            </div>
+               
+<hr />
+        
+        <h3 class="heading-medium">Funding snapshot</h3>
+            <div class="grid-row">
+                                           <div class="column-third">
+                <div class="data">
+          <h2 class="bold-xlarge">£3,250</h2>
+          <p class="bold-xsmall">Current balance</p>
+        </div>
+                                                <div class="data">
+                    <div class="data rj-top-border">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    <div class="data rj-top-border">
+          <h2 class="bold-xlarge">£5,250</h2>
+          <p class="bold-xsmall">Incoming funds</p>
+        </div>
+                </div>
+            </div>                
+<div class="column-two-thirds">
+        <div id="chart"></div>
+<details>
+        <summary>View in this data a tabular format</summary>
+    <table id="transactions">
+                  
+                    <thead>
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Credit</th>
+                        <th class="" scope="col">Debit</th>
+                        <th class="" scope="col">Balance</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                      <tbody><tr>
+                        <td>15 August 2018</td>
+                        <td>Hackney Skills and Training Ltd</td>
+                        <td class="">&nbsp;</td>
+                        <td class=" ">£379</td>
+                        <td class="">£5,340</td>
+                        <td class=""><a href="/sprintbeta6&#10;&#10;&#10;&#10;/finance/debit-details">View</a></td>
+                      </tr>
+                      <tr>
+                        <td>10 August 2018</td>
+                        <td>Levy credit</td>
+                        <td class="">£774</td>
+                        <td class=" ">&nbsp;</td>
+                        <td class="">£5,719</td>
+                       <td class="credit-details"><a href="/sprintbeta6&#10;&#10;&#10;&#10;/finance/credit-details">View</a></td>
+                      </tr>
+                      <tr>
+                        <td>08 August 2018</td>
+                        <td>Lots of skills Ltd</td>
+                        <td class="">&nbsp;</td>
+                        <td class=" ">£347</td>
+                        <td class="">£4,945</td>
+                        <td class=""><a href="/sprintbeta6&#10;&#10;&#10;&#10;/finance/debit-details">View</a></td>
+                      </tr>
+                      <tr>
+                        <td>15 July 2018</td>
+                        <td>Hackney Skills and Training Ltd</td>
+                        <td class="">&nbsp;</td>
+                        <td class=" ">£379</td>
+                        <td class="">£5,292</td>
+                        <td class=""><a href="/sprintbeta6&#10;&#10;&#10;&#10;/finance/debit-details">View</a></td>
+                      </tr>
+                       <tr>
+                        <td>10 July 2018</td>
+                        <td>Levy credit</td>
+                        <td class="">£774</td>
+                        <td class=" negative">&nbsp;</td>
+                        <td class="">£5,671</td>
+                       <td class="credit-details"><a href="/sprintbeta6&#10;&#10;&#10;&#10;/finance/credit-details">View</a></td>
+                      </tr>
+                      <tr>
+                        <td>08 July 2018</td>
+                        <td>Lots of skills Ltd</td>
+                        <td class="">&nbsp;</td>
+                        <td class=" ">£347</td>
+                        <td class="">£4,897</td>
+                        <td class=""><a href="/sprintbeta6&#10;&#10;&#10;&#10;/finance/debit-details">View</a></td>
+                      </tr>
+                      <tr>
+                        <td>15 June 2018</td>
+                        <td>Hackney Skills and Training Ltd</td>
+                        <td class="">&nbsp;</td>
+                        <td class=" negative">£379</td>
+                        <td class="">£5,244</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <tr>
+                        <td>10 June 2018</td>
+                        <td>Levy credit</td>
+                        <td class="">£774</td>
+                        <td class=" negative">&nbsp;</td>
+                        <td class="">£5,623</td>
+                       <td class="credit-details"><a href="/sprintbeta6&#10;&#10;&#10;&#10;/finance/credit-details">View</a></td>
+                      </tr>
+                      <tr>
+                        <td>08 June 2018</td>
+                        <td>Lots of Skills Ltd</td>
+                        <td class="">&nbsp;</td>
+                        <td class="">£347</td>
+                        <td class="">£4,849</td>
+                        <td class=""><a href="/sprintbeta6&#10;&#10;&#10;&#10;/finance/debit-details">View</a></td>
+                      </tr>
+                
+                    </tbody>
+                </table>
+    
+        </details>    
+            </div>        
+
+            
+ 
+            </div>
+            <hr />
+                        </section>
+
+
+        <section id="recruitment">
+                
+                <h2 class="heading-medium"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Learners</a></h2>        
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                        <p>View your saved or search for new apprenticeship training. Search for and update the status of your apprentices or recruit new apprentices</p>
+                    <div class="grid-row">
+                        <div class="column-half">            
+                            <h4 class="heading-small"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">Search your apprentices</a></h4>
+                            <p class="font-xsmall">View training details of your apprentices</p>
+                            <h4 class="heading-small"><a href="#">Recruit an apprentice</a></h4>
+                            <p class="font-xsmall">Advertise and manage apprenticeship vacancies</p>
+                        </div>                   
+                    </div>
+                </div>
+
+            
+                <div class="column-third">
+<div id="learnerChart"></div>
+                    <details>
+        <summary>View in this data a tabular format</summary>
+                        <table id="transactions">
+                  
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col"></th>
+  
+                      </tr>
+                    </thead>
+                      <tbody><tr>
+                        <td>Alexis Sanchez</td>
+                        <td>Active</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View</a></td>
+       
+                      </tr>
+                      <tr>
+                        <td>Rob Holding</td>
+                        <td>Active</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View</a></td>
+        
+
+                      </tr>
+                      <tr>
+                        <td>George Wreah</td>
+                        <td>Leaver</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View</a></td>
+                    
+                      </tr>
+                      <tr>
+                        <td>Mathew Upson</td>
+                        <td>Leaver</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View</a></td>
+                       
+                      </tr>
+                       <tr>
+                        <td>Kolo Toure</td>
+                        <td>Leaver</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View</a></td>
+                        
+                      </tr>
+                      <tr>
+                        <td>Emma Bryne</td>
+                        <td>Pending</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View</a></td>
+                        
+                      </tr>
+                      <tr>
+                        <td>Sari van Veenedaal</td>
+                        <td>Active</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View</a></td>
+                        
+                      </tr>
+                      <tr>
+                        <td>Vyan Sampson</td>
+                        <td>Pending</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View</a></td>
+                       
+                      </tr>
+                      <tr>
+                        <td>Casey Stoney</td>
+                        <td>Active</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View</a></td>
+                       
+                      </tr>
+                
+                    </tbody>
+                </table>
+                    </details>
+<script>
+var chart2 = c3.generate({
+    bindto: '#learnerChart',
+    size: {
+        height: 220
+    },
+    data: {
+        columns: [
+            ['data1', 30],
+            ['data2', 120],
+            ['data3', 120],
+        ],
+        names: {
+            data1: 'active learners',
+            data2: 'pending learners',
+            data3: 'leavers'
+        },
+               colors: {
+            data1: '#2E358B',
+            data2: '#6F72AF',
+            data3: '#28A197'
+        },
+        type : 'pie',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    },
+    pie: {
+            label: {
+                format: function (value, ratio, id) {
+                    return d3.format('learners')(value);
+                }
+            }
+        }
+});                        
+                        </script>
+                </div>
+            </div>
+            
+                <hr>
+            </section>
+  
+
+            <section id="providers">
+                
+                <h2 class="heading-medium"><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/providers">Training</a></h2>
+                <div class="grid-row">
+                    <div class="column-two-thirds">
+                        <p>Review commitments with your training providers, view in progress or add a new commitment</p>                    
+                    </div>
+                </div>
+                
+            
+                <div class="form-group">
+<a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/new-contract" class="button--secondary">Start a new commitment</a>
+                </div>
+                
+                
+                <div class="grid-row">
+                    <div class="column-third">        <h4 class="heading-small"><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts">Approved commitments</a></h4>
+                <p class="font-xsmall">Check your existing commitments with training providers</p> </div>
+                    <div class="column-third">
+                <h4 class="heading-small"><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/in-progress">Commitments in progress</a></h4>
+                <p class="font-xsmall">Check the status of a commitment being added to your apprenticeship account</p> </div>
+                    <div class="column-third">
+                <h4 class="heading-small"><a href="https://findapprenticeshiptraining.sfa.bis.gov.uk">Find a training provider</a></h4>
+                <p class="font-xsmall">Add a new commitment with a training provider to your apprenticeship account</p> </div>
+                </div>
+        
+                
+                <hr>
+            </section>
+
+    
+
+    
+    <div class="grid-row">
+    
+        <div class="column-half">
+        
+    <section id="settings">
+                
+                <h2 class="heading-medium"><a href="/sprintbeta6&#10;&#10;&#10;&#10;/account/organisation">Manage organisations</a></h2>
+                <p>Add the organisations that you want to hire apprentices through.</p>
+                                <div class="form-group">
+<a href="/sprintbeta6&#10;&#10;&#10;&#10;/account/organisation" class="button--secondary">Manage organisations</a>
+                </div>
+            </section>
+        </div>
+        
+        <div class="column-half">
+                      
+                <h2 class="heading-medium"><a href="/sprintbeta6&#10;&#10;&#10;&#10;/account/paye">Manage PAYE schemes</a></h2>
+                <p>Add PAYE schemes to allow levy funds to be added to your account.</p>
+                                     <div class="form-group">
+<a href="/sprintbeta6&#10;&#10;&#10;&#10;/account/paye" class="button--secondary">Manage PAYE schemes</a>
+                </div>
+        
+        </div>
+    </div>
+
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+    
+    if (newLevyAccount && newOrgSigned == "y") {
+     //   alert("signed and done")
+        $("#as, .asSigned").removeClass("hidden");
+    } else if ( newLevyAccount == "y" && newOrgSigned != "y" ) {
+   //     alert("done but not signed");
+        $("#as, .asNotSigned").removeClass("hidden");
+    }
+    
+
+var chart = c3.generate({
+    bindTo: 'chart',
+    data: {
+        columns: [
+            ['data1', 70, 70, 70, 70, 70, 70],
+            ['data2', 704, 704, 704, 704, 704, 704],
+            ['data3', -60, 200, 160, -100, -15, 250],
+            ['data4', -726, -600, -700, -800, -726, -600],
+        ],
+        names: {
+            data1: 'levy top up',
+            data2: 'levy credit',
+            data3: 'balance',
+            data4: 'provider payments'
+        },
+        type: 'bar',
+        types: {
+            data3: 'area-spline',
+        },
+       colors: {
+            data1: '#2E358B',
+            data2: '#6F72AF',
+            data3: '#28A197'
+        },
+        groups: [
+            ['data1','data2','data4']
+        ]
+    },
+    axis: {
+        x: {
+            label: 'Tax Month'
+        },
+        y: {
+            tick: {
+                count: 5,
+                format: function (d) { return "£" + d; }
+            },
+            label: 'Balance (£)'
+        }
+    },
+    grid: {
+        y: {
+            lines: [{value:0}]
+        }
+    }
+});
+
+    
+</script>
+
+</main>
+
+
+<main id="content" role="main" class="v2">
 {% include "includes/phase_banner_beta.html" %}
 <!--{% include "includes/userControl.html" %}-->
 
@@ -61,7 +602,7 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
                 <div class="column-third">
                     
                            <aside class="" id="help1">
-            <h3 class="heading-medium">Help</h3>
+            <h3 class="bold-medium">Help</h3>
                 <p>A tour of the levy account's dashboard</p>
                 <a href="#" class="button" id="startTour">Take the tour</a>
                 
@@ -76,22 +617,7 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
             </aside>    
                     
                     
-   <aside class="" id="help2">
-            <h3 class="heading-medium">Don't know how to configure your account?</h3>
-                <p>This informational video will give you an overview on the configuration of your levy account to reflect your business organisation.</p>
-
-       <iframe id="youTubeResponsive" width="640" height="360" src="https://www.youtube.com/embed/ofbDKGuB0X0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                <a href="#" class="button" id="startTour">Watch the video</a>
-                
-                
-                            <h3 id="commonLinks" class="heading-medium">Your favourite pages</h3>
-<ul class="list list-links">
-            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">See your available spend</a></li>
-            <li><a href="/{% include "includes/sprint-link.html" %}/expire">View expiring funds</a></li>
-            <li><a href="#">Find a training provider</a></li>       
-            <li><a href="#">Add an apprentice</a></li>
-</ul>
-            </aside>   
+  
                     
                     <section id="todo">
        <h2 class="heading-medium" style="margin-top:0">To do:</h2>
@@ -268,13 +794,7 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
         </div>
 
     </div>
-    
-
-</main>
-
- <!--button class="button">Do the thing</button-->
-
-<script>
+    <script>
     
     if (newLevyAccount && newOrgSigned == "y") {
      //   alert("signed and done")
@@ -285,7 +805,13 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
     }
     
     
-
+    $(document).bind('keypress', function(event) {
+    if( event.which === 83 && event.shiftKey ) {
+    $(".v2").toggleClass("hidden");
+    $(".v1").toggleClass("hidden");
+    console.log("do something");
+    }
+    });
     
 $(document).ready(function(){
          // Define the tour!
@@ -329,11 +855,18 @@ $(document).ready(function(){
         hopscotch.startTour(tour);    
     });
 });
-    
-    
-    $("#help1").hide();
+
+        
+
+
     
 </script>
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
 
 {% endblock %}
 

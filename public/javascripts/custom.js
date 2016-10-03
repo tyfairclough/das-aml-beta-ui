@@ -170,7 +170,7 @@ $( document ).ready(function() {
 }, 550);
   });
 
-
+/*
 $(document).ready(function() {
    
 $("body").keyup(function(event){
@@ -184,6 +184,8 @@ $("body").keyup(function(event){
     }
 }); 
 });
+
+*/
 
 // this sets the default sprint number if its not changed on the admin page.
 var defaultSprint = function() {

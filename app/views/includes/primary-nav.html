@@ -1,35 +1,38 @@
-<nav id="navA">
+<nav id="navA" class="hidden">
 				<ul class="nav nav-tabs">
 					<li class="active"><a href="/{% include "includes/sprint-link.html" %}/account">Home</a></li>
-					<li><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
-					<li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
-					<li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
-                    <li><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Your organisations</a></li>
+					<li><a href="/{% include "includes/sprint-link.html" %}/finance">Finance</a></li>
+					<li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Learners</a></li>
+					<li><a href="/{% include "includes/sprint-link.html" %}/training">Training</a></li>
+                    <li><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Manage organisations</a></li>
+                    <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
 				</ul>
     
-    				<ul class="nav sub-nav">
-					<li><a href="/{% include "includes/sprint-link.html" %}/account">Home</a></li>
-					<li><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
-					<li class="active"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
-					<li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
-                    <li><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Your organisations</a></li>
+    				{% macro link(link) %}
+                <ul class="nav sub-nav">
+                        <li class="{% if link == 'WHATTT' %}active{% endif %}"><a href="/{% include "includes/sprint-link.html" %}/account">Link1</a></li>
+                        <li><a href="/{% include "includes/sprint-link.html" %}/finance">Link2</a></li>
+                        <li class="active"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Link3</a></li>
+                        <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
+                        <li><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Your organisations</a></li>
 				</ul>
-    
+                    {% endmacro %}
+
 </nav>
 
 
-<nav class="nav utility-menu4" id="navB">
+<nav class="nav utility-menu4 hidden" id="navB">
 <ul style="margin-top: 7px;">
           <li><span id="userName" class="user-name">John Doe</span> <span class="fa fa-caret-down"></span>
             <div class="hide-line"></div>
             <ul>
-              <a href="#"><li>View invitations (0)</li></a>
+              <a href="/{% include "includes/sprint-link.html" %}/profile"><li>View invitations (0)</li></a>
               <a href="#"><li>Change name</li></a>
               <a href="#"><li>Change e-mail address</li></a>
-              <a href="#"><li>Update password</li></a>
+              <a href="/{% include "includes/sprint-link.html" %}/profile/reset-password"><li>Update password</li></a>
              <!-- <a href="#"><li>Delete account</li></a> -->
 <hr />
-                <a href="#"><li>Sign out</li></a>
+                <a href="/{% include "includes/sprint-link.html" %}/start"><li>Sign out</li></a>
             </ul>
           </li>
           <li id="levyAccount">
@@ -55,7 +58,7 @@
 </nav>
 
 
-<nav class="nav primary-nav" id="navC">
+<nav class="nav primary-nav hidden" id="navC">
       <ul>
         <li><a class="active-nav-item" href="/{% include "includes/sprint-link.html" %}/account">Home</a></li>
         <li><a href="/{% include "includes/sprint-link.html" %}/finance">Finance</a></li>
@@ -67,6 +70,9 @@
 </nav>
 
 
+
+
+
 <script>
 
 
@@ -76,13 +82,11 @@
 var NavigationStatus = function() {
   var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
    console.log(navStatus)
-    if (navStatus == "on") {
-      $( ".nav" ).removeClass( "visually-hidden" );
-  } else {
-  $( ".nav" ).addClass( "visually-hidden" );
-
+    if (navStatus == "a") {
+      $( "#navA" ).removeClass( "hidden" );
+  } else if (navStatus == "b") {
+        $( "#navB,#navC" ).removeClass( "hidden" );
   }
-    $("#navC, #navB").removeClass("visually-hidden");
 };
 NavigationStatus();
 
