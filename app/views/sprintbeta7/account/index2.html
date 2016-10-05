@@ -1,0 +1,339 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+
+<main id="content" role="main">
+    
+
+<section id="v2">
+{% include "includes/phase_banner_beta.html" %}
+<!--{% include "includes/userControl.html" %}-->
+
+{% include "includes/primary-nav.html" %}
+
+
+
+    <div class="govuk-box-highlight hidden" id="as">
+          <h2 class="bold-large">
+Account created for <span class="company-name">FIFA Holdings ltd</span>
+          </h2>
+        <p class="hidden asNotSigned">To spend levy funds somebody needs to <a href="/{% include "includes/sprint-link.html" %}/account/organisation/view?agreementState=not-signed">sign the agreement</a></p>
+        <p class="hidden asSigned">This account can now spend levy funds</p>
+        </div>
+    
+
+    
+                <section id="intro">
+                    <h1 class="heading-large company-name" id="company-Name" >{% include "includes/account-name-number.html" %}</h1>
+                    <hr class="pta-hr" style="margin: 10px 0 30px;">
+            </section>
+    
+    
+    <div class="grid-row">
+        
+        
+
+
+    
+            
+
+        
+                <div class="column-third">
+                    
+                           <aside class="" id="help1">
+            <h3 class="bold-medium">Help</h3>
+                <p>Take a tour of the levy account's dashboard and features.</p>
+                <a href="#" class="button" id="startTour">Take the tour</a>
+                
+                
+                            <h3 id="commonLinks" class="heading-medium">Your last places</h3>
+<ul class="list list-links">
+            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">See your available spend</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/expire">View expiring funds</a></li>
+            <li><a href="#">Find a training provider</a></li>       
+            <li><a href="#">Add an apprentice</a></li>
+</ul>
+            </aside>    
+                    
+                    
+  
+                    
+                    <section id="todo">
+       <h2 class="heading-medium" style="margin-top:0">To do:</h2>
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Sign the SFA contract</h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><a href="/{% include "includes/sprint-link.html" %}/forecast/">Invite decision maker</a></p>
+                </div>
+            </div>
+
+<div class="rj-alert-wrapper rj-number-complete">
+                <div class="rj-alert-copy">
+                    <span class="visually-hidden">Task complete</span>
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">You have no existing training provider relationships</h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:88%; margin: 5px 10px 5px 20px">Find a training provider</p>
+                </div>
+            </div>
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">You have no apprentices in your levy account</h2>                    
+                    <a style="width:85%; margin: 5px 10px 5px 20px" href="/{% include "includes/sprint-link.html" %}/forecast/">Start a new commitment</a>
+                </div>
+            </div>
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">You haven't forecast your funds</h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Calculate levy payments due</p>
+                </div>
+            </div>
+                        <div class="form-group">
+                            <br>
+                        <span>1 of 4 tasks completed today</span>                        <hr />
+                        </div>
+</section>
+                    
+                    
+<section id="employerRank" class="hidden">
+
+                                              <h4 class="heading-medium">Employer rank</h4>
+                                              <div class="data">
+          <h2 class="bold-xlarge">132<sup class="bold-small">nd</sup><i class="fa fa-chevron-down" style="font-size:0.75em; color: #B10E1E; margin-left: 15px"><span class="visually-hidden">down from last week</span></i>
+        </h2>
+          <p class="bold-xsmall">of 1,452</p>
+                                                  <details>
+<summary>More information</summary>                                                      
+                                                      Your employer rank is calculated by combining the number of apprentices you  hire over your total employee count times by last years average pass rate.
+                                                  </details>
+
+        </div>                    
+</section>   
+                    
+                    
+                    
+                      
+        </div>
+
+        <div class="column-two-thirds">
+            
+
+    
+            <section id="finance">
+                
+                <h2 class="heading-medium"><a href="/{% include "includes/sprint-link.html" %}/finance">Finance</a></h2>
+                <p>Get and spend your levy funds for your apprenticeship programme</p>
+                
+                <div class="grid-row hidden">
+                    <div class="column-half">
+                        <div class="data">
+          <h2 class="bold-xlarge">£31,050</h2>
+          <p class="bold-xsmall">Current balance</p>
+        </div>
+                    </div>
+                    <div class="column-half">
+                    <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+<a href="/{% include "includes/sprint-link.html" %}/history" class="button--secondary">View your transactions</a>
+               </div>
+                
+<ul class="list list-links">
+    <li><a href="/{% include "includes/sprint-link.html" %}/forecast/">Forecast your funding</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/expire">View funds you could lose</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/committed">Committed spending</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/fraction">Your English percentage</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/#">Download your financial information</a></li>
+                    <li><a href="/{% include "includes/sprint-link.html" %}/account/paye">Manage PAYE schemes</a></li>
+
+</ul>
+                <hr />
+            </section>
+            <section id="recruitment">
+                
+                <h2 class="heading-medium">Learners</h2>
+                <p>View your saved or search for new apprenticeship training. Search for and update the status of your apprentices or recruit new apprentices</p>
+                
+                <div class="grid-row hidden">
+                    <div class="column-half">
+                        <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                    <div class="column-half">
+                    <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                </div>
+                
+
+<ul class="list list-links">
+    <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">Search your apprentices</a></li>
+    <li><a href="#">Recruit an apprentice</a></li>
+</ul>
+                <hr />
+            </section>            
+            <section id="providers">
+                
+                <h2 class="heading-medium"><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/providers">Training</a></h2>
+                <p>Review commitments with your training providers, view in progress or add a new commitment</p>
+                
+                <div class="grid-row hidden">
+                    <div class="column-half">
+                        <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                    <div class="column-half">
+                    <div class="data">
+          <h2 class="bold-xlarge">£1,250</h2>
+          <p class="bold-xsmall">Expiring funds</p>
+        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+<a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/new-contract" class="button--secondary">Start a new commitment</a>
+                </div>
+<ul class="list list-links">
+    <li><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts">Approved commitments</a></li>
+    <li><a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts/in-progress">Commitments in progress</a></li>
+    <li><a href="https://findapprenticeshiptraining.sfa.bis.gov.uk">Find a training provider</a></li>
+</ul>
+                <hr />
+            </section>
+
+            <section id="settings">
+                
+                <h2 class="heading-medium"><a href="/{% include "includes/sprint-link.html" %}/account/organisation">Manage organisations</a></h2>
+                <p>Add the organisations that you want to hire apprentices through.</p>
+                                <div class="form-group">
+<a href="/{% include "includes/sprint-link.html" %}/account/organisation" class="button--secondary">Manage organisations</a>
+                </div>
+                <br clear="all" />
+                <hr />
+                
+                <h2 class="heading-medium"><a href="/{% include "includes/sprint-link.html" %}/account/paye">Manage PAYE schemes</a></h2>
+                <p>Add PAYE schemes to allow levy funds to be added to your account.</p>
+                                     <div class="form-group">
+<a href="/{% include "includes/sprint-link.html" %}/account/paye" class="button--secondary">Manage PAYE schemes</a>
+                </div>
+
+                <hr />
+            </section>
+        
+        </div>
+
+    </div>
+    <script>
+
+
+
+$(document).ready(function(){
+    
+
+         // Define the tour!
+    var tour = {
+      id: "startTour",
+      steps: [
+        {
+          title: "Your personal settings",
+          content: "Change your details own details and sign out here",
+          target: "userName",
+          placement: "bottom"
+        },
+        {
+          title: "Switch accounts",
+          content: "You can switch between different levy accounts or add a new one here",
+          target: "#levyAccount",
+          placement: "bottom"
+        },
+        {
+          title: "Your to do list",
+          content: "Quick access to the tasks that need your attention most",
+          target: "#todo",
+          placement: "right"
+        },
+        {
+          title: "Links",
+          content: "Reach all your levy account tasks through this menu, organised by function.",
+          target: "#finance",
+          placement: "top"
+        }
+      ],
+        i18n: {
+            closeTooltip: "close"
+        }
+    };
+
+    // Start the tour!
+    
+    $("#startTour").click(function(e){
+        e.preventDefault();
+        hopscotch.startTour(tour);    
+    });
+});
+      
+
+
+    
+</script>
+
+</section>    
+    
+</main>
+
+
+
+<script>
+        
+    if (newLevyAccount && newOrgSigned == "y") {
+     //   alert("signed and done")
+        $("#as, .asSigned").removeClass("hidden");
+    } else if ( newLevyAccount == "y" && newOrgSigned != "y" ) {
+   //     alert("done but not signed");
+        $("#as, .asNotSigned").removeClass("hidden");
+    }
+    
+    
+        $(document).bind('keypress', function(event) {
+    if( event.which === 83 && event.shiftKey ) {
+        window.open("index","_self")
+    }
+    });
+</script>
+
+{% endblock %}
+

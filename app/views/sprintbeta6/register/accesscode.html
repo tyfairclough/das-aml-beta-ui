@@ -36,16 +36,15 @@
 <div id="codeError" class="error-summary hidden" role="group" tabindex="-1">
 
   <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-Errors to fix
+    Message to alert the user to a problem goes here
   </h1>
 
   <p>
-Check the following details:
+    Optional description of the errors and how to correct them
   </p>
 
   <ul class="error-summary-list">
-    <li class="hidden"><a href="#email-code">Access code is invalid</a></li>
-    <li class="hidden"><a href="#email-code">Access code has expired</a></li>
+    <li><a href="#email-address">Descriptive link to the question with an error</a></li>
   </ul>
 
 </div>
@@ -68,8 +67,7 @@ Access code sent          </h2>
       <div class="form-group" id="enterCode">
           <label for="email-code" class="form-label-bold">
               <span class="form-label-bold">Enter code</span>
-              <span id="error1" class="error-message">Access code is invalid</span>
-              <span id="error2" class="error-message">Access code has expired</span>
+              <span class="error-message">Enter your code here</span>
           <!--span class="form-hint">Here is a hint for this form field.</span-->
         </label>
           <input class="form-control" id="email-code" type="text">
@@ -94,14 +92,13 @@ Access code sent          </h2>
         $("#submit-email-code").click(function(e) {
             if ( ($("#email-code").val()) != "" ) {
                         localStorage.setItem("accountActivatedMsg", 'true'); 
-                console.log("redirect");
+                console.log("rredict");
                 //return true;
                 } else {
                 e.preventDefault();
                 $("#enterCode.form-group").addClass("error");
-                $("#enterCode.form-group #error1.error-message").show(); 
+                $("#enterCode.form-group .error-message").show(); 
                     $("#codeError").removeClass("hidden");
-                    $("#codeError li").eq(0).removeClass("hidden");
                     $(".govuk-box-highlight").addClass("hidden");
             }
         });

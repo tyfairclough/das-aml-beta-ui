@@ -1,0 +1,533 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a class="link-back" href="/{% include "includes/sprint-link.html" %}/profile">Back to profile</a>
+
+        <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" id="checkboxError">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Error message
+  </h1>
+
+  <p>
+    Description of error message.
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="/{% include "includes/sprint-link.html" %}/account/paye">Fix checkbox</a></li>
+  </ul>
+
+</div>
+    
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <div class="hgroup">
+            <h1 class="heading-large">Sign agreement</h1>
+              <p>To access levy funds and hire an apprentice through 
+ <span class="company-name">Acme Ltd</span> you must sign the following agreement.</p>
+        </div>
+    </div>
+</div>
+
+    <div class="grid-row hidden">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large company-name">TESCO STORES LIMITED</h1>
+        <h2><span class="company-name">Tesco House</span>, Shire Park, Kestrel Way, AL7 1GA</h2>
+        <hr />
+    </div>
+</div>
+
+    
+        
+        
+        <article id="contract" class="hidden">
+
+            <header class="publication-header" id="contents">
+<div class="inner-block floated-children">
+<div class="headings">
+<p class="document-type">Apprenticeships levy</p>
+<h1 class="heading-large">Employer agreement</h1>
+<p>Updated <time class="published-at date" datetime="2016-08-12T09:34:04+01:00">12 August 2016</time></p>
+</div>
+<nav class="in-page-navigation">
+<h3 class="bold-small">Contents</h3>
+<ul class="unnumbered">
+<li><a href="#Introduction ">Introduction </a></li>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#term-of-agreement">Term of agreement</a></li>
+<li><a href="#incorporation-of-funding-rules">Incorporation of funding rules</a></li>
+<li><a href="#contract-requirements">Contract requirements</a></li>
+<li><a href="#contract-compliance-and-audit">Contract compliance and audit</a></li>
+<li><a href="#payment-to-providers-1">Payment to providers – employer obligations</a></li>
+<li><a href="#payment-to-providers-2">Payment to providers - SFA obligations</a></li>
+<li><a href="#limitation-of-liability">Limitation of liability</a></li>
+<li><a href="#compliants">Complaints about providers</a></li>
+<li><a href="#stopping-payments">Stopping payments to providers</a></li>
+<li><a href="#termination">Termination of agreement</a></li>
+<li><a href="#dispute">Dispute resolution</a></li>
+<li><a href="#jurisdiction">Jurisdiction / authorised signatory</a></li>
+<li><a href="#aid">State aid</a></li>
+<li><a href="#aid">Entire agreement / amendment</a></li>
+</ul>
+</nav>
+</div>
+</header>
+            
+
+<div>
+
+    <div class="grid-row">
+<div class="column-third">&nbsp;</div>
+    <div class="column-two-thirds">
+    
+<h4 class="heading-small">Introduction</h4>
+
+        <ol>
+            <li>This Agreement is made between the Secretary of State for Education through the Skills Funding Agency, an executive agency of the Department for Education (the SFA) and <span class="company-name"></span>, (the Employer).  
+1.2	The Agreement applies to any organisation that employs Apprentices and sets out the terms and conditions on which the SFA will make payments to Providers who have a Contract with the Employer to deliver Apprenticeships. </li>
+            <li>The Agreement applies to any organisation that employs Apprentices and sets out the terms and conditions on which the SFA will make payments to Providers who have a Contract with the Employer to deliver Apprenticeships. </li>
+        </ol>
+
+        <h4 class="heading-small">Definitions</h4>
+“Agreement” means this agreement between the Employer and the SFA
+
+“Apprentice” means those who receive apprenticeship training and (where required) end-point assessment through an apprenticeship framework or standard funded by the Skills Funding Agency.
+
+“Apprenticeship” means a job with an accompanying skills development programme. This includes the training and (where required) end-point-assessment for an employee as part of a job with an accompanying skills development programme.
+“Apprenticeship Framework” means [AGREE DEFINITION}
+“Apprenticeship Levy” means  a levy on UK employers to fund new apprenticeships. In England, control of apprenticeship funding will be put in the hands of employers through the Digital Apprenticeship Service
+“Apprenticeship Standard” means [AGREE DEFINITION}
+ “Commitment Statement” means the details of Apprenticeship Standards or Apprenticeship Frameworks which the Provider will deliver and the price agreed for that delivery that is recorded on DAS
+“Contract” means the Contract between the Employer and the Provider for the delivery of Apprenticeships.
+“Digital apprenticeship service” means the digital interface to services designed to support the uptake of apprenticeships. The service is aimed primarily at employers, with information coming from a range of different sources including learning providers and apprenticeship assessment organisations.  
+“Funding” means 
+           “Funding Rules” means the document which sets out the detailed requirements for Apprenticeships which the Employer and Provider must comply with in order for the Provider to be funded by the SFA.
+	
+	
+		“Provider” means an organisation body who has a Contract with the Employer to deliver Apprenticeships. 
+
+	“Provider Agreement” means the agreement between the Provider and the SFA setting out the condition on which the Provider will receive Funding from the SFA.
+
+		“Register” means the Register of Apprenticeship Training Providers on which all Providers must appear and the Register of Apprenticeship Assessment Organisations on which all Assessment Organisations must appear.
+
+
+3	Term of the Agreement
+
+3.1	The Agreement will commence on XXXXX and shall end on XXXXX [QUERY – IS THERE A NEED FOR AN END DATE?] unless it is terminated in accordance with clause 12. 
+
+
+4	Conditions of Funding 
+
+4.1	The Employer agrees to comply with the terms and conditions of this Agreement together with current versions of the following documents which are incorporated and form part of this Agreement:
+
+a.	The Funding Rules [LINK TO BE INCLUDED]
+b.	 [The Apprenticeship Funding Bands Document / Funding rates and Calculations documents?]
+c.	DAS conditions of use
+
+List any other documents to be incorporated?
+
+5	Contract Requirements
+5.1	The Employer must record as a commitment in a digital apprenticeship service account details of Commitment Statement on DAS for all the Apprenticeships that will be delivered under a Contract with a Provider and must agree any changes to any commitment with the relevant provider before these are recorded in the digital apprenticeship service.
+5.2	The Employer must agree any changes to the Commitment Statement with the relevant Provider before these are recorded on DAS. 
+5.32	The Employer must enter into a binding Contract for Services with a Provider for the provision of Apprenticeships detailed in a commitment recorded in the digital apprenticeship service the coa Commitment Statement which is recorded in DAS.  The Contract for Services must recognise that the Employer is liable to pay the Provider notwithstanding even thoughthat the SFA may make full or partial payments to the Provider in accordance with a Provider Agreement.
+5.4	The Employer must enter into a Contract with a Provider which appears on the Register to deliver Apprenticeships and the Contract must include terms which deal with the following:
+	5.4.1	monitoring of the activity and quality of apprenticeships being delivered, I	ncluding supporting quality arrangement of Ofsted and/or QAA; 
+	
+	5.4.2	provision for SFA and any other person nominated by SFA access to the 
+		Provider’s premises and all documents related to SFA funded provision;
+	5.4.3	provision of data to SFA to enable timely updating of the Employer’s 
+		digital accounts and for SFA to manage the apprenticeship budget; 
+	5.4.4	data protection; and
+	5.4.5	dispute resolution.
+	[FURTHER TERMS REQUIRED FOR SPECIFIC MENTION?]
+	 [the Employer must enter into a binding contract which includes the following terms?][THE CONTRACT BETWEEN THE EMPLOYER AND PROVIDER IS A COMMERCIAL AGREEMENT BETWEEN TWO INDEPENDENT PARTIES – THE TERMS ARE A MATTER FOR NEGOTIATION BETWEEN THOSE TWO PARTIES?]]
+The binding contract between the employer and provider must recognize that the employer is accountable to pay the provider notwithstanding that Government may make full or partial payments on the employers behalf.  
+
+5.5	The details of any commitment recorded on the digital apprenticeship service must be Commitment Statement must also be incorporated and included as a schedule to the Contract between the Employer and Provider. 
+5.6	The Employer must select an Assessment Organisation that will enter into a contract with the Provider to deliver the end point assessments for the Apprenticeships detailed in any Commitment Statement recorded in dasa commitment recorded in the digital apprenticeship service.
+5.7	The Employer must select an Assessment Organisation which appears on the Register to deliver end point assessments.
+
+5.8	The employer may only direct funding from their digital account to spend on eligible apprenticeship training and assessment for their employees delivered by approved providers.
+5.9	The employer must allow access to SFA auditors in the event of an investigation into fraud or irregularity by the provider or the employer. 
+
+5.10	Where the SFA has reasonable cause to suspect that fraud or irregularity has occurred in relation to the payments under this Agreement, the SFA shall have the right of access to the Employer’s premises at any reasonable time with or without notice to examine and remove or copy all relevant documents and records including electronic records and to interview the Employer’s servants or agents engaged with the delivery of the Contract(s).
+ 
+6	Contract Compliance and Audit
+6.1	The Employer must participate in audits of their arrangements as required by the SFA including, but not limited to providing, on request and at its own cost, evidence that: 
+6.1.1	It owns and operates the PAYE schemes associated with its DAS
+ Account or that the schemes are owned and operated by connected companies;
+6.1.2	the employers associated with its DAS account are connected companies according to HMRC’s definition; (https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/30m8734/connected-companies.pdf);
+6.1.3	Apprentices detailed in a Commitment Statement recorded on its DAScommitment recorded in the digital apprenticeship service account are included in a PAYE scheme associated with that digital apprenticeship service account. 
+
+6.2	The Employer shall comply in full with the terms and conditions of this Agreement [SANCTIONS FOR NON-COMPLIANCE?]
+
+7	Payments– Employer obligations
+7.1	The Employer must pay the Apprenticeship Levy which is payable in the financial year which it becomes due.
+7.2	The Employer must make relevant co-investment payments, calculated in accordance with the funding rules. , directly to the Provider when they become due. in any one month.
+7.3	The Employer must pay the SFA on demand any co-funding amount due if the Employer levy account remains negative for XXX months.
+7.4	The Employer shall pay the SFA on demand the value of any payments made to Providers on their behalf where, for any reason, the apprenticeship arrangements with the Provider are invalid. 
+7.4	The employer must not ask for or demand from a provider or an intermediary for access to funds in their digital account.
+7.5	The employer must not agree any arrangement with the provider or an intermediary aimed at off-setting or reducing a co-investment payment due by the employer except where this is authorised byunder the SFA’s funding rules .
+ 8	Payments to Providers – SFA obligations
+8.1	Subject to the terms and conditions of this Agreement and the Provider Agreement, the SFA shall make the following payments to Providers: 
+a. the cost figure agreed by the employer and Provider for the delivery of Apprenticeships detailed in a commitment recorded on the digital apprenticeship service recorded in the Commitment Statement or a figure up to the maximum allowable under the Apprenticeship Funding Bands, whichever is the lower.
+b. the cost for the delivery of English, and maths provision and learning support where required
+c. Additional Employer Incentive payments which become payable underin accordance with the Funding Rules
+8.2	The Provider will be responsible for paying the additional Employer Incentive payments to the Employer in accordance with the Funding Rules.
+9 	Limitation of Liability
+9.1  	The SFA will not be liable to the Employer for any indirect or consequential loss, damage, injury or costs whatsoever.	
+10	Complaints about Providers
+10.1	If the Employer has a complaint about the Provider’s delivery of Apprenticeships it should attempt to resolve this directly with the Provider in accordance with the terms of the Contract. 
+10.2	If the Employer is unable to resolve its complaint with the Provider it may complain about the Provider in accordance with the SFA’s procedure for dealing with complaints about Providers.
+11	Stopping Payments to Providers
+11.1	The Employer must notify the SFA immediately if it gives notice to the Provider to terminate the Contract and confirm the date of termination.  The SFA will stop paying the Provider on the date of termination unless the Employer notifies the SFA that payments should be stopped earlier.
+11.2	The Employer must notify the SFA immediately if it becomes aware of any fraud or irregularity in the Provider’s delivery of the Apprenticeship.  The SFA reserves the right to suspend payments to the Provider where it has reasonable cause to suspect fraud or irregularity.
+11.3	The SFA shall notify the Employer if the Provider is removed from the Register.  The SFA will stop payments to the Provider three months from the date of this notification unless the Provider has successfully re-entered the Register.  The Employer must give the Provider three month’s notice to terminate the Contract with the Provider.
+	
+12	Termination of Agreement
+12.1	This Agreement may be terminated;
+
+12.1.1	by either Party giving not less than 3 month’s notice in writing to the other Party;
+
+12.1.2	with immediate effect, by the SFA, on an Event of Insolvency of the Employer; 
+12.1.3	in the event of [suspected?] fraud or irregularity by the employer; or if the employer acts in a way that brings the apprenticeship programme into disrepute;
+
+12.1.4	by either Party in the event that the other has committed a breach of the conditions set out in this Agreement which is not capable of remedy or which the other party has failed to remedy having been given written notice of such breach and, in the view of the party not in breach, reasonable time to rectify the breach.
+
+12.2	For the purposes of Clause 12.1, the term “Event of Insolvency” shall mean the following:
+
+12.2.1	an inability, or deemed inability to pay its debts within the meaning of section 123 of the Insolvency Act 1986; or 
+
+12.2.2	commencing negotiations with all or any class of creditors with a view to rescheduling any debts or entering into any composition or arrangement with creditors generally; or
+
+12.2.3	an order being made or a resolution being passed, or a notice being issued convening a meeting for the purpose of passing a resolution, or any analogous proceedings are taken for winding up, administration or dissolution; or
+
+12.2.4	any liquidator, trustee in bankruptcy, receiver, administrative receiver, administrator or similar officer being appointed over, or in respect of, any part of the Employer’s business or assets.
+
+13	Dispute Resolution
+13.1	Any dispute, difference or question arising between the Parties either during the currency of the Agreement or afterwards which cannot be resolved informally between the Parties shall be referred to the SFA’s nominated representative and the Employer’s representative nominated for this purpose (jointly “the Dispute Resolution Panel”) for formal review and consideration.  Any request for referral to the Dispute Resolution Panel must include details of the dispute and any proposals to resolve it.
+
+13.2	The Dispute Resolution Panel will meet within 28 days of receiving a request for referral made in accordance with clause 13.1 above.
+
+	
+14	Jurisdiction / Authorised Signatory
+14.1	This Agreement shall be governed by and construed in accordance with English Law.
+14.2	By signing this Agreement, the person signing on behalf of the Employer represents and warrants that the Employer agrees to be bound by this Agreement and that he/she is duly authorised to sign this agreement and legally bind the Employer. 
+15	State Aid
+15.1	The Employer should satisfy itself if the European rules on State Aid apply to the value of benefits delivered under this Agreement. 
+16	Entire Agreement / Amendment
+16.1	This Agreement constitutes the entire Agreement between the Secretary of State for Education and the Employer and shall not be varied except by an instrument in writing signed by the parties.  This Agreement supersedes any and all prior agreements, correspondence, arrangements and communications whether oral or written of any party to this Agreement.
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+        
+        </article>
+     
+    <article id="samplecontract">
+        <h3 class="heading-medium">Introduction</h3>
+
+
+
+<p>1.1 This Agreement is made between the Secretary of State for Education
+through the Skills Funding Agency, an executive agency of the Department for
+Education (the SFA) and <span class="company-name"></span>, (the Employer).</p>
+        <p>1.2 The Agreement applies to any organisation that employs Apprentices and sets out the terms and conditions on which the SFA will make payments to Providers who have a Contract with the Employer to deliver Apprenticeships.</p>
+
+<h3 class="heading-medium">2 Definitions</h3>
+        <p>“Agreement” means this agreement between the Employer and the SFA “Apprentice” means those who receive apprenticeship training and (where required) end-point assessment through an apprenticeship framework or standard funded by the Skills Funding Agency.</p>
+
+
+
+<p>“Apprenticeship” means a job with an accompanying skills development programme. This includes the training and (where required) end-point-assessment for an employee as part of a job with an accompanying skills development programme.</p>
+
+
+
+<p>“Apprenticeship Framework” means [AGREE DEFINITION} “Apprenticeship Levy” means a levy on UK employers to fund new apprenticeships. In England, control of apprenticeship funding will be put in the hands of employers through the Digital Apprenticeship Service</p>
+
+
+
+<p>“Apprenticeship Standard” means [AGREE DEFINITION} “Commitment Statement” means the details of Apprenticeship Standards or Apprenticeship Frameworks which the Provider will deliver and the price agreed for that delivery that is recorded on DAS “Contract” means the Contract between the Employer and the Provider for the delivery of Apprenticeships.</p>
+
+
+
+<p>“Digital apprenticeship service” means the digital interface to services designed to support the uptake of apprenticeships. The service is aimed primarily at employers, with information coming from a range of different sources including learning providers and apprenticeship assessment organisations.</p>
+
+
+
+<p>“Funding” means “Funding Rules” means the document which sets out the detailed requirements for Apprenticeships which the Employer and Provider must comply with in order for the Provider to be funded by the SFA.</p>
+
+
+
+<p>“Provider” means an organisation body who has a Contract with the Employer to deliver Apprenticeships. “Provider Agreement” means the agreement between the Provider and the SFA setting out the condition on which the Provider will receive Funding from the SFA.</p>
+
+
+
+<p>“Register” means the Register of Apprenticeship Training Providers on which all Providers must appear and the Register of Apprenticeship Assessment Organisations on which all Assessment Organisations must appear.</p>
+
+
+
+<h3 class="heading-medium">3 Term of the Agreement</h3>
+
+
+
+<p>3.1 The Agreement will commence on XXXXX and shall end on XXXXX  Communications with the Department for Business, Innovation and Skills may be automatically logged, monitored and/or recorded for legal purposes.</p>
+        
+        
+
+<p>1.1 This Agreement is made between the Secretary of State for Education
+through the Skills Funding Agency, an executive agency of the Department for
+Education (the SFA) and <span class="company-name"></span>, (the Employer).</p>
+        <p>1.2 The Agreement applies to any organisation that employs Apprentices and sets out the terms and conditions on which the SFA will make payments to Providers who have a Contract with the Employer to deliver Apprenticeships.</p>
+
+<h3 class="heading-medium">2 Definitions</h3>
+        <p>“Agreement” means this agreement between the Employer and the SFA “Apprentice” means those who receive apprenticeship training and (where required) end-point assessment through an apprenticeship framework or standard funded by the Skills Funding Agency.</p>
+
+
+
+<p>“Apprenticeship” means a job with an accompanying skills development programme. This includes the training and (where required) end-point-assessment for an employee as part of a job with an accompanying skills development programme.</p>
+
+
+
+<p>“Apprenticeship Framework” means [AGREE DEFINITION} “Apprenticeship Levy” means a levy on UK employers to fund new apprenticeships. In England, control of apprenticeship funding will be put in the hands of employers through the Digital Apprenticeship Service</p>
+
+
+
+<p>“Apprenticeship Standard” means [AGREE DEFINITION} “Commitment Statement” means the details of Apprenticeship Standards or Apprenticeship Frameworks which the Provider will deliver and the price agreed for that delivery that is recorded on DAS “Contract” means the Contract between the Employer and the Provider for the delivery of Apprenticeships.</p>
+
+
+
+<p>“Digital apprenticeship service” means the digital interface to services designed to support the uptake of apprenticeships. The service is aimed primarily at employers, with information coming from a range of different sources including learning providers and apprenticeship assessment organisations.</p>
+
+
+
+<p>“Funding” means “Funding Rules” means the document which sets out the detailed requirements for Apprenticeships which the Employer and Provider must comply with in order for the Provider to be funded by the SFA.</p>
+
+
+
+<p>“Provider” means an organisation body who has a Contract with the Employer to deliver Apprenticeships. “Provider Agreement” means the agreement between the Provider and the SFA setting out the condition on which the Provider will receive Funding from the SFA.</p>
+
+
+
+<p>“Register” means the Register of Apprenticeship Training Providers on which all Providers must appear and the Register of Apprenticeship Assessment Organisations on which all Assessment Organisations must appear.</p>
+
+
+
+<h3 class="heading-medium">3 Term of the Agreement</h3>
+
+
+
+<p>3.1 The Agreement will commence on XXXXX and shall end on XXXXX  Communications with the Department for Business, Innovation and Skills may be automatically logged, monitored and/or recorded for legal purposes.</p>
+        
+        
+<p>1.1 This Agreement is made between the Secretary of State for Education
+through the Skills Funding Agency, an executive agency of the Department for
+Education (the SFA) and <span class="company-name"></span>, (the Employer).</p>
+        <p>1.2 The Agreement applies to any organisation that employs Apprentices and sets out the terms and conditions on which the SFA will make payments to Providers who have a Contract with the Employer to deliver Apprenticeships.</p>
+
+<h3 class="heading-medium">2 Definitions</h3>
+        <p>“Agreement” means this agreement between the Employer and the SFA “Apprentice” means those who receive apprenticeship training and (where required) end-point assessment through an apprenticeship framework or standard funded by the Skills Funding Agency.</p>
+
+
+
+<p>“Apprenticeship” means a job with an accompanying skills development programme. This includes the training and (where required) end-point-assessment for an employee as part of a job with an accompanying skills development programme.</p>
+
+
+
+<p>“Apprenticeship Framework” means [AGREE DEFINITION} “Apprenticeship Levy” means a levy on UK employers to fund new apprenticeships. In England, control of apprenticeship funding will be put in the hands of employers through the Digital Apprenticeship Service</p>
+
+
+
+<p>“Apprenticeship Standard” means [AGREE DEFINITION} “Commitment Statement” means the details of Apprenticeship Standards or Apprenticeship Frameworks which the Provider will deliver and the price agreed for that delivery that is recorded on DAS “Contract” means the Contract between the Employer and the Provider for the delivery of Apprenticeships.</p>
+
+
+
+<p>“Digital apprenticeship service” means the digital interface to services designed to support the uptake of apprenticeships. The service is aimed primarily at employers, with information coming from a range of different sources including learning providers and apprenticeship assessment organisations.</p>
+
+
+
+<p>“Funding” means “Funding Rules” means the document which sets out the detailed requirements for Apprenticeships which the Employer and Provider must comply with in order for the Provider to be funded by the SFA.</p>
+
+
+
+<p>“Provider” means an organisation body who has a Contract with the Employer to deliver Apprenticeships. “Provider Agreement” means the agreement between the Provider and the SFA setting out the condition on which the Provider will receive Funding from the SFA.</p>
+
+
+
+<p>“Register” means the Register of Apprenticeship Training Providers on which all Providers must appear and the Register of Apprenticeship Assessment Organisations on which all Assessment Organisations must appear.</p>
+
+
+
+<h3 class="heading-medium">3 Term of the Agreement</h3>
+
+
+
+<p>3.1 The Agreement will commence on XXXXX and shall end on XXXXX  Communications with the Department for Business, Innovation and Skills may be automatically logged, monitored and/or recorded for legal purposes.</p>
+        
+        
+<p>1.1 This Agreement is made between the Secretary of State for Education
+through the Skills Funding Agency, an executive agency of the Department for
+Education (the SFA) and <span class="company-name"></span>, (the Employer).</p>
+        <p>1.2 The Agreement applies to any organisation that employs Apprentices and sets out the terms and conditions on which the SFA will make payments to Providers who have a Contract with the Employer to deliver Apprenticeships.</p>
+
+<h3 class="heading-medium">2 Definitions</h3>
+        <p>“Agreement” means this agreement between the Employer and the SFA “Apprentice” means those who receive apprenticeship training and (where required) end-point assessment through an apprenticeship framework or standard funded by the Skills Funding Agency.</p>
+
+
+
+<p>“Apprenticeship” means a job with an accompanying skills development programme. This includes the training and (where required) end-point-assessment for an employee as part of a job with an accompanying skills development programme.</p>
+
+
+
+<p>“Apprenticeship Framework” means [AGREE DEFINITION} “Apprenticeship Levy” means a levy on UK employers to fund new apprenticeships. In England, control of apprenticeship funding will be put in the hands of employers through the Digital Apprenticeship Service</p>
+
+
+
+<p>“Apprenticeship Standard” means [AGREE DEFINITION} “Commitment Statement” means the details of Apprenticeship Standards or Apprenticeship Frameworks which the Provider will deliver and the price agreed for that delivery that is recorded on DAS “Contract” means the Contract between the Employer and the Provider for the delivery of Apprenticeships.</p>
+
+
+
+<p>“Digital apprenticeship service” means the digital interface to services designed to support the uptake of apprenticeships. The service is aimed primarily at employers, with information coming from a range of different sources including learning providers and apprenticeship assessment organisations.</p>
+
+
+
+<p>“Funding” means “Funding Rules” means the document which sets out the detailed requirements for Apprenticeships which the Employer and Provider must comply with in order for the Provider to be funded by the SFA.</p>
+
+
+
+<p>“Provider” means an organisation body who has a Contract with the Employer to deliver Apprenticeships. “Provider Agreement” means the agreement between the Provider and the SFA setting out the condition on which the Provider will receive Funding from the SFA.</p>
+
+
+
+<p>“Register” means the Register of Apprenticeship Training Providers on which all Providers must appear and the Register of Apprenticeship Assessment Organisations on which all Assessment Organisations must appear.</p>
+
+
+
+<h3 class="heading-medium">3 Term of the Agreement</h3>
+
+
+
+<p>3.1 The Agreement will commence on XXXXX and shall end on XXXXX  Communications with the Department for Business, Innovation and Skills may be automatically logged, monitored and/or recorded for legal purposes.</p>
+    </article>
+
+    
+    <div class="grid-row">
+    <div class="column-two-thirds">
+            <form action="/{% include "includes/sprint-link.html" %}/account" method="GET">
+                <input type="hidden" id="accountId" name="accountId" value="13">
+                <input type="hidden" id="agreementId" name="agreementId" value="13">
+                <input type="hidden" id="legalEntityName" name="legalEntityName" value="TESCO STORES LIMITED">
+              <h1 class="heading-medium">Sign the agreement now?</h1>
+                <div class="form-group" id="agreeCheck">
+                    
+                <legend class="form-label-bold"><!--Sign the agreement now?-->
+                    <div class="error-message">You must be authorised to sign the agreement</div>
+                </legend>
+                    <label class="block-label" for="understood">
+                    
+                    <input class="checkbox" id="understood" name="understood" type="checkbox">
+                <span>I've been authorised by my organisation to sign this agreement</span>
+                
+                    
+                    </label>
+
+                    </div>
+                <input class="button" id="signAgreement" type="submit" value="Sign and add account">
+                <a href="/{% include "includes/sprint-link.html" %}/account?newLevyAccount=y&newOrgSigned=n" class="button text-link">Add account, but don't sign</a>
+            </form>
+    </div>
+</div>
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+        
+        if (flow == "addOrg") {
+            $(".text-link").text("Add organisation, but don't sign");   
+            $("#signAgreement").attr("value","Sign, and add organisation");
+
+            //$(".text-link").attr("href","organisation?newOrg=y&newOrgSigned=n");   
+              var newOrg = $("<input>").attr("type","hidden").attr("name","newOrg").val("y");
+                    $('form').append($(newOrg));  
+            var newOrgSigned = $("<input>").attr("type","hidden").attr("name","newOrgSigned").val("y");
+                    $('form').append($(newOrgSigned)); 
+
+            $("form").attr("action","organisation?newOrg=y&newOrgSigned=y");
+            
+            //back link
+            $(".link-back").replaceWith("<a class='link-back' href='../account/organisation/'>Back to organisations</a>");
+            
+            
+            $(".text-link").click(function(e){
+                e.preventDefault();
+                window.open("../account/organisation?newOrg=y&newOrgSigned=n","_self")
+            });
+    } else {
+                      var newLevyAccount = $("<input>").attr("type","hidden").attr("name","newLevyAccount").val("y");
+                    $('form').append($(newLevyAccount));  
+                    var newOrgSigned = $("<input>").attr("type","hidden").attr("name","newOrgSigned").val("y");
+                    $('form').append($(newOrgSigned)); 
+    }
+    
+
+    $("#signAgreement").click(function(e){
+        if ( ($("#understood").is( ':checked' )) != true ) {
+            e.preventDefault();
+            //alert("error");
+            $("#agreeCheck").addClass("error");
+            $("#checkboxError").removeClass("hidden");
+            $(".error-message").show();
+        } else {
+            return true;
+        }
+    })
+    
+    $(".error-message").hide();
+    
+    
+    
+</script>
+
+{% endblock %}
+
