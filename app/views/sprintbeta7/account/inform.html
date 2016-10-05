@@ -66,7 +66,7 @@
                     </div>
                     
             <form action="step_b1">
-  <fieldset>
+ <!-- <fieldset>
       <h1 class="heading-medium">Check this statement to continue</h1>
       <div class="form-group" id="termsCheck">
           <span class="error-message">Check this statement to continue</span>
@@ -76,6 +76,16 @@ I understand that all account users will be able to see financial information fr
       </label>
           </div>
   </fieldset>
+
+-->  
+                
+                    <div class="panel panel-border-thin text">
+                        <p class="bold-xsmall">By clicking Start you agree to the following:</p>
+                    <p class="font-xsmall">I have authority to add PAYE schemes to this account.</p>
+                    <p class="font-xsmall">I understand that all account users will be able to see levy funds from any PAYE schemes I add.</p>
+                    <p class="font-xsmall">All PAYE schemes I add are owned and operated by an organisation that’ll use this account, or owned and operated by a <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/308734/connected-companies.pdf">connected organisation</a></p>
+</div>
+
                 
                 <button type="submit" class="button">Start</button>
 </form>
@@ -86,7 +96,7 @@ I understand that all account users will be able to see financial information fr
 
 <script>
   $(".error-message").hide();
-    $("button").click(function(e){
+ /*   $("button").click(function(e){
         if ( $("#paye-terms").is(":checked")) {
         } else {
             e.preventDefault();
@@ -95,7 +105,7 @@ I understand that all account users will be able to see financial information fr
             $("#codeError").removeClass("hidden");
         }
     })
-    
+   */ 
 </script>
 
 {% endblock %}

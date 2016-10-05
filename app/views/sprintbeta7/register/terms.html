@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+<a href="../profile" class="link-back">Back to create your account</a>
+
+    
+    
+<div class="grid-row">
+        <h1 class="heading-large">Terms of use</h1>
+     
+     <p>You must sign out of this service at the end of each session.</p>
+     
+     <p>You must not do any of the following when using this service:</p>
+     <ul class="list list-bullet">
+        <li>untruthful or inaccurate information</li>
+        <li>upload any files that contain computer viruses or malware</li>
+        <li>commit any cybercrime as defined in the <a href="http://www.legislation.gov.uk/ukpga/1990/18/contents">Computer Misue Act 1990</a></li>
+        <li>share your sign in details with anybody else</li>
+     </ul>
+    <p>This service uses <a href="cookies">cookies</a></p>
+</div>
+    
+</main>
+
+<script>
+    
+    
+
+    
+</script>
+
+{% endblock %}

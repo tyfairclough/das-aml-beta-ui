@@ -154,17 +154,20 @@
       </div>     
                   
                  
-                 <div class="form-group" id="checkTerms">
+                <!-- <div class="form-group" id="checkTerms">
                   <legend>                     <span class="error-message hidden">
           You need to accept the terms of use
         </span></legend>
 
             <label class="block-label" for="confirm-terms">
       <input id="confirm-terms" name="terms" type="checkbox" value="confirm-terms">
-I accept the <a href="#" rel="external">terms of use</a>.    </label>
+I accept the <a href="terms" target="_blank">terms of use</a>.    </label>
             </div>
+-->
         </fieldset>
-        
+        <div class="panel panel-width-thin">
+            <p>By continuing you accept the <a href="terms">terms of use.</a></p>
+        </div>
         <p>To confirm your identity, you'll need an access code to continue.</p>
         
     <input class="button" id="createAccountButton" type="submit" value="Get access code">
@@ -188,10 +191,10 @@ I accept the <a href="#" rel="external">terms of use</a>.    </label>
         validateEmail();
         passwordComplete();
         passwordsMatch();
-        termsChecked();
+        //termsChecked();
         lastNameComplete();
 
-        if (nameComplete() && validateEmail() && passwordComplete() && passwordsMatch() && termsChecked() === true) {
+        if (nameComplete() && validateEmail() && passwordComplete() && passwordsMatch() /*&& termsChecked()*/ === true) {
             console.log("success");
             setNames()
             window.open("accesscode","_self");
