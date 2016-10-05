@@ -71,6 +71,20 @@ module.exports = function(grunt){
           dest: 'app/assets/sass/'
         }]
       },
+        d3: {
+        files: [{
+          cwd: 'node_modules/c3/node_modules/d3/',
+          src: ['**'],
+          dest: 'public/javascripts/'
+        }]
+      },
+        c3: {
+        files: [{
+          cwd: 'node_modules/c3',
+          src: ['**'],
+          dest: 'public/javascripts/'
+        }]
+      },
     },
 
     // Watches assets and sass for changes

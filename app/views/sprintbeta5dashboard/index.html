@@ -66,7 +66,7 @@
     <div class="column-half">
         <h3 class="heading-medium">Funding forecast</h3>
         
-    <canvas id="myChart" width="400" height="200"></canvas>
+    <div id="myChart"></div>
 
     </div>
 </div>    
@@ -137,7 +137,57 @@
 </main>
 
  <!--button class="button">Do the thing</button-->
+<script>
 
+var chart = c3.generate({
+    bindTo: $("#myChart"),
+    data: {
+        columns: [
+            ['data1', 70, 70, 70, 70, 70, 70],
+            ['data2', 704, 704, 704, 704, 704, 704],
+            ['data3', -60, 200, 160, -100, -15, 250],
+            ['data4', -726, -600, -700, -800, -726, -600],
+        ],
+        names: {
+            data1: 'levy top up',
+            data2: 'levy credit',
+            data3: 'balance',
+            data4: 'provider payments'
+        },
+        type: 'bar',
+        types: {
+            data3: 'area-spline',
+        },
+       colors: {
+            data1: '#2E358B',
+            data2: '#6F72AF',
+            data3: '#28A197'
+        },
+        groups: [
+            ['data1','data2','data4']
+        ]
+    },
+    axis: {
+        x: {
+            label: 'Tax Month'
+        },
+        y: {
+            tick: {
+                count: 5,
+                format: function (d) { return "£" + d; }
+            },
+            label: 'Balance (£)'
+        }
+    },
+    grid: {
+        y: {
+            lines: [{value:0}]
+        }
+    }
+});
+
+    
+</script>
 <script>
     
     if (newLevyAccount && newOrgSigned == "y") {
@@ -148,36 +198,7 @@
         $("#as, .asNotSigned").removeClass("hidden");
     }
     
-var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ["January", "February", "March", "April", "May", "June","July","August","September","October","November","December"],
-        datasets: [{
-            label: 'Levy paid',
-            data: [, , , , 1000, 1500,1500,1500,1700,1700,1900],
-            backgroundColor: [
-                'rgba(9, 127, 150, 0)'
-            ],
-            borderColor: [
-                'rgba(9, 127, 150, 1)'
-            ],
-            borderWidth: 2,
-                        tension: 0
-        }]
-    },
-    options: {
-        line: {
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:false
-                }
-            }]
-        }
-    }
-});
+
 
     
 </script>
