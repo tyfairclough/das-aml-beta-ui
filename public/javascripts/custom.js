@@ -39,6 +39,7 @@ var signedOut = getQueryVariable("signedOut");
 var govgateway = getQueryVariable("govgateway");
 var resetPassword = getQueryVariable("resetPassword");
 var ab = getQueryVariable("ab");
+var sprintIteration = JSON.parse(localStorage.getItem("sprint-number"));
 
 
 
