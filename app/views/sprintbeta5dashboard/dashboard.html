@@ -157,34 +157,13 @@
         $("#as, .asNotSigned").removeClass("hidden");
     }
     
-var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
-    type: 'line',
+var chart = c3.generate({
+    bindto: '#myChart',
     data: {
-        labels: ["January", "February", "March", "April", "May", "June","July","August","September","October","November","December"],
-        datasets: [{
-            label: 'Levy paid',
-            data: [, , , , 1000, 1500,1500,1500,1700,1700,1900],
-            backgroundColor: [
-                'rgba(9, 127, 150, 0)'
-            ],
-            borderColor: [
-                'rgba(9, 127, 150, 1)'
-            ],
-            borderWidth: 2,
-                        tension: 0
-        }]
-    },
-    options: {
-        line: {
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:false
-                }
-            }]
-        }
+      columns: [
+        ['data1', 30, 200, 100, 400, 150, 250],
+        ['data2', 50, 20, 10, 40, 15, 25]
+      ]
     }
 });
 

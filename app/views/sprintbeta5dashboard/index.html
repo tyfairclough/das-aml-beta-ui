@@ -73,25 +73,26 @@
     
     <div class="grid-row">
     <div class="column-third">
-        <h3 class="heading-medium">Today's errands</h3>
+        <h3 class="heading-medium">Actions</h3>
 <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Don't know where to start?</h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:88%; margin: 5px 10px 5px 20px">Take a guided tour</p>
+                </div>
+        </div>
+                <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">SFA agreement: not signed </h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Review and sign</p>
+                </div>
+            </div>
+<div class="rj-alert-wrapper">    
                 <div class="rj-alert-copy">
                   <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Forecast: not completed  </h2>
                   <p style="width:85%; margin: 5px 10px 5px 20px" to-do-action=""><a href="/sprintbeta5a&#10;&#10;&#10;&#10;/forecast/">Calculate your available spend</a></p>
                 </div>
             </div>
-        <div class="rj-alert-wrapper">
-                <div class="rj-alert-copy">
-                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Applications received: 16</h2>
-                  <p class="looks-like-a-link-underline to-do-action" style="width:88%; margin: 5px 10px 5px 20px">Process your applications</p>
-                </div>
-            </div>
-        <div class="rj-alert-wrapper">
-                <div class="rj-alert-copy">
-                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Contracts awaiting review: 7 </h2>
-                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Review your contracts</p>
-                </div>
-            </div>
+
         <div class="rj-alert-wrapper">
                 <div class="rj-alert-copy">
                   <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Staff with access to account: 1 </h2>
@@ -110,7 +111,6 @@
                     <li><a href="#">View funds available to spend</a></li>
                     <li><a href="#">View funds expiring soon</a></li>
                     <li><a href="#">View your transaction history</a></li>
-                    <li><a href="#"></a></li>
                     </ul>
                 </div>
                 <div class="column-half">
@@ -136,17 +136,31 @@
 
 </main>
 
+<script>
+    
+    if (newLevyAccount && newOrgSigned == "y") {
+     //   alert("signed and done")
+        $("#as, .asSigned").removeClass("hidden");
+    } else if ( newLevyAccount == "y" && newOrgSigned != "y" ) {
+   //     alert("done but not signed");
+        $("#as, .asNotSigned").removeClass("hidden");
+    }
+    
+
+
+    
+</script>
+
  <!--button class="button">Do the thing</button-->
 <script>
-
 var chart = c3.generate({
-    bindTo: $("#myChart"),
+    bindto: '#myChart',
     data: {
-        columns: [
+      columns: [
             ['data1', 70, 70, 70, 70, 70, 70],
             ['data2', 704, 704, 704, 704, 704, 704],
             ['data3', -60, 200, 160, -100, -15, 250],
-            ['data4', -726, -600, -700, -800, -726, -600],
+            ['data4', -726, -600, -700, -800, -726, -600]
         ],
         names: {
             data1: 'levy top up',
@@ -177,7 +191,7 @@ var chart = c3.generate({
                 format: function (d) { return "£" + d; }
             },
             label: 'Balance (£)'
-        }
+        }        
     },
     grid: {
         y: {
@@ -185,22 +199,6 @@ var chart = c3.generate({
         }
     }
 });
-
-    
-</script>
-<script>
-    
-    if (newLevyAccount && newOrgSigned == "y") {
-     //   alert("signed and done")
-        $("#as, .asSigned").removeClass("hidden");
-    } else if ( newLevyAccount == "y" && newOrgSigned != "y" ) {
-   //     alert("done but not signed");
-        $("#as, .asNotSigned").removeClass("hidden");
-    }
-    
-
-
-    
 </script>
 
 {% endblock %}
