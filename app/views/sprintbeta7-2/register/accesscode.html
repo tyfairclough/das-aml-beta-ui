@@ -121,7 +121,7 @@ setTimeout(function(){ d = "expired"; }, 30000);
                         if ( ($("#email-code").val()) != "" ) {
                         localStorage.setItem("accountActivatedMsg", 'true'); 
                 console.log("redirect");
-                            window.open("../profile","_self");
+                            window.open("/"+sprintIteration+"/account/step_b1","_self");
                 //return true;
                 } else {
                 $("#enterCode.form-group").addClass("error");
