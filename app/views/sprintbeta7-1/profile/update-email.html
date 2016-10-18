@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+<a href="../profile" class="link-back">Cancel change your e-mail address</a>
+
+    
+    
+    <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Errors to fix
+  </h1>
+
+  <p>
+Check the following details:
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#">Enter a valid email address</a></li>
+    <li><a href="#">Re-type email address</a></li>
+    <li><a href="#">Emails don’t match</a></li>
+  </ul>
+
+</div>
+
+ 
+
+
+    
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                   <h1 class="heading-large">Change your e-mail address</h1>
+                    
+                    <form action="../profile?passwordReset=y">
+                        <fieldset>
+                            <legend class="visually-hidden">Change your e-mail address</legend>
+                            <div class="form-group">
+                                <label for="newEmail">
+                                    <span class="form-label-bold">New email address</span>
+                                    <span class="error-message one" style="display:none;">Enter a valid email address</span>
+                                </label>
+                                <input class="form-control" id="email1" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="newEmailRetyped">
+                                    <span class="form-label-bold">Re-type email address</span>
+                                    <span class="error-message one" style="display:none;">Re-type email address</span>
+                                    <span class="error-message two" style="display:none;">Emails don't match </span>
+                                </label>
+                                <input class="form-control" id="email2" type="text" />
+                            </div>
+                            
+                   
+                            
+                        </fieldset>
+                        
+                        
+                        <button id="updateEmail" type="submit" class="button">Continue</button>
+                        
+                    </form>
+                </div>
+            </div>  
+</main>
+
+<script>
+        $(".error-summary").hide();
+        $(".error-summary .error-summary-list li").hide();
+        var email1 = "";
+        var email2 = "";
+    
+    
+
+    
+    $("#updateEmail").click(function(e){
+        e.preventDefault();
+        
+         email1 = $("#email1").val();
+         email2 = $("#email2").val();        
+       
+        validate();
+        EmailMatch();
+        EmailReTyped();
+        
+        if ( validate() && EmailMatch() ) {
+            console.log("success redirect now");
+            localStorage.setItem("email-address", JSON.stringify(email1));
+            window.open("../profile?emailUpdated=y","_self");
+        } else {
+            console.log("did not pass");
+        }
+        
+    });
+    
+    
+               function validateEmail(email1) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email1);
+        }
+    
+            function EmailReTyped() {
+            if ( email2 == "" ) {
+                $(".error-summary").show();
+                $(".error-summary li:eq(1)").show();
+                return false;
+                } else {
+                        return true
+                };
+            }
+    
+
+    
+    function EmailMatch() {
+        if ( email1 == email2 ) {
+            return true;
+        } else {
+                return false;
+                $(".error-summary").show();
+                $(".error-summary li:eq(0)").hide();
+                $(".error-summary li:eq(1)").hide();
+                $(".error-summary li:eq(2)").show();    
+        }
+    }
+    
+    
+
+        function validate() {
+            if (validateEmail(email1)) {
+                return true;
+            } else {
+                return false;
+                $(".error-summary").show();
+                $(".error-summary li:eq(0)").show();
+            }
+        }
+    
+
+    
+</script>
+
+{% endblock %}

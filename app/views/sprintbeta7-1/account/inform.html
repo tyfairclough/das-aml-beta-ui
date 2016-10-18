@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a href="/{% include "includes/sprint-link.html" %}/profile" class="link-back">Back to homepage</a>    
+    
+    
+    <div id="codeError" class="error-summary hidden" role="group" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Message to alert the user to a problem goes here
+  </h1>
+
+  <p>
+    Optional description of the errors and how to correct them
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#email-address">Descriptive link to the question with an error</a></li>
+  </ul>
+
+</div>
+
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                   <h1 class="heading-large">What you need</h1>
+                   <!-- <p>Use this service to:</p>
+                    <ul class="list list-bullet">
+                        <li>Create an apprenticeship account for your organisation</li>
+                        <li>Access and manage your levy funds</li>
+                    </ul>
+                    
+                    <h3 class="heading-medium">Before you start</h3>-->
+                    <p>To add a levy account you need:</p>
+                    <ul class="list list-bullet">
+                        <li>the Companies House number for your organisation</li>
+                        
+                        <li>the Government Gateaway login details for the PAYE scheme you want to use to claim levy funds</li>
+                    </ul>
+                    <div class="form-group">
+                    <a href="#" rel="external">What's Government Gateway?</a>
+                    </div>
+                    
+            <form action="step_b1">
+ <!-- <fieldset>
+      <h1 class="heading-medium">Check this statement to continue</h1>
+      <div class="form-group" id="termsCheck">
+          <span class="error-message">Check this statement to continue</span>
+    <label class="block-label" for="paye-terms">
+      <input id="paye-terms" name="paye-terms" type="checkbox" value="yes" />
+I understand that all account users will be able to see financial information from any PAYE schemes I add.
+      </label>
+          </div>
+  </fieldset>
+
+-->  
+                
+                    <div class="panel panel-border-thin text">
+                        <p class="bold-xsmall">By clicking Start you agree to the following:</p>
+                    <p class="font-xsmall">I have authority to add PAYE schemes to this account.</p>
+                    <p class="font-xsmall">I understand that all account users will be able to see levy funds from any PAYE schemes I add.</p>
+                    <p class="font-xsmall">All PAYE schemes I add are owned and operated by an organisation that’ll use this account, or owned and operated by a <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/308734/connected-companies.pdf">connected organisation</a></p>
+</div>
+
+                
+                <button type="submit" class="button">Start</button>
+</form>
+                </div>
+          </div>  
+
+</main>
+
+<script>
+  $(".error-message").hide();
+ /*   $("button").click(function(e){
+        if ( $("#paye-terms").is(":checked")) {
+        } else {
+            e.preventDefault();
+            $("#termsCheck.form-group").addClass("error");
+            $(".error-message").show();
+            $("#codeError").removeClass("hidden");
+        }
+    })
+   */ 
+</script>
+
+{% endblock %}

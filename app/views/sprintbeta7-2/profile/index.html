@@ -1,0 +1,218 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav.html" %}
+
+
+  
+ 
+    <section id="notifications" style="clear: both;">
+    
+          <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" id="govGatewayDenied">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Account not added
+  </h1>
+
+  <p>
+    You need to grant authority to HMRC to add an account.
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="/{% include "includes/sprint-link.html" %}/account/paye">Add new account</a></li>
+  </ul>
+
+</div>
+
+        
+    <div class="govuk-box-highlight profileCreatedMsg hidden">
+          <h2 class="bold-large">
+You've created your profile
+        </h2>
+        </div>
+        
+        
+        <div class="govuk-box-highlight resetPassword hidden">
+          <h2 class="bold-large">
+Password changed
+            </h2>
+        </div>
+    
+        
+        <div class="govuk-box-highlight emailChanged hidden">
+          <h2 class="bold-large">
+Email changed
+            </h2>
+        </div>
+    
+        </section>
+    
+    
+    
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                   <h1 class="heading-large">Levy accounts</h1>
+
+
+                    <p>With levy accounts you can:</p>
+                    <ul class="list list-bullet">
+                        <li>view financial information</li>
+                        <li>create or amend apprenticeships</li>
+                        <li>spend money</li>
+                    </ul>
+                    
+                  <p>At the moment, you don't have access to any levy accounts. You need to be invited to an account or add a new one.</p>
+                    
+                    <div class="accounts many form-group hidden">
+                  <p>Select an account or add a new one. </p>
+                      <table class="table-19-font">
+                          <thead>
+                            <tr>
+                              <th scope="col">Account name</th>
+                              <!--<th scope="col" class="">Account number</th>-->
+                            <th class="">What you can do</th>
+
+                               <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="rjTabWidth">Acme Ltd Coventry High St</td>
+                             <!-- <td class="">DF9 0832 778</td>-->
+                          <td class="">Everything - you're the owner</td>
+
+                              <td><a href="/{% include "includes/sprint-link.html" %}/account">Open</a></td>
+                            </tr>
+                             <tr>
+                              <td class="rjTabWidth">Acme Ltd Headquarters</td>
+                            <!--  <td class="">JJ1 9983 222</td>-->
+                           <td class="">Create and stop payments and view financial information</td>
+
+                              <td class="looks-like-a-link-underline">Open</td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">Acme Oxford St, London</td>
+<!--                              <td class="">ZZ1 7634 826</td>-->
+                              <td class="">View apprenticeship and financial information</td>
+
+                              <td class="looks-like-a-link-underline">Open</td>
+                                     
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">Acme Ltd, Cheletenham High St</td>
+                              <!--<td class="">FF9 1647 842</td>-->
+                              <td class="">View apprenticeship and financial information</td>
+                              <td class="looks-like-a-link-underline">Open</td>
+                            </tr>
+                          </tbody>
+                      </table>
+
+                    </div>
+
+                                                <a class="button" href="/{% include "includes/sprint-link.html" %}/account/inform">Continue</a>
+
+                    
+                    </div>
+                
+                <div class="column-third hidden">
+                <aside class="related">
+                    <h4 class="heading-small">Profile settings</h4>
+                    <ul class="list list-links">
+                        <li><a href="#">Reset password</a></li>
+                        <li><a href="#">Change email</a></li>
+                        <li><a href="#">Delete profile</a></li>
+                    </ul>
+                    </aside>
+                </div>
+          </div>  
+
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+                                <h4 class="hidden heading-medium">Invitiations</h4>
+
+            <section class="invites-none hidden">
+                <p>You currently have <strong class="bold-small">no</strong> invitations to levy accounts. But you can contact your account admin to request an invitation.</p>
+            </section>
+            
+            <section class="invites-pending hidden">
+                    <p>You have <span class="bold-small">4</span> pending invitations to employer accounts.</p>
+                    <a href="invitations.html">View invitations</a>
+                </section>
+            
+            
+                    <div class="survey-panel">
+                <h2 class="bold-large">
+                    Give us your feedback
+                </h2>
+                <p>
+                    This is a new service and your feedback will help us improve it.<br>
+                    Use the link below to take part in a short survey.
+                </p>
+                <a href="https://www.surveymonkey.co.uk/r/MLTBYNX" target="_blank" class="button">Take the survey</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    
+        
+      if ( emailUpdated == "y" ) {
+          $(".emailChanged").removeClass("hidden");
+      }
+    
+      if ( govgateway == "denied" ) {
+        $("#govGatewayDenied").removeClass("hidden");
+    }
+ /* if (localStorage.getItem("accountActivatedMsg") == "true") {
+      $(".profileCreatedMsg").removeClass("hidden");
+      localStorage.setItem("accountActivatedMsg",'false');
+  }
+  */
+    
+    if ( resetPassword == "y") {
+      $(".resetPassword").removeClass("hidden");
+  }
+//store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+
+    EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+    });
+    
+
+    
+</script>
+
+{% endblock %}

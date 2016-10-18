@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+    <div class="service-info ">
+    
+    <div class="logo">
+        <span class="organisation-logo organisation-logo-medium">HM Revenue &amp; Customs</span>
+    </div>
+    
+    <div class="last-login float--right">
+        <p class="flush text--right h3-heading"></p>
+    </div>
+
+</div>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-large">Authority to interact with HMRC on your behalf</h1>
+            
+            <p>The <strong class="bold-small">Skills Funding Agency</strong> software application is requesting to do the following:</p>
+            <ul class="list list-bullet">
+                <li>access levy data</li>
+            </ul>
+            <p>It will be able to do the above for 10 hours from when you grant authority.</p>
+            
+            <div class="form-group">
+            <a class="button" href="step_a3">Grant authority</a> <a href="/{% include "includes/sprint-link.html" %}/account/paye?govgateway=denied" class="button text-link">Do not grant authority</a>
+            </div>
+            
+            <p>You can <a rel="external" href="#">remove this authority</a> at any time.</p>
+        
+        </div>
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

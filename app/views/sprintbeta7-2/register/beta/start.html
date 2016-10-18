@@ -6,6 +6,14 @@
 
 {% block content %}
 
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
 <script>
 // not needed at the moment, remember to remove script from the header if you don't use this in the end.
 
@@ -18,64 +26,70 @@
 
 
 <main id="content" role="main">
-{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/phase_banner_beta.html" %}
 
 <div class="breadcrumbs">
     <ol role="breadcrumbs">
 <!--the breadcrumb for the inform pages is in the following template -->
-
+       {% include "includes/breadcrumbs/start-bread.html" %}
     </ol>
 </div>
 
-        <div class="grid-row">
+  <div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Register your apprenticeship account</h1>
 
-            <div class="column-two-thirds">
-                <h1 class="heading-xlarge">Access my apprenticeship funding</h1>
-                <div class="grid-row">
-                    <div class="column-half">
-                         <!--the navigation for the inform pages is in the following template -->
-                        {% include "includes/inform-nav.html" %}
-                    </div>
-                </div>
+    <p>Use this service to:
+	<ul class="list-bullet">
+		<li>Create an apprenticeship account for your organisation</li>
+		<li>Access and manage your levy funds</li>
+	</ul></p>
+	
+	<h2 class="heading-medium">Before you start</h2>
 
-                <h2 class="heading-large">1. Overview</h2>
-                <p>
+    <p>You need:
+	<ul class="list-bullet">
+		<li>The email you use at work</li>
+	</ul></p>
 
-                    <body>                <p class="">The government is committed to boosting productivity by investing in human capital. As part of this, the government is committed to developing vocational skills, and to increasing the quantity and quality of apprenticeships. It has committed to an additional 3 million apprenticeship starts in England by 2020. The levy will help to deliver new apprenticeships and it will support quality training by putting employers at the centre of the system. Employers who are committed to training will be able to get back more than they put in by training sufficient numbers of apprentices.</p>
+      <p>You need to know
+  <ul class="list-bullet">
+    <li>The number of apprenticeship accounts your organisation will need</li>
+    <li>Your organisation’s PAYE schemes</li>
+     <li>How your organisation’s PAYE schemes will be linked to the apprenticeship account </li>
+      <li>The Government Gateway ID of each PAYE scheme </li>
+       <li>Your organisation’s Companies House number</li>
+  </ul></p>
 
-
-
-
-
-                <!--<p class="form-hint">Search or browse to find your business type or the skill you’re looking for, eg Engineering or Accountant.</p>-->
-
-
-                <div class="page-navigation">
-                    <a href="inform_1.html#" style="visibility: hidden;" class="page-navigation__btn previous">
-                        <i class="arrow-button fa fa-angle-left"></i>
-                        <span class="description">Previous <span class="hide-mob">page</span></span>
-                        <span class="counter">1 of 4</span>
-                    </a>
-
-
-
-                    <a href="/{% include "includes/sprint-link.html" %}/register/inform_2" style="" class="page-navigation__btn next">
-                        <i class="arrow-button fa fa-angle-right"></i>
-                        <span class="description">Next <span class="hide-mob">page</span></span>
-                        <span class="counter">Who pays levy</span>
-                    </a>
-
-
-                </div>
+ <!-- <div class="panel panel-border-wide">
+    <p>
+      After you have registered, you will be able to grant access to the apprenticeship account to other people in your company.
+    </p>
+  </div> -->
+    <div style="margin-top:50px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/register/beta/registered-before" class="button button-start">Start</a>
+    </div>
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 
 
             </div>
 
-                      <!--the side bar for the inform pages is in the following template -->
+             <div class="column-one-third">
+                      <aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
 
-
-
-        </div>
+                        </ul>
+                           </nav>
+                    </aside>
+            </div>
+</div>
 </main>
 
 <script>
