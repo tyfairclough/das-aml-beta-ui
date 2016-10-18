@@ -1,0 +1,147 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a class="link-back" href="/{% include "includes/sprint-link.html" %}/account/inform">Start again</a>
+    
+      
+    <div id="codeError" class="error-summary hidden" role="group" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Companies House number
+  </h1>
+
+  <p>
+        Check the following details:
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#ch-number">Enter a valid Companies House number</a></li>
+    <li><a href="#ch-number">Enter a company that isn't already registered</a></li>
+    <li><a href="#ch-number">No company found. Try again</a></li>
+  </ul>
+
+</div>
+    
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <h1 class="heading-large">Search for your organisation</h1>
+
+            <p>Use the companies house number for an organisation that your apprentices will be employed through.</p>
+            <!--<p>We need to add a company name to the contract between you and the Skills Funding Agency. To find your company enter the company number of your organisation that is registered with Companies House.</p>-->
+            
+            <p class="font-xsmall"><a href="https://beta.companieshouse.gov.uk" rel="external">Find my Companies House number</a></p>
+            
+            <form action="step_a5">
+            
+            <fieldset>
+                <div class="form-group">
+                <label class="form-label-bold" for="ch-number">
+                    <span class="form-label-bold">Companies House number</span>
+                    <span id="validNo" class="error-message visually-hidden">Enter a valid Companies House number
+</span>
+                    <span id="alreadyRegistered" class="error-message visually-hidden">Enter a company that isn't already registered
+                        </span>
+                    <span id="noCompaniesFound" class="error-message visually-hidden">No company found. Try again</span>
+                    </label>
+                <input class="form-control" id="ch-number" type="text" name="ch-number">
+                </div>
+                </fieldset>
+            </form>
+            
+            <a id="submitForm" rel="external" href="step_b2" class="button">Continue</a>
+        
+        </div>
+    </div>
+
+    
+    
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script type="text/javascript">
+    
+    if (flow == "addOrg") {
+        $(".link-back").replaceWith("<a class='link-back' href='../account/organisation/'>Back to organisations</a>");
+    }
+ 
+    
+    $("#submitForm").click(function(e){
+        e.preventDefault();
+        $(".error-summary-list li").addClass("hidden");
+        
+        if ( ! $.isNumeric($("#ch-number").val()) || $("#ch-number").val().length < 8 ) {
+        console.log("no number validation");
+            $("form .form-group").addClass("error");
+            $("form label .error-message").addClass("visually-hidden");
+            $("form div #validNo").removeClass("visually-hidden")
+            $("#codeError").removeClass("hidden");
+            $(".error-summary-list li").eq(0).removeClass("hidden");
+            
+            
+        } else if ( $("#ch-number").val() == "09963675" ) {
+            console.log ("company already registered");
+            $("form .form-group").addClass("error");
+            $("form label .error-message").addClass("visually-hidden");
+            $("form div #alreadyRegistered").removeClass("visually-hidden")
+            $("#codeError").removeClass("hidden");
+            $(".error-summary-list li").eq(1).removeClass("hidden");
+    
+        } else if ( $("#ch-number").val() == "12345678" ) {
+            console.log("company not found");
+            $("form .form-group").addClass("error");
+            $("form label .error-message").addClass("visually-hidden");
+            $("form div #noCompaniesFound").removeClass("visually-hidden")
+            $("#codeError").removeClass("hidden");
+            $(".error-summary-list li").eq(2).removeClass("hidden");
+    
+        } else {
+            var chNumber = $("#ch-number").val();
+            localStorage.setItem("chNumber", JSON.stringify(chNumber));
+                if ( flow == "addOrg") {
+                window.open("step_a5?flow=addOrg","_self")    
+                    } else {
+                window.open("step_b2","_self");
+                    }
+        }
+
+    });
+    
+    
+    
+    
+
+</script>
+
+{% endblock %}
+

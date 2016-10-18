@@ -1,0 +1,204 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .financial-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="#">Education and learning</a></li>
+      <li><a href="#">Apprenticeships, 14 to 19 education and training for work</a></li>
+      <li>Access my levy</li>
+    </ol>
+
+  </div>
+    
+    
+    <div class="govuk-box-highlight hidden" id="signedOut">
+          <h2 class="bold-large">
+    You've been signed out          </h2>
+        </div>
+        
+    
+    <div id="wrapper" class="answer answer">
+      <div class="grid-row">
+        <main id="content" role="main" class="">
+  <header class="page-header">
+    <div>
+      <h1 class="heading-xlarge">
+        
+        Manage your apprenticeships
+      </h1>
+    </div>
+  </header>
+  <div class="article-container group">
+    
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+  <p>You can use this service to access and spend your levy on apprenticeships in England.</p>
+
+
+          
+
+<form>
+  <div class="form-group">
+    <fieldset>
+
+
+
+      <label class="block-label selection-button-radio" for="personal_details_yes">
+        <input id="personal_details_yes" type="radio" name="personalDetails" value="Yes">
+        <span></span> I have an invitation
+      </label>
+
+      <label class="block-label selection-button-radio" for="personal_details_no">
+        <input id="personal_details_no" type="radio" name="personalDetails" value="No">
+        <span></span> I want to create a levy account
+      </label>
+
+    </fieldset>
+  </div>
+
+
+</form>          
+          <div class="form-group">
+          <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+You need your Companies House number and your Government Gateway login details to create an account.
+  </h1>
+
+  <p class="hidden">
+    Optional description of the errors and how to correct them
+  </p>
+
+  <ul class="error-summary-list hidden">
+    <li><a href="#example-personal-details">Descriptive link to the question with an error</a></li>
+  </ul>
+
+</div>
+          </div>
+          
+<a rel="external" href="profile" class="button button-start" id="createAccount">Start</a>
+          
+<h2 class="heading-medium">Sign in</h2>
+<p>If you already have an account, you just need your email address and password to sign in </a>.</p>
+
+          <div class="form-group">
+          <a class="button" href="/{% include "includes/sprint-link.html" %}/login">Sign in</a>
+</div>
+
+      <!--
+      <p><a href="/{% include "includes/sprint-link.html" %}/profile/forgot" rel="external">Forgot your password</a></p>
+          <p><a href="/{% include "includes/sprint-link.html" %}/profile/unlock/step_a1" rel="external">Unlock your account</a></p>
+        -->
+
+      </div>
+        
+          
+
+  <!-- related -->
+  <div class="related-container column-third hidden">
+
+    <aside class="related" id="related">
+      
+        
+        <div class="inner group related-subsection">
+          
+          <h2 id="parent-subsection">Apprenticeships, 14 to 19 education and training for work</h2>
+          
+
+          <nav role="navigation" aria-labelledby="parent-subsection">
+            <ul>
+              
+                <li>
+                  <a href="/apprenticeships-guide">Become an apprentice</a>
+                </li>
+              
+                <li>
+                  <a href="/find-traineeship">Find a traineeship</a>
+                </li>
+              
+              
+                <li class="related-topic"><a href="/browse/education/find-course">More <span class="visuallyhidden">in Apprenticeships, 14 to 19 education and training for work</span></a></li>
+              
+            </ul>
+          </nav>
+        </div>
+      
+
+      
+        <div class="inner group">
+          <h2 id="related-external-links">Elsewhere on the web</h2>
+
+          <nav role="navigation" aria-labelledby="related-external-links">
+            <ul>
+              
+                <li>
+                  <a href="https://nationalcareersservice.direct.gov.uk/advice/courses/typesoflearning/Pages/apprenticeship-application-help.aspx" rel="external">Help with your application</a>
+                </li>
+              
+            </ul>
+          </nav>
+        </div>
+      
+
+      <div class="inner group">
+        <a class="return-to-top" href="#content">Return to top ↑</a>
+      </div>
+    </aside>
+
+  </div>
+<!-- end related -->
+    </div>
+   
+
+
+
+  </div>
+</main>
+
+
+
+
+
+      </div>
+      
+          
+</div>
+</main>
+
+<script>
+if (signedOut == "y" ) {
+    $("#signedOut").removeClass("hidden");
+}
+    
+    $("#createAccount").click(function(e){
+        e.preventDefault();
+        
+        if ( $("#personal_details_no").prop('checked') ) {
+            console.log("no is selected");
+            $(".error-summary").removeClass("hidden");
+        } else {
+            window.open("profile","_self")
+        }
+        
+    })
+</script>
+
+{% endblock %}
+

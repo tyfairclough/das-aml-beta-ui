@@ -1,0 +1,442 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a href="start" class="link-back">Back</a>
+
+    <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Errors to fix
+
+
+
+  </h1>
+<p>Check the following details:</p>
+
+  <ul class="error-summary-list">
+    <li class="hidden"><a href="#name">Enter first name</a></li>
+    <li class="hidden"><a href="#lastNane">Enter last name</a></li>
+    <li class="hidden"><a href="#example-personal-details">Enter a valid email address</a></li>
+    <li class="hidden"><a href="#example-personal-details">Enter a password</a></li>
+    <li class="hidden"><a href="#example-personal-details">Passwords don't match</a></li>
+    <li class="hidden"><a href="#example-personal-details">Check the terms of use</a></li>
+    <li class="hidden"><a href="#example-personal-details">This e-mail is already registered, please user another, sign-in or reset your password if you have forgotten it.</a></li>
+  </ul>
+
+</div>
+    
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+<h1 class="heading-xlarge">Add your details</h1>
+
+    
+    
+    
+    <form id="profileSetup" action="accesscode">
+  <fieldset>
+    <legend class="visuallyhidden">Name</legend>
+      <div class="form-group" id="name">
+          <label class="form-label-bold" for="users-name">
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+          <span class="form-label-bold">First name</span>
+          <span class="error-message hidden">
+          Enter a name to continue
+        </span>
+        </label>
+              
+          <input aria-invalid="true" class="form-control" id="users-name" type="text"  aria-required="true" >
+      </div>
+      
+      <div class="form-group" id="lastNameField">
+          <label class="form-label-bold" for="lastName">
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+          <span class="form-label-bold">Last name</span>
+          <span class="error-message hidden">
+          Enter your last name to continue
+        </span>
+        </label>
+              
+          <input class="form-control" id="lastName" type="text"  aria-required>
+      </div>
+      
+      
+      <div class="form-group" id="jobRole">
+          <label class="form-label-bold" for="lastName">
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+          <span class="form-label-bold">Job title (optional)</span>
+          <span class="error-message hidden">
+        </span>
+        </label>
+              
+          <input class="form-control" id="lastName" type="text"  aria-required>
+      </div>
+      <div class="form-group" id="emailGroup">
+          <label class="form-label-bold" for="email-address">
+            <span class="form-label-bold">Email</span>
+            <span class="error-message hidden">Error message about valid email here</span>
+          </label>
+          <input class="form-control" id="email-address" type="text">
+      </div>
+    </fieldset>
+             <fieldset>
+   
+            <div class="form-group" id="passwordgroup">
+          <label class="form-label-bold" for="user-password">
+              <span class="form-label-bold">Create password</span>
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+                        <span class="error-message hidden">
+          Enter a name to continue
+        </span>
+        </label>        <p>Your password must:</p>
+ <!--       <ul class="list list-bullet">
+            <li>be 8 to 12 characters long</li>
+            <li>have at least one uppercase and one lowercase letter</li>
+            <li>have at least one number</li>
+        </ul>
+-->
+        
+                                        <div class="popover">
+                                    <div class="arrow"></div>
+                                    <div class="popover-content">
+                                        <ul>
+                                            <li id="8num" class="success"><i class="fa fa-circle"></i>have at least 8 characters</li>
+                                            <li id="1cap" class="success"><i class="fa fa-circle"></i> have at least one uppercase and one lowercase letter</li>
+                                            <li id="1num" class="success"><i class="fa fa-circle"></i> have at least one number</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                <br>
+        
+   
+                 
+
+
+                
+                <input id="password" type="password" class="form-control">
+                                <div class="password-strength">
+                                    <span class="tooweak"></span>
+                                    <span class="weak"></span>
+                                    <span class="medium"></span>
+                                    <span class="strong"></span>
+                                </div>
+ <p>Password strength: <span class="pw-strength"></span></p>
+                            </div>
+                
+                 
+            
+            
+
+            
+            
+      <div class="form-group" id="confirmPassword">
+          <label class="form-label-bold" for="user-password_confirm">
+              <span class="form-label-bold">Re-type password</span>
+          <span class="error-message" id="error1">Reconfirm you password</span>
+          <span class="error-message" id="error2">Passwords do not match</span>
+          </label>
+          <input class="form-control" id="user-password_confirm" type="password">
+      </div>     
+                  
+                 
+                <!-- <div class="form-group" id="checkTerms">
+                  <legend>                     <span class="error-message hidden">
+          You need to accept the terms of use
+        </span></legend>
+
+            <label class="block-label" for="confirm-terms">
+      <input id="confirm-terms" name="terms" type="checkbox" value="confirm-terms">
+I accept the <a href="terms" target="_blank">terms of use</a>.    </label>
+            </div>
+-->
+        </fieldset>
+        <div class="panel panel-width-thin">
+            <p>By continuing you accept the <a href="terms">terms of use.</a></p>
+        </div>
+        <p class="bold-small">To confirm your identity, we need to send you an email.</p>
+        
+    <input class="button" id="createAccountButton" type="submit" value="Send me an email">
+</form>
+
+<div id="result">
+    </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+<script>
+
+    
+    $(".error-message").hide();
+    
+    
+    $("#createAccountButton").click(function(e){
+    e.preventDefault();   
+        
+        nameComplete();
+        validateEmail();
+        passwordComplete();
+        passwordsMatch();
+        //termsChecked();
+        lastNameComplete();
+
+        if (nameComplete() && validateEmail() && passwordComplete() && passwordsMatch() /*&& termsChecked()*/ === true) {
+            console.log("success");
+            setNames()
+            window.open("accesscode","_self");
+        } else {
+            $(".error-summary").removeClass("hidden");
+                         $("body").animate({
+        scrollTop: $(".error-summary").offset().top
+    });
+        }
+    });
+    
+    function termsChecked() {
+        if($('#confirm-terms').is(":checked")) {
+        return true;
+        } else {
+            //console.log("terms not checked");
+        $("#checkTerms").addClass("error");
+        $("#checkTerms > legend .error-message").removeClass("hidden").show();
+            $(".error-summary li:eq(5)").removeClass("hidden");
+        }
+    }
+    
+    
+    function setNames() {
+        localStorage.setItem("users-name", JSON.stringify($("#users-name").val()));
+        localStorage.setItem("email-address", JSON.stringify($("#email-address").val()));
+
+        localStorage.setItem("password", JSON.stringify($("#password").val()));
+
+       
+        
+        
+        console.log(JSON.parse(localStorage.getItem('users-name')));
+        console.log(JSON.parse(localStorage.getItem('email-address')));        
+        console.log(JSON.parse(localStorage.getItem('password')));        
+    }
+
+    function nameComplete() {
+        if ($("#users-name").val() == "") {
+            //alert("name empty");
+                  $("#name").addClass("error");
+      $("#name .error-message").removeClass("hidden").show();
+            $(".error-summary li:eq(0)").removeClass("hidden");
+        } else {
+            return true;
+        }
+    }
+    
+    function lastNameComplete() {
+        if ($("#lastName").val() == "") {
+            //alert("name empty");
+                  $("#lastNameField").addClass("error");
+      $("#lastNameField .error-message").removeClass("hidden").show();
+            $(".error-summary li:eq(1)").removeClass("hidden");
+        } else {
+            return true;
+        }
+    }
+    
+    function passwordComplete() {
+        if ($("#password").val() == "") {
+            //alert("password empty");
+                  $("#passwordgroup").addClass("error");
+      $("#passwordgroup .error-message").removeClass("hidden").show();
+            $(".error-summary li:eq(3)").removeClass("hidden");
+        } else {
+            return true;
+        }
+    }
+    
+    function passwordsMatch() {
+        var confirmPassword = $("#user-password_confirm").val();
+        var password = $("#password").val();
+        
+        
+        if ( confirmPassword == "" ) {
+            $("#confirmPassword").addClass("error");
+            $("#confirmPassword label #error1.error-message").show();   
+            $(".error-summary li:eq(4)").removeClass("hidden");
+}
+        else if ( password != confirmPassword ) {
+            // fire error
+            //console.log("passwords don't match")
+            $("#confirmPassword").addClass("error");
+            $("#confirmPassword label #error2.error-message").show();
+            $(".error-summary li:eq(4)").removeClass("hidden");
+            
+        } else {
+            return true;
+        } 
+    }
+    
+    function validateEmailString(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+function validateEmail() {
+      $("#result").text("");
+ //console.log("email" + email);
+    var email = $("#email-address").val();
+    if (validateEmailString(email)) {
+    //$("#result").text(email + " is valid :)");
+    //$("#result").css("color", "green");
+        
+        if ( email == "tim@delux.com") {
+      $("#emailGroup").addClass("error");
+      $("#emailGroup .error-message").removeClass("hidden").show();
+            $(".error-summary li:eq(6)").removeClass("hidden");
+        } else {
+            return true;
+        }
+  } else {
+    //$("#result").text(email + " is not valid :(");
+    //$("#result").css("color", "red");
+      $("#emailGroup").addClass("error");
+      $("#emailGroup .error-message").removeClass("hidden").show();
+        $(".error-summary li:eq(2)").removeClass("hidden");
+  }
+  return false;
+}
+    
+
+    
+
+    
+    
+    
+    i = 0;
+
+    $("#password input").keyup(function(e){
+        i++;
+        var len = $("#password-input").val().length;
+        alert(len);
+        //var oneCharacter = newRegExp(^[A-Za-z]([A-Za-z]{2}|[A-Za-z][0-9]|[0-9]{2})[0-9]{0,6}$);
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+        var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+        if (false == enoughRegex.test($(this).val())) {
+        } else if (strongRegex.test($(this).val())) {
+
+        } else if (mediumRegex.test($(this).val())) {
+            $("#1char").removeClass("danger").addClass("success");
+            $("#1char .fa").removeClass("fa-circle").addClass("fa-check-circle")
+        } else if (len > 8 ) {
+            $("#8num").removeClass("danger").addClass("success");
+            $("#8num .fa").removeClass("fa-circle").addClass("fa-check-circle")
+        } else {
+
+        }
+        return true;
+    })
+
+
+    i = 0;
+   
+
+
+
+    $("#passwordgroup input").keyup(function(e) {
+        var password = $(this).val();
+
+        //validate the length
+        if ( password.length < 8 ) {
+            $('#8num').removeClass('success').addClass('danger');
+            $("#8num i").removeClass("fa-check-circle").addClass("fa-circle");
+        } else {
+            $('#8num').removeClass('danger').addClass('success');
+            $("#8num i").removeClass("fa-circle").addClass("fa-check-circle");
+        }
+
+//validate letter
+        if ( password.match(/[A-z]/) ) {
+            $('#1char').removeClass('danger').addClass('success');
+            $("#1char i").removeClass("fa-circle").addClass("fa-check-circle");
+        } else {
+            $('#1char').removeClass('success').addClass('danger');
+            $("#1char i").removeClass("fa-check-circle").addClass("fa-circle");
+        }
+
+//validate capital letter
+        if ( password.match(/[A-Z]/) ) {
+            $('#1cap').removeClass('danger').addClass('success');
+            $("#1cap i").removeClass("fa-circle").addClass("fa-check-circle");
+        } else {
+            $('#1cap').removeClass('success').addClass('danger');
+            $("#1cap i").removeClass("fa-check-circle").addClass("fa-circle");
+        }
+
+//validate number
+        if ( password.match(/\d/) ) {
+            $('#1num').removeClass('danger').addClass('success');
+            $("#1num i").removeClass("fa-circle").addClass("fa-check-circle");
+        } else {
+            $('#1num').removeClass('success').addClass('danger');
+            $("#1num i").removeClass("fa-check-circle").addClass("fa-circle");
+        }
+
+
+
+
+        i++;
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+        var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+        if (false == enoughRegex.test(password)) {
+            console.log("pass");
+            $('.password-strength .tooweak').fadeIn();
+            $(".pw-strength").text("incomplete");
+        } else if (strongRegex.test($(this).val())) {
+            $('.password-strength .strong').fadeIn();
+            $(".pw-strength").text("strong");
+        } else if (mediumRegex.test($(this).val())) {
+            $('.password-strength .medium').fadeIn();
+            $(".pw-strength").text("moderate");
+        } else {
+            $('.password-strength .weak').fadeIn();
+            $(".pw-strength").text("weak");
+        }
+        return true;
+
+
+
+    });
+
+
+
+
+
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a href="/{% include "includes/sprint-link.html" %}/register/profile" class="link-back">Back</a>
+
+    
+    
+<div id="codeError" class="error-summary hidden" role="group" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+Errors to fix
+  </h1>
+
+  <p>
+Check the following details:
+  </p>
+
+  <ul class="error-summary-list">
+    <li class="hidden"><a href="#email-code">Your code is invalid</a></li>
+    <li class="hidden"><a href="#email-code">Your code has expired</a></li>
+  </ul>
+
+</div>
+  
+    
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+    <div class="govuk-box-highlight">
+          <h2 class="bold-large">
+Check your email         </h2>
+        <p>We've sent a code to <strong class="bold-small userId">pete.kowalczyk@gmail.com</strong></p>
+        </div>
+    
+<h1 class="heading-xlarge">Enter your code</h1>
+
+
+    <form action="/{% include "includes/sprint-link.html" %}/profile">
+  <fieldset>
+    <legend class="visuallyhidden">Enter code</legend>
+      <div class="form-group" id="enterCode">
+          <label for="email-code" class="form-label-bold">
+              <span class="form-label-bold">Enter code</span>
+              <span id="error1" class="error-message">Your code is invalid</span>
+              <span id="error2" class="error-message">Your code has expired</span>
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="email-code" type="text">
+      </div>
+     
+             <div class="form-group">
+
+                 <button type="submit" class="button" id="submit-email-code" value="Continue">Continue</button>
+      </div>
+</form>
+
+        <h4 class="heading-small">Not received an email?</h4>
+        
+        <p>You can <a href="#" id="newCode">request another email</a>.</p>
+        
+
+</main>
+
+    <script>
+        $(".error-message").hide();
+        
+                var d;
+        
+setTimeout(function(){ d = "expired"; }, 30000);
+
+        
+        $("#submit-email-code").click(function(e) {
+            e.preventDefault();    
+            
+            if (d == "expired") {
+                      console.log("code expired run");
+                codeExpired();
+                } else {
+                console.log("check code run");
+            checkCode();
+          
+            }
+        });
+        
+        function codeExpired() {
+                $("#enterCode.form-group").addClass("error");
+                $("#enterCode.form-group #error2.error-message").show(); 
+                    $("#codeError").removeClass("hidden");
+                    $("#codeError li").eq(1).removeClass("hidden");
+                    $(".govuk-box-highlight").addClass("hidden");
+        }
+        
+        function checkCode() {
+                        if ( ($("#email-code").val()) != "" ) {
+                        localStorage.setItem("accountActivatedMsg", 'true'); 
+                console.log("redirect");
+                            window.open("/"+sprintIteration+"/account/step_b1","_self");
+                //return true;
+                } else {
+                $("#enterCode.form-group").addClass("error");
+                $("#enterCode.form-group #error1.error-message").show(); 
+                    $("#codeError").removeClass("hidden");
+                    $("#codeError li").eq(0).removeClass("hidden");
+                    $(".govuk-box-highlight").addClass("hidden");
+            }
+        }
+        
+        
+        var userId = JSON.parse(localStorage.getItem('email-address'));
+
+        
+        //$("#submit-email-code").click(function(e){
+        //    e.preventDefault();
+        //    window.location.href='../profile';
+        //    localStorage.setItem("accountActivatedMsg", 'true');                  
+        //})
+        
+        $("#newCode").click(function(e){
+                    var userId = JSON.parse(localStorage.getItem('email-address'));
+
+            e.preventDefault();
+            $(".govuk-box-highlight h2").text("A new access code sent");
+            $(".govuk-box-highlight p").html("A new acccess code has been sent to <strong class='bold-small'>"+ userId +"</span>");
+$(".govuk-box-highlight").removeClass("hidden");
+            $("#codeError, .error-message").addClass("hidden");
+            $("#enterCode").removeClass("error");
+        })
+
+        
+        $(".userId").text(JSON.parse(localStorage.getItem('email-address')));
+    </script>
+    
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+
