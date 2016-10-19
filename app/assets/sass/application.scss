@@ -2079,3 +2079,11 @@ hr.pta-hr {
 }
     
 }
+
+
+.govuk-box-highlight a {
+    color: white;
+    &:hover {
+        color: rgba(255,255,255,0.8);
+    }
+}

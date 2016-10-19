@@ -33,6 +33,12 @@
 {% include "includes/primary-nav.html" %}
 
     
+    <div class="govuk-box-highlight hidden">
+          <h2 class="bold-large">
+Levy account created          </h2>
+        <p>You'll need to sign the SFA agreement before you can start spending your levy. <a href="#">Sign the SFA contract</a></p>
+        </div>
+    
     <div class="hgroup">
        <h1 class="heading-large company-name">FIFA</h1>
        <p>Get and spend your levy funds for your apprenticeship programme</p>
@@ -579,6 +585,10 @@ var chart = c3.generate({
         window.open("/"+sprintIteration+"/account/index2","_self")
     }
     });
+    
+    if ( newOrgSigned == "y") {
+        $(".govuk-box-highlight").removeClass("hidden");
+    }
 </script>
 
 {% endblock %}

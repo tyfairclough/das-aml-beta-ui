@@ -4172,3 +4172,11 @@ hr.pta-hr {
     margin-top: 30px;
   }
 }
+
+.govuk-box-highlight a {
+  color: white;
+}
+
+.govuk-box-highlight a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
