@@ -1,0 +1,145 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/primary-nav.html" %}
+
+{% include "includes/breadcrumbStart.html" %}
+{% include "includes/breadcrumbEnd.html" %}
+    
+    
+    <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" id="govGatewayDenied">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Account not added
+  </h1>
+
+  <p>
+    You need to grant authority to HMRC to add an account.
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="/{% include "includes/sprint-link.html" %}/account/paye">Add new account</a></li>
+  </ul>
+
+</div>
+<div class="govuk-box-highlight hidden PAYEremoved">
+          <h2 class="bold-large">
+            You've removed 680/cacb268	
+          </h2>
+        </div>
+    
+    
+    <div class="govuk-box-highlight hidden PAYEadded">
+          <h2 class="bold-large">
+680/cacb268 has been added
+          </h2>
+        <p>Levy funds from this PAYE scheme will now credit your account</p>
+        </div>
+    
+    <div class="grid-row">
+    <div class="column-two-thirds">
+                    <div class="hgroup">
+            <h1 class="heading-large">Manage PAYE schemes</h1>
+            <p>Add PAYE schemes to allow levy funds to be added to your account.</p>
+  </div>
+
+        </div>
+        <div class="column-third">
+                        <a class="button rhtm" href="/{% include "includes/sprint-link.html" %}/account/paye/step_a0">Add new scheme</a>
+        
+        </div>
+    </div>
+    
+    
+    <div id="emptyState" class="grid-row hidden">
+        <div class="column-two-thirds">
+            <div class="notice">
+            <p class="">There are no PAYE schemes added.</p>
+                </div>
+        </div>
+    </div>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+
+            
+            
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col" style="padding-top:0">Scheme ID</th>
+                                <th scope="col" style="padding-top:0"></th>
+                      
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="">123/AB12345
+                                </td>
+<td><a href="/{% include "includes/sprint-link.html" %}/account/paye/remove-paye">Remove</a></td>                            </tr>
+                            <tr>
+                                <td class="">680/cacb268
+                                </td>
+<td><a href="/{% include "includes/sprint-link.html" %}/account/paye/remove-paye">Remove</a></td>                            </tr>
+                        </tbody>
+                    </table>            
+ 
+            
+            
+            
+        </div>
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+    
+          if ( govgateway == "denied" ) {
+        $("#govGatewayDenied").removeClass("hidden");
+    }
+    
+    
+    $("table tr + tr").hide();
+    
+        if ( PAYEremoved == "y" ) {
+        $(".PAYEremoved, #emptyState").removeClass("hidden");
+            $("table").addClass("hidden")
+    }  else if ( PAYEadded == "y" ) {
+        $(".PAYEadded").removeClass("hidden");
+        $("table tr + tr").show();
+    } 
+</script>
+
+{% endblock %}
+
