@@ -1,0 +1,35 @@
+<header role="banner" id="global-header" class="">
+        <div class="header-wrapper">          
+            <div class="header-global">
+                
+                    <div class="header-global__title">
+                        <a title="Skills Funding Agency" href="/">
+                            Skills Funding Agency
+                        </a>
+                    </div>
+                    <div class="header-global__subtitle">
+                        <a title="Go to Manage your apprenticeships homepage" href="/">
+                            Manage your apprenticeships
+                        </a>
+                    </div>
+           
+            </div>
+        </div>
+    </header>
+
+
+
+
+<script>
+var NavigationStatus = function() {
+  var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
+   console.log(navStatus)
+    if (navStatus == "on") {
+      $( "#proposition-links" ).removeClass( "visually-hidden" );
+  } else {
+  $( "#proposition-links" ).addClass( "visually-hidden" );
+
+  }
+};
+NavigationStatus();
+</script>
