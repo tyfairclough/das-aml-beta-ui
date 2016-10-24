@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+<div class="hgroup">
+    <h1 class="heading-xlarge">Something’s broken</h1>
+
+    <div class="message">
+        <p>There’s a problem and we’re working to fix it. </p>
+        <p>Sorry for the inconvenience. Please try again later.</p>
+        <p>If you urgently need information about your levy funds, you can <a href="#">contact HMRC</a> - you’ll need your Government Gateway details. </p>
+        <a class="button" href="/{% include "includes/sprint-link.html" %}/">Return to homepage</a>
+    </div>
+</div>
+
+</main>
+
+    <script>
+        $("#submit-email-code").click(function(e){
+            e.preventDefault();
+            window.location.href='../profile';
+            localStorage.setItem("accountActivatedMsg", 'true');                  
+        })
+        
+        $("#newCode").click(function(e){
+            e.preventDefault();
+            $(".govuk-box-highlight h2").text("A new access code sent");
+            $(".govuk-box-highlight p").html("A new acccess code has been sent to <strong class='bold-small'>pete.kowalczyk@gmail.com</span>");
+        })
+    </script>
+    
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

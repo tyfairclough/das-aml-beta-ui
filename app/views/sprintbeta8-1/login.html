@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+    
+<div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+   Errors to fix
+  </h1>
+
+  <p>
+Check the following details:
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#email-address">Enter a valid email address
+</a></li>
+      <li><a href="#password">Enter password
+</a></li>
+  </ul>
+
+</div>
+    
+       <div class="govuk-box-highlight hidden">
+          <h2 class="bold-large">
+Account unlocked
+        </h2>
+           <p>You can now sign in</p>
+        </div>
+
+  <h1 class="heading-xlarge">Sign in</h1>
+
+  <p>
+   Sign in or <a href="register/profile">create an account</a> to manage your apprenticeship levy account.
+  </p>
+
+<form action="profile">
+  <fieldset>
+    <legend class="visuallyhidden">email address and password to sign in</legend>
+      <div class="form-group emailAddress">
+          <label for="email-address">
+              <span class="form-label-bold" >Email address</span>
+               <span class="error-message visually-hidden">Enter a valid email address
+</span>
+          <!--span class="form-hint">Here is a hint for this form field.
+</span-->
+        </label>
+          <input class="form-control" id="email-address" type="text">
+      </div>
+      <div class="form-group password">
+          <label for="password">
+              <span  class="form-label-bold">Password</span>
+                             <span class="error-message visually-hidden">
+          Enter password 
+
+        </span>
+              </label>
+
+          <input class="form-control" id="password" type="password">
+      </div>
+    </fieldset>
+    <input class="button" id="createAccountButton" type="submit" value="Sign in">
+</form>
+<br>
+    <ul class="list list-links">
+    <li> <a href="profile/forgot">Forgot your password</a></li>
+    <li> <a href="profile/unlock/step_a1">Unlock your account</a></li>
+    </ul>
+
+<p id="test"></p>
+</main>
+
+<script>
+    
+    $(".error-summary li").hide();
+
+    
+var i = 0;
+    
+    var unlockStatus = JSON.parse(localStorage.getItem("unlockStatus"));
+
+    if ( unlockStatus == "unlock" ) {
+     //   $(".govuk-box-highlight").removeClass("hidden");
+    };
+
+    
+//store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(e){
+              // save the form info to local storage by first putting the data into an object
+    e.preventDefault();
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+    });
+    
+    
+    $("#createAccountButton").click(function(e){
+        
+        var Email = JSON.parse(localStorage.getItem("email-address"));
+        var Password = JSON.parse(localStorage.getItem("password"));
+        
+        var inputEmail = $("#email-address").val();
+        var inputPassword = $("#password").val();
+        
+        if ( Email != inputEmail || Password != inputPassword) {
+            e.preventDefault();
+            i++;
+            console.log(i);
+
+            if (i===3) {
+               window.location.href = ("/" + JSON.parse(localStorage.getItem('sprint-number')) + "/error/lockedout");
+            }
+          
+        } else {
+            console.log("log in");  
+               window.location.href = ("/" + JSON.parse(localStorage.getItem('sprint-number')) + "/account/");
+
+        }
+        
+        if ( inputEmail == "" ) {
+            $(".error-summary").removeClass("hidden")
+            $(".error-summary-list li").eq(0).show();
+            $(".emailAddress.form-group").addClass("error");
+            $(".emailAddress.form-group span.error-message").removeClass("visually-hidden");
+        }
+        
+        if ( inputPassword == "" ) {
+            $(".error-summary").removeClass("hidden")
+            $(".error-summary-list li").eq(1).show();
+            $(".password.form-group").addClass("error");
+            $(".password.form-group span.error-message").removeClass("visually-hidden");
+        }
+  
+    });
+    
+    
+
+</script>
+
+{% endblock %}
