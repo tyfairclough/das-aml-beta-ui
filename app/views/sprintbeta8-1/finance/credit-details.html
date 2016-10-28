@@ -20,6 +20,7 @@
 
 {% include "includes/breadcrumbStart.html" %}
     <li><a href="/{% include "includes/sprint-link.html" %}/finance">Finance</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/finance/history">Transaction history</a></li>
 {% include "includes/breadcrumbEnd.html" %}
 
 
@@ -34,154 +35,41 @@
                 </p>
                 <div class="">
 
-                  <table class="table-19-font">
-                  <thead>
-                    <tr>
-                      <th colspan="2">
-                        <h2 class="heading-medium">Overview</h2>
-
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                    <tr>
-                      <td class="rjTableName">Payment type</td>
-                      <td class="">Skills Funding Agency Payment</td>
-             
-                    </tr>
-                     <tr>
-                      <td class="rjTableName">Date</td>
-                      <td class="">10 August 2018</td>
-               
-                    </tr>
-                    <tr>
-                      <td class="rjTableName">Payment amount</td>
-                      <td class="">£704</td>
-                    </tr>
-                  </tbody>
-                </table>
-
+       
                 <table class="table-19-font">
                   <thead>
                     <tr>
-                      <h2 class="heading-medium">Payroll</h2>
-                          <th scope="col">Payroll number</th>
-                        <th class="numeric" scope="col" >English percentage</th>
-                        <th scope="col" class="numeric">Amount</th>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                     <td class="rjTableName">387/987</td>
-                      <td class="numeric">81%</td>
-                      <td class="numeric">£304</td>
-
-                    </tr>
-                     <tr>
-                     <td class="rjTableName">987/666</td>
-                      <td class="numeric">67%</td>
-                      <td class="numeric">£400</td>
-
-                    </tr>
-
-                    <!--tr>
-                     <td class="rjTableName">Current total</td>
-                      <td class="">£2,987.24</td>
-                      <td class=""></td>
-                    </tr-->
-
-                  </tbody>
-                </table>
-
-                
-
-                </div>
-            </div>
-              </div>
-          </div>
-
-   <div id="" class="v2 grid-row">
-           <div class="column-two-thirds">
-                        <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Credit details</h1>
-            <div>
-                <p>
-                  The following shows details of the payment into your account.
-                </p>
-                <div class="">
-
-                  <table class="table-19-font">
-                  <thead>
-                    <tr>
-                      <th colspan="2">
-                        <h2 class="heading-medium">Overview</h2>
-
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                    <tr>
-                      <td class="rjTableName">Payment type</td>
-                      <td class="">Levy credit</td>
-             
-                    </tr>
-                     <tr>
-                      <td class="rjTableName">Date</td>
-                      <td class="">10 August 2018</td>
-               
-                    </tr>
-                    <tr>
-                      <td class="rjTableName">Payment amount</td>
-                      <td class="">£704</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <table class="table-19-font">
-                  <thead>
-                    <tr>
-                      <h2 class="heading-medium">Payroll</h2>
-                          <th scope="col">Payroll number</th>
-                          <th scope="col">Type</th>
-                        <th class="" scope="col" >English percentage</th>
-                        <th scope="col" class="">Date submitted</th>
-                        <th scope="col" class="">Levy YTD</th>
-                        <th scope="col" class="numeric">Amount</th>
+                      <h2 class="heading-medium">Payroll</h2>  
+                        <th scope="col">PAYE scheme</th>
+                        <th class="numeric" scope="col" >Levy</th>
+                        <th scope="col" class="numeric">English fraction</th>
+                        <th scope="col" class="numeric">Top up</th>
                         <th scope="col" class="numeric">Total</th>
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                     <td class="rjTableName">387/987</td>
-                      <td class="numeric">Declaration</td>
-                      <td class="">100%</td>
-                      <td class="">1 Aug 2017</td>
-                      <td class="numeric">£304</td>
-                      <td class="numeric">£304</td>
-                      <td class="numeric">£304</td>
+                     <td class="rjTableName">387/A987</td>
+                      <td class="numeric">£##,###</td>
+                      <td class="numeric">##%</td>
+                      <td class="numeric">£##,###</td>
+                      <td class="numeric">£##,###</td>
+
                     </tr>
                      <tr>
-                     <td class="rjTableName">987/666</td>
-                      <td class="">Top up</td>
-                      <td class="">100%</td>
-                      <td class="">1 Aug 2017</td>
-                      <td class="numeric">£0</td>
-                      <td class="numeric">£30</td>
-                      <td class="numeric">£334</td>
-
+                     <td class="rjTableName">970/A311</td>
+                      <td class="numeric">£##,###</td>
+                      <td class="numeric">##%</td>
+                      <td class="numeric">£##,###</td>
+                      <td class="numeric">£##,###</td>
                     </tr>
-
-                    <!--tr>
-                     <td class="rjTableName">Current total</td>
-                      <td class="">£2,987.24</td>
-                      <td class=""></td>
-                    </tr-->
-
                   </tbody>
                 </table>
+                                         <div class="total">Grand total £###,###</div>
+
+               
+
 
                 
 
@@ -189,6 +77,8 @@
             </div>
               </div>
           </div>
+
+  
 
 
           <div class="column-one-third">

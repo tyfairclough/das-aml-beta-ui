@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-payments a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+{% include "includes/breadcrumbStart.html" %}
+    <li><a href="/{% include "includes/sprint-link.html" %}/finance">Finance</a></li>
+{% include "includes/breadcrumbEnd.html" %}
+
+
+  <div id="v1">
+           <!--div class="column-two-thirds"-->
+             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}View your transactions</h1>
+
+               <!--p class="lede">
+                  On this page you can view every transaction in and out of your account.
+                </p-->
+        <div>
+            <div class="home-figures">
+                <h2 class="heading-small" >This is your current balance:</h2>
+                <h2 class="bold-xlarge" data-bind="text: displayBalance"></h2> <!--style="color:#08c"-->
+                <p style="font-size:16px" >on <span data-bind="text: displaySystemDate"></span></p>
+            </div>
+              <!--div class="home-figures">
+                <h2 class="heading-small">Your English fraction is</h2>
+                <h2 class="bold-xlarge">0.81</h2>
+                <p style=" font-size:16px" class="">Since 1 April 2017</p> 
+              </div--> 
+
+            <!--div class="home-figures" style="">
+                <h2 class="heading-small">Total committed spending:</h2>
+                <h2 class="rjCashMoney">£65,000</h2>
+                <p style="margin-top:0">until 21 Jan 2021</p>
+            </div> 
+            <div class="home-figures" style="">
+                <h2 class="heading-small">Forecasted income:</h2>
+                <h2 class="rjCashMoney">£120,000</h2>
+                <p style="margin-top:0">Until 31 Jan 2019</p>
+            </div--> 
+          </div>
+            <!--h2 class="heading-medium">Account history</h2-->
+                <table id="transactions">
+                  <h2 class="heading-medium">Transactions</h2>
+                    <thead>
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Description</th>
+                        <th scope="col" style="text-align:center">Credit</th>
+                        <th class="" scope="col" style="text-align:center">Debit</th>
+                        <th class="" scope="col" style="text-align:center">Balance</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <!--tbody data-bind="foreach: statementLines">
+                        <tr>
+                            <td data-bind="text: displayDate"></td>
+                            <td data-bind="text: description"></td>
+                            <td class="numeric" data-bind="text: displayCredit"></td>
+                            <td class="numeric negative" data-bind="text: displayDebit">-</td>
+                            <td class="numeric" data-bind="text: $parent.calculateRunningTotal($index)"></td>
+                            <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">View</td>
+                            <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">View</td>
+                        </tr-->
+                      <tr>
+                        <td>15 August 2018</td>
+                        <td>Payment to provider Hackney Skills and Training Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£379</td>
+                        <td class="numeric">£5,340</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Details</a></td>
+                      </tr>
+                      <tr>
+                        <td>10 August 2018</td>
+                        <td>Levy credit August 2018 </td>
+                        <td class="numeric ">£704</td>
+                        <td class="numeric negative">&nbsp</span></td>
+                        <td class="numeric">£5,649</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">Details</a></td>
+                      </tr>
+                      <tr>
+                        <td>08 August 2018</td>
+                        <td>Payment to provider Lots of skills Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£347</td>
+                        <td class="numeric">£4,945</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Details</a></td>
+                      </tr>
+                      <tr>
+                        <td>15 July 2018</td>
+                        <td>Payment to provider Hackney Skills and Training Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£379</td>
+                        <td class="numeric">£5,292</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Details</a></td>
+                      </tr>
+                      <tr>
+                        <td>10 July 2018</td>
+                        <td>Levy credit July 2018</td>
+                        <td class="numeric">£704</td>
+                        <td class="numeric negative">&nbsp</td>
+                        <td class="numeric">£5,601</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">Details</a></td>
+    </tr>
+                      <tr>
+                        <td>08 July 2018</td>
+                        <td>Payment to provider Lots of skills Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£347</td>
+                        <td class="numeric">£4,897</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Details</a></td>
+                      </tr>
+                      <tr>
+                        <td>15 June 2018</td>
+                        <td>Payment to provider Hackney Skills and Training Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric negative">£379</td>
+                        <td class="numeric">£5,244</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">Details</a></td>
+                      </tr>
+                      <tr>
+                        <td>10 June 2018</td>
+                        <td>Levy credit June 2018</td>
+                        <td class="numeric">£704</td>
+                        <td class="numeric negative">&nbsp</td>
+                        <td class="numeric">£5,623</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">Details</a></td>
+                        </tr>
+
+                      <tr>
+                        <td>08 June 2018</td>
+                        <td>Payment to provider Lots of Skills Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric">£347</td>
+                        <td class="numeric">£4,849</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Details</a></td>
+                      </tr>
+                  
+
+                    </tbody>
+                </table>
+  </div>
+
+
+</main>
+
+
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+    
+    
+    $("#v1 table .credit-details").click(function(e){
+        e.preventDefault();
+        window.open("finance/credit-details?ab=v1","_self");
+    })
+    
+
+</script>
+
+{% endblock %}
+
