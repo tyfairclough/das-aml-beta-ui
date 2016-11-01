@@ -40,7 +40,9 @@ var govgateway = getQueryVariable("govgateway");
 var resetPassword = getQueryVariable("resetPassword");
 var ab = getQueryVariable("ab");
 var sprintIteration = JSON.parse(localStorage.getItem("sprint-number"));
-
+var userEmail = JSON.parse(localStorage.getItem("email-address"));
+var emailUpdated = getQueryVariable("emailUpdated");
+var nameUpdated = getQueryVariable("nameUpdated");
 
 
 
@@ -234,7 +236,9 @@ $(".ch-number").text(JSON.parse(localStorage.getItem('chNumber')));
             
 $(".company-name").text(JSON.parse(localStorage.getItem('company-name-header')));
 $(".user-name").text(JSON.parse(localStorage.getItem('users-name')));
-$(".current-page").text($("h1").text());    
+$(".user-email").text(userEmail);
+    $(".current-page").text($("h1").text());    
+    
 
     
     var addedOrNor = function() {

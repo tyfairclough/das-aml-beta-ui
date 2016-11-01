@@ -24,7 +24,7 @@
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
 
-<a href="../profile" class="link-back">Cancel change your e-mail address</a>
+<a href="../profile" class="link-back">Back to your profile</a>
 
     
     
@@ -107,7 +107,7 @@ Check the following details:
         if ( validate() && EmailMatch() ) {
             console.log("success redirect now");
             localStorage.setItem("email-address", JSON.stringify(email1));
-            window.open("../profile?emailUpdated=y","_self");
+            window.open("../account?emailUpdated=y","_self");
         } else {
             console.log("did not pass");
         }

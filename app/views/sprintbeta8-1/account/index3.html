@@ -39,6 +39,12 @@ Levy account created          </h2>
         <p>You need to <a href="/{% include "includes/sprint-link.html" %}/account/organisation/view?agreementState=not-signed">sign the SFA agreement</a> before you can start spending your levy.</p>
         </div>
     
+           <div class="govuk-box-highlight hidden" id="emailUpdated">
+          <h2 class="bold-large">
+Email changed         </h2>
+           <p>You've changed your email address to <span class="user-email bold-small">john@tesco.co.uk</span> </p>
+        </div>
+    
     <div class="hgroup">
        <h1 class="heading-large company-name">FIFA</h1>
        <p>Get and spend your levy funds for your apprenticeship programme</p>
@@ -578,7 +584,9 @@ var chart = c3.generate({
    //     alert("done but not signed");
         $("#as, .asNotSigned").removeClass("hidden");
     }
-    
+        if ( emailUpdated == "y") {
+        $("#emailUpdated").removeClass("hidden");
+    }
     
         $(document).bind('keypress', function(event) {
     if( event.which === 83 && event.shiftKey ) {

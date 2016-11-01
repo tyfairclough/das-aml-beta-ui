@@ -45,6 +45,11 @@ Account created for <span class="company-name">FIFA Holdings ltd</span>
         <p class="hidden asSigned">This account can now spend levy funds</p>
         </div>
     
+           <div class="govuk-box-highlight hidden" id="emailUpdated">
+          <h2 class="bold-large">
+Email changed         </h2>
+           <p>You've changed your email address to <span class="user-email bold-small">john@tesco.co.uk</span> </p>
+        </div>
 
     
                 <section id="intro">
@@ -327,12 +332,17 @@ $(document).ready(function(){
         $("#as, .asNotSigned").removeClass("hidden");
     }
     
+        if ( emailUpdated == "y") {
+        $("#emailUpdated").removeClass("hidden");
+    }
     
         $(document).bind('keypress', function(event) {
     if( event.which === 83 && event.shiftKey ) {
         window.open("/"+sprintIteration+"/account/index","_self")
     }
     });
+    
+    
 </script>
 
 {% endblock %}

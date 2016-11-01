@@ -81,10 +81,15 @@ float: none;
         <li>Employer Account Homepage</li>
     </ol>
 </div>
-   <div class="govuk-box-highlight hidden">
+   <div class="govuk-box-highlight hidden" id="newOrgSigned">
           <h2 class="bold-large">
 Levy account created          </h2>
         <p>You need to <a href="/{% include "includes/sprint-link.html" %}/account/organisation/view?agreementState=not-signed">sign the SFA agreement</a> before you can start spending your levy.</p>
+        </div>
+       <div class="govuk-box-highlight hidden" id="emailUpdated">
+          <h2 class="bold-large">
+Email changed         </h2>
+           <p>You've changed your email address to <span class="user-email bold-small">john@tesco.co.uk</span> </p>
         </div>
     
     
@@ -281,7 +286,11 @@ var chart = c3.generate({
     });
     
     if ( newOrgSigned == "y") {
-        $(".govuk-box-highlight").removeClass("hidden");
+        $("#newOrgSigned").removeClass("hidden");
+    }
+    
+    if ( emailUpdated == "y") {
+        $("#emailUpdated").removeClass("hidden");
     }
 </script>
 
