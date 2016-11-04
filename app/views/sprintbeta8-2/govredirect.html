@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<script>
+$(document).ready(function() {
+      var theButton = document.getElementById('finance-person-false');
+      EventUtil.addHandler(theButton, 'click', function(event){
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+           var $input = $("input:radio[value=true]:checked").val();
+
+         if ($input) {} else { $( "#inline-finance-pro-error" ).removeClass( "tamc-js-hidden" );}
+      });
+      });
+$(document).ready(function() {
+            var anotherButton = document.getElementById('finance-person-true');
+      EventUtil.addHandler(anotherButton, 'click', function(event){
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+           var $inputOn = $("input:radio[value=true]:checked").val();
+          if ($inputOn) {$( "#inline-finance-pro-error" ).addClass( "tamc-js-hidden" );} else { }
+      });
+         });
+
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+
+    
+    <div id="wrapper" class="answer answer">
+      <div class="grid-row">
+        <main id="content" role="main" class="">
+  <div class="article-container group">
+    
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+<h2 class="heading-large">Connect to Government Gateway</h2>
+  <p>To access your levy fund you will need to authorise HMRC to give this information to you.</p>
+
+<p>You will need:</p>
+
+<ul class="list list-bullet">
+  <li>the Government Gateway login details used for your payroll</li>
+  <li>your Companies House number - <a href="https://beta.companieshouse.gov.uk/search/" rel="external">find my Companies House number</a></li>
+
+</ul>
+<br />
+          
+<a rel="external" href="gateway" class="button" id="createAccount">Continue</a>
+          
+
+      <!--
+      <p><a href="/sprintbeta8-1
+
+
+
+/profile/forgot" rel="external">Forgot your password</a></p>
+          <p><a href="/sprintbeta8-1
+
+
+
+/profile/unlock/step_a1" rel="external">Unlock your account</a></p>
+        -->
+
+      </div>
+        
+          
+
+  <!-- related -->
+  <div class="related-container column-third hidden">
+
+    <aside class="related" id="related">
+      
+        
+        <div class="inner group related-subsection">
+          
+          <h2 id="parent-subsection">Apprenticeships, 14 to 19 education and training for work</h2>
+          
+
+          <nav role="navigation" aria-labelledby="parent-subsection">
+            <ul>
+              
+                <li>
+                  <a href="/apprenticeships-guide">Become an apprentice</a>
+                </li>
+              
+                <li>
+                  <a href="/find-traineeship">Find a traineeship</a>
+                </li>
+              
+              
+                <li class="related-topic"><a href="/browse/education/find-course">More <span class="visuallyhidden">in Apprenticeships, 14 to 19 education and training for work</span></a></li>
+              
+            </ul>
+          </nav>
+        </div>
+      
+
+      
+        <div class="inner group">
+          <h2 id="related-external-links">Elsewhere on the web</h2>
+
+          <nav role="navigation" aria-labelledby="related-external-links">
+            <ul>
+              
+                <li>
+                  <a href="https://nationalcareersservice.direct.gov.uk/advice/courses/typesoflearning/Pages/apprenticeship-application-help.aspx" rel="external">Help with your application</a>
+                </li>
+              
+            </ul>
+          </nav>
+        </div>
+      
+
+      <div class="inner group">
+        <a class="return-to-top" href="#content">Return to top ↑</a>
+      </div>
+    </aside>
+
+  </div>
+<!-- end related -->
+    </div>
+   
+
+
+
+  </div>
+</main>
+
+
+
+
+
+      </div>
+      
+          
+</div>
+</main>
+
+
+
+<script>
+</script>
+
+{% endblock %}
+

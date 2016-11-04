@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+ 
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+<h2 class="heading-large">Your levy fund</h2>
+          
+
+
+        <div class="data">
+          <h2 class="bold-xxlarge">£116,100</h2>
+          <p class="bold-xsmall">as of November 2016</p>
+        </div>
+          
+          <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+            <h1 class="heading-small">Fund breakdown</h1>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="hidden">
+        <td>
+          PAYE scheme
+        </td>
+        <td>
+            345/B33049
+        </td>
+        <td class="change-answer">
+          <a href="step_b1">
+            Remove <span class="visuallyhidden">PAYE scheme</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          PAYE scheme
+        </td>
+        <td>
+          123/AB12345	
+        </td>
+        <td class="change-answer">
+          <a href="step_b2">
+            Remove <span class="visuallyhidden">PAYE scheme</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  </div>
+      </div>
+    
+    
+    <div class="grid-row">
+    
+    <div class="column-half">
+        <h2 class="heading-medium">What would you like to do with this?</h2>
+        
+        
+        <form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">What would you like to do with this?</legend>
+
+      <label class="block-label" for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
+          Save it for later retrieval
+      </label>
+      <label class="block-label" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+          Add another PAYE scheme
+      </label>
+      <p class="form-block">or</p>
+      <label class="block-label" for="radio-3">
+        <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad">
+          Spend the funds
+      </label>
+
+    </fieldset>
+  </div>
+            <div class="form-group">
+                  <button type="submit" class="button">Go</button>
+
+            </div>
+</form>
+        
+
+        </div>
+    </div>
+</main>
+
+<script>
+</script>
+
+{% endblock %}
+
