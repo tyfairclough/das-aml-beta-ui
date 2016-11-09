@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/primary-nav.html" %}
+
+{% include "includes/breadcrumbStart.html" %}
+{% include "includes/breadcrumbEnd.html" %}
+    
+    
+<div class="govuk-box-highlight hidden" id="org">
+          <h2 class="bold-large"><span class="company-name">FIFA Holdings ltd</span>  has been added</h2>
+
+    <p class="asNotSigned hidden">To spend levy funds somebody needs to <a href="/{% include "includes/sprint-link.html" %}/account/organisation/view?agreementState=not-signed">sign the agreement</a></p>    
+    <p class="asSigned">This account can now spend levy funds</p>
+        </div>
+
+    
+    <div class="grid-row">
+    <div class="column-two-thirds">
+                    <div class="hgroup">
+            <h1 class="heading-large">SFA agreements</h1>
+                        <p>You need to sign an agreement for each organisation before you can access levy funds and hire apprentices through that organisation.</p>
+  </div>
+
+        </div>
+        <div class="column-third">
+                        <a class="button rhtm" href="/{% include "includes/sprint-link.html" %}/account/step_b1?flow=addOrg">Add new organisation</a>
+        
+        </div>
+    </div>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+
+            
+            
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col" style="padding-top:0">Organisation</th>
+                                <th scope="col" style="padding-top:0">Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hidden">
+                                <td class=""><span class="company-name">ACME Ltd Coventry</span>
+                                </td>
+                                <td>Signed</td>
+<td><a href="/{% include "includes/sprint-link.html" %}/account/organisation/view?agreementState=signed">View</a></td>                            </tr>
+                            <tr>
+                                <td class="">Acme Ltd Bradford
+                                </td>
+                                <td>Not signed</td>
+<td><a href="/{% include "includes/sprint-link.html" %}/account/organisation/view?agreementState=not-signed">View or sign</a></td>                            </tr>
+                        </tbody>
+                    </table>            
+ 
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="grid-row hidden">
+        <div class="column-two-thirds">
+            <div class="notice">
+            <p class="">There are no organisations added.</p>
+                </div>
+        </div>
+    </div>
+    
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+    
+    console.log("everything is happening twice");
+    
+if (newOrg == "y" ) {
+    $("#org").removeClass("hidden");
+};
+    
+    
+    if (newOrgSigned != "y") {
+        console.log("its not signed");
+        $("#org .asNotSigned").removeClass("hidden");
+        $("#org .asSigned").addClass("hidden");
+    } else {
+        
+    }
+     
+
+</script>
+
+{% endblock %}
+

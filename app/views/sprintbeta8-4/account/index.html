@@ -1,0 +1,302 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+
+<main id="content" role="main">
+    
+<section id="v1">
+{% include "includes/phase_banner_beta.html" %}
+<div class="user-menu logged-in">
+    
+    <style scoped>
+    .user-menu.logged-in {
+    border-bottom: 1px solid #bfc1c3;
+    margin-bottom: 0px;
+        overflow: auto;
+        margin-top: 10px;
+        font-size: 16px;
+        text-align: right;
+}
+        
+                .user-menu li {
+    display: inline-block;
+    padding: 0;
+    background: none;
+    float: none;
+    margin-bottom: 0px;
+}
+        .breadcrumbs li:first-child, .user-menu li:first-child {
+    background-image: none;
+    margin-left: 0;
+    padding-left: 0;
+            margin-right: 10px;
+}
+        
+        .user-menu li {
+    display: inline-block;
+    padding: 0;
+    background: none;
+float: none;
+            overflow: auto;
+    margin-bottom: 0px;
+}
+        
+               .user-menu li a {
+            font-weight:   900;
+        }
+
+    </style>
+            <ul id="service-info-list" role="navigation">
+                <li><a href="/" class="link-user-profile">Test Fairclough</a></li>
+                <li><a href="/Home/SignOut">Log out</a></li>
+            </ul>
+        </div>
+    <div class="breadcrumbs">
+    <ol role="navigation">
+        <li><a href="/">Your User Profile</a></li>
+        <li>Employer Account Homepage</li>
+    </ol>
+</div>
+   <div class="govuk-box-highlight hidden" id="newOrgSigned">
+          <h2 class="bold-large">
+Levy account created          </h2>
+        <p>You need to <a href="/{% include "includes/sprint-link.html" %}/account/organisation/view?agreementState=not-signed">sign the SFA agreement</a> before you can start spending your levy.</p>
+        </div>
+       <div class="govuk-box-highlight hidden" id="emailUpdated">
+          <h2 class="bold-large">
+Email changed         </h2>
+           <p>You've changed your email address to <span class="user-email bold-small">john@tesco.co.uk</span> </p>
+        </div>
+    
+    
+            <aside id="tasks" class="hidden">
+            <style scoped>
+                .rj-alert-wrapper {
+                    height: auto;
+                    padding: 20px;
+                    margin-bottom: 20px;
+                    box-sizing: border-box;
+                }
+                
+                .rj-alert-copy {
+                    height: auto;
+                    
+                }
+                
+                .heading-medium {
+                    margin-top: 0;
+                }
+                
+                
+                .heading-small {
+                    margin-top: 0;
+                }
+                p {
+                    margin: 0;
+                }
+            </style>
+            
+                <h4 class="heading-medium">Your tasks</h4>
+            <ul>
+                <li><div class="rj-alert-wrapper">
+                                                                <div class="rj-alert-type high">
+                                </div>
+                    <div class="rj-alert-copy">
+                      <h2 class="heading-small">Spending blocked</h2>
+                      <p>You need to <a href="/{% include "includes/sprint-link.html" %}/account/organisation/">sign a legal agreement</a>.</p>
+                    </div>
+                </div>
+                </li>
+                <li class="hidden">
+                    
+                    <div class="rj-alert-wrapper">
+                                                                <div class="rj-alert-type high">
+                                </div>
+                    <div class="rj-alert-copy">
+                      <h2 class="heading-small">Spending blocked</h2>
+                      <p>You need to <a href="/{% include "includes/sprint-link.html" %}/account/organisation/">sign <span class="bold-small">3</span> legal agreement</a>.</p>
+                    </div>
+                </div>
+                </li>                
+            </ul>
+        </aside>
+    
+    
+    <div class="hgroup">
+       <h1 class="heading-large company-name">FIFA</h1>
+       <p>Get and spend your levy funds for your apprenticeship programme</p>
+       <hr class="pta-hr" style="margin: 10px 0 30px;">
+
+ 
+  </div>
+    
+    
+    <div class="grid-row">
+
+        
+        <div class="column-two-thirds">
+     
+            <div class="grid-row">
+                <div class="column-half">
+                    <h3 class="heading-medium" style="margin-top: 0;">
+                        <a href="/{% include "includes/sprint-link.html" %}/team/">Team</a>
+                    </h3>
+                    <p>Invite new users and manage existing ones</p>
+                </div>
+                <div class="column-half ">
+                    <h3 class="heading-medium" style="margin-top: 0">
+                        <a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a>
+                    </h3>
+                    <p>Manage your funds including how much you have available to spend, your transactions and funds you could lose</p>
+                </div>
+
+            </div>
+            <div class="grid-row">
+                <div class="column-half ">
+                    <h3 class="heading-medium" style="margin-top: 0">
+                        <a href="/{% include "includes/sprint-link.html" %}/account/organisation">SFA agreements</a>
+                    </h3>
+                    <p>Manage organisations and sign your agreements</p>
+                </div>
+                <div class="column-half">
+                    <h3 class="heading-medium" style="margin-top: 0;">
+                        <a href="/{% include "includes/sprint-link.html" %}/account/paye">PAYE</a>
+                    </h3>
+                    <p>Manage the PAYE schemes associated with your Account</p>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="column-half ">
+                    <h3 class="heading-medium" style="margin-top: 0">
+                        <a href="https://das-alpha-node-ui-proto.herokuapp.com/sprintbeta1/contracts">Apprentices</a>
+                    </h3>
+                    <p>Add apprentices, review and approve cohorts and pause or stop apprentices</p>
+                </div>
+            </div>
+                    <section>
+                        <hr />
+            <div class="panel panel-filled">
+                <h2 class="heading-large">Give us your feedback</h2>
+                <p>This is a new service and your feedback will help us improve it. Use the link below to take part in a short survey.</p>
+                <p><a href="https://www.surveymonkey.co.uk/r/accessmylevysurveyend" target="_blank" class="button">Take the survey</a></p>
+            </div>
+        </section>
+        </div>
+ 
+</div>
+
+    
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+
+var chart = c3.generate({
+    bindTo: 'chart',
+    data: {
+        columns: [
+            ['data1', 70, 70, 70, 70, 70, 70],
+            ['data2', 704, 704, 704, 704, 704, 704],
+            ['data3', -60, 200, 160, -100, -15, 250],
+            ['data4', -726, -600, -700, -800, -726, -600],
+        ],
+        names: {
+            data1: 'levy top up',
+            data2: 'levy credit',
+            data3: 'balance',
+            data4: 'provider payments'
+        },
+        type: 'bar',
+        types: {
+            data3: 'area-spline',
+        },
+       colors: {
+            data1: '#2E358B',
+            data2: '#6F72AF',
+            data3: '#28A197'
+        },
+        groups: [
+            ['data1','data2','data4']
+        ]
+    },
+    axis: {
+        x: {
+            label: 'Tax Month'
+        },
+        y: {
+            tick: {
+                count: 5,
+                format: function (d) { return "£" + d; }
+            },
+            label: 'Balance (£)'
+        }
+    },
+    grid: {
+        y: {
+            lines: [{value:0}]
+        }
+    }
+});
+
+    
+</script>
+
+    </section>
+
+    
+</main>
+
+
+
+<script>
+        
+    if (newLevyAccount && newOrgSigned == "y") {
+     //   alert("signed and done")
+        $("#as, .asSigned").removeClass("hidden");
+    } else if ( newLevyAccount == "y" && newOrgSigned != "y" ) {
+   //     alert("done but not signed");
+        $("#as, .asNotSigned").removeClass("hidden");
+    }
+    
+    
+        $(document).bind('keypress', function(event) {
+    if( event.which === 83 && event.shiftKey ) {
+        window.open("/"+sprintIteration+"/account/index2","_self")
+    }
+    });
+    
+    if ( newOrgSigned == "y") {
+        $("#newOrgSigned").removeClass("hidden");
+    }
+    
+    if ( emailUpdated == "y") {
+        $("#emailUpdated").removeClass("hidden");
+    }
+</script>
+
+{% endblock %}
+

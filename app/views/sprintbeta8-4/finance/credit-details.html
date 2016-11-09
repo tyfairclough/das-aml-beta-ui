@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-payments a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+
+{% include "includes/breadcrumbStart.html" %}
+    <li><a href="/{% include "includes/sprint-link.html" %}/finance">Finance</a></li>
+    <li><a href="/{% include "includes/sprint-link.html" %}/finance/history">View your transactions</a></li>
+{% include "includes/breadcrumbEnd.html" %}
+
+
+  
+    
+   <div id="" class="v1 grid-row">
+           <div class="column-two-thirds">
+<div class="hgroup">
+               <h1 class="heading-xlarge" style="margin-bottom:0.625em;">{% include "includes/account-name-number.html" %}Credit details</h1>
+                              <p class="lede">Levy payment for tax month May 2017.</p>
+       </div>
+            <div>
+    
+                <div class="">
+
+       
+                <table class="table-19-font">
+                  <thead>
+                    <tr>
+
+                        <th scope="col">PAYE scheme</th>
+                        <th class="numeric" scope="col" >Levy</th>
+                        <th scope="col" class="numeric">English %</th>
+                        <th scope="col" class="numeric">Top up</th>
+                        <th scope="col" class="numeric">Paid in</th>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     <td class="rjTableName">387/A987</td>
+                      <td class="numeric">£10,000.<span class="font-xsmall">00</span></td>
+                      <td class="numeric">80%</td>
+                      <td class="numeric">£800.<span class="font-xsmall">00</span></td>
+                      <td class="numeric">£8,800.<span class="font-xsmall">00</span></td>
+
+                    </tr>
+                     <tr>
+                     <td class="rjTableName">970/A311</td>
+                      <td class="numeric">£10,000.<span class="font-xsmall">00</span></td>
+                      <td class="numeric">75%</td>
+                      <td class="numeric">£750.<span class="font-xsmall">00</span></td>
+                      <td class="numeric">£8,250.<span class="font-xsmall">00</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+                                         <div class="total">£17,050.<span class="bold-xsmall">00</span></div>
+
+               
+
+
+                
+
+                </div>
+            </div>
+              </div>
+          </div>
+
+  
+
+
+          <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav"-->
+                          <!--li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Review provider "offers"</a>
+                          </li-->
+                          <!--li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/makepayment">Make a payment</a>
+                          </li>
+                           <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/reviewpayments">Review and amend regular payments</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
+                          </li>
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+        </div>
+</main>
+ <!--button class="button">Do the thing</button-->
+
+<script>
+
+    $(".v1,.v2").hide();
+    
+    if ( ab == "v2" ) {
+        $(".v2").show();
+    } else {
+        $(".v1").show();        
+    }
+    
+</script>
+{% endblock %}
+

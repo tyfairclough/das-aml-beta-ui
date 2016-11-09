@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+<a href="../team/" class="link-back">Back to team members</a>
+
+
+<div class="grid-row">
+            <div class="column-two-thirds">
+                <div class="hgroup">
+                    <h1 class="heading-xlarge">Invite a team member</h1>
+
+                    <p>
+                     Invite somebody to access this levy account.
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+
+               <form action="user-confirmation">
+            <fieldset>
+                <legend class="visuallyhidden">password</legend>
+
+                <div class="form-group">
+
+                    <label class="form-label-bold" for="full-name">Email </label>
+                    <div class="grid-row">
+                        <div class="column-two-thirds">
+                            <span class="form-hint">
+                             An invitation will be sent to this email address.
+
+        </span>
+                        </div>
+                    </div>
+
+                    <input class="form-control" id="email-address" type="email">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label-bold" for="full-name">Full name</label>
+                    <input class="form-control" id="name" type="text">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="visuallyhidden">Team member access</legend>
+                <label class="form-label-bold" for="full-name">Team member access</label>
+
+                <p>
+                    Choose the level of access this user can have.
+                </p>
+
+                <label class="rj-roles-choice block-label " for="radio-1">
+                    <input id="radio-1" type="radio" name="radio-group" value="Viewer"> Can view financial information but can't make changes
+                </label>
+
+                <label class="block-label rj-roles-choice" for="radio-2">
+                    <input id="radio-2" type="radio" name="radio-group" value="Doer"> 
+                    Can create and stop payments and view financial information
+                </label>
+
+                <label class="block-label rj-roles-choice" for="radio-3">
+                    <input id="radio-3" type="radio" name="radio-group" value="Owner"> Everything - they're the owner
+                </label>
+            </fieldset>
+
+
+
+            <div style="margin-top:20px"></div>
+            <br clear="all">
+            <br clear="all">
+
+
+            <a class="button" href="../team/?justadded=y">Send invitation</a>
+        </form>
+
+            </div>
+            <div class="column-third">
+
+
+
+            </div>
+        </div>
+    
+
+</main>
+
+<script>
+  
+</script>
+
+{% endblock %}

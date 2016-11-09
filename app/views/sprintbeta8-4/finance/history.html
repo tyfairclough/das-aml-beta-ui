@@ -1,0 +1,341 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-payments a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+{% include "includes/breadcrumbStart.html" %}
+    <li><a href="/{% include "includes/sprint-link.html" %}/finance">Finance</a></li>
+{% include "includes/breadcrumbEnd.html" %}
+
+
+  <div id="v1">
+           <!--div class="column-two-thirds"-->
+             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}View your transactions</h1>
+
+               <!--p class="lede">
+                  On this page you can view every transaction in and out of your account.
+                </p-->
+        <div>
+            <div class="home-figures">
+                <h2 class="heading-small" >Current balance</h2>
+                <h2 class="bold-xlarge">£34,100.<span class="bold-large">00</span></h2> <!--style="color:#08c"-->
+                <p style="font-size:16px" ><span data-bind="text: displaySystemDate"></span></p>
+            </div>
+              <!--div class="home-figures">
+                <h2 class="heading-small">Your English fraction is</h2>
+                <h2 class="bold-xlarge">0.81</h2>
+                <p style=" font-size:16px" class="">Since 1 April 2017</p> 
+              </div--> 
+
+            <!--div class="home-figures" style="">
+                <h2 class="heading-small">Total committed spending:</h2>
+                <h2 class="rjCashMoney">£65,000</h2>
+                <p style="margin-top:0">until 21 Jan 2021</p>
+            </div> 
+            <div class="home-figures" style="">
+                <h2 class="heading-small">Forecasted income:</h2>
+                <h2 class="rjCashMoney">£120,000</h2>
+                <p style="margin-top:0">Until 31 Jan 2019</p>
+            </div--> 
+          </div>
+            <!--h2 class="heading-medium">Account history</h2-->
+                  <h2 class="heading-medium">Your transactions</h2>
+      
+      <form id="filter">
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Choose which transactions you want to see
+</legend>
+
+      <label class="block-label" for="radio-inline-1">
+        <input id="radio-inline-1" type="radio" name="exSelect" value="in" checked="checked">
+        Paid in
+      </label>
+      <label class="block-label" for="radio-inline-2">
+        <input id="radio-inline-2" type="radio" name="exSelect" value="out">
+        Paid out
+      </label>
+        <label class="block-label" for="radio-inline-3">
+        <input id="radio-inline-3" type="radio" name="exSelect" value="all">
+        Paid in and out
+      </label>
+
+    </fieldset>
+  </div>
+</form>
+      
+                <table id="ex1" class="transactions">
+                    <thead>
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Description</th>
+                        <th scope="col" class="numeric">Paid in</th>
+                        <th class="numeric" scope="col">Paid out</th>
+                        <th class="numeric" scope="col">Balance</th>
+                        <th class="numeric" scope="col"></th>
+                      </tr>
+                    </thead>
+                      <tr class="hidden debit">
+                 
+                        <td>15 August 2018</td>
+                        <td>Payment to provider Hackney Skills and Training Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£###</td>
+                        <td class="numeric">£##,###</td>
+                        <td class="numeric"><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Details</a></td>
+                      </tr>
+                      <tr class="credit">
+                        <td>20 June 2017</td>
+                        <td>Levy credit from May 2017 </td>
+                        <td class="numeric ">£##,###.<span class="font-xsmall">##</span></td>
+                        <td class="numeric negative">-</span></td>
+                        <td class="numeric">£##,###.<span class="font-xsmall">##</span></td>
+                        <td class="numeric"><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">Details</a></td>
+                      </tr>
+                      <tr class="hidden debit">
+                        <td>08 August 2018</td>
+                        <td>Payment to provider Lots of skills Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£##</td>
+                        <td class="numeric">£#,###</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Details</a></td>
+                      </tr>
+                      <tr class="hidden debit">
+                        <td>15 July 2018</td>
+                        <td>Payment to provider Hackney Skills and Training Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£###</td>
+                        <td class="numeric">£#,###</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Details</a></td>
+                      </tr>
+                      <tr class="credit">
+                        <td>20 May 2017</td>
+                        <td>Levy credit from April 2017</td>
+                        <td class="numeric">£##,###.<span class="font-xsmall">##</span></td>
+                        <td class="numeric negative">-</td>
+                        <td class="numeric">£##,###.<span class="font-xsmall">##</span></td>
+                        <td class="numeric"><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">Details</a></td>
+                    </tr>
+                      <tr class="hidden debit">
+                        <td>08 July 2018</td>
+                        <td>Payment to provider Lots of skills Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£##</td>
+                        <td class="numeric">£#,###</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Details</a></td>
+                      </tr>
+                      <tr class="hidden debit">
+                        <td>15 June 2018</td>
+                        <td>Payment to provider Hackney Skills and Training Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric negative">£###</td>
+                        <td class="numeric">£#,###</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">Details</a></td>
+                      </tr>
+                      <tr class="hidden debit">
+                        <td>08 June 2018</td>
+                        <td>Payment to provider Lots of Skills Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric">£##</td>
+                        <td class="numeric">£#,###</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Details</a></td>
+                      </tr>
+                  
+
+                    </tbody>
+                </table>
+
+
+
+ <table id="ex2" class="transactions hidden">
+                    <thead>
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Description</th>
+                        <th scope="col" class="numeric">Paid in</th>
+                        <th class="numeric" scope="col">Paid out</th>
+                        <th class="numeric" scope="col">Balance</th>
+                        <th class="numeric" scope="col"></th>
+                      </tr>
+                    </thead>
+                      <tr class="hidden debit">
+                 
+                        <td>15 August 2018</td>
+                        <td>Cohort payment: ##########</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£###</td>
+                        <td class="numeric">£##,###</td>
+                        <td class="numeric"><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details-cohort">Details</a></td>
+                      </tr>
+                      <tr class="credit">
+                        <td>20 June 2017</td>
+                        <td>Levy credit from May 2017 </td>
+                        <td class="numeric ">£##,###.<span class="font-xsmall">##</span></td>
+                        <td class="numeric negative">-</span></td>
+                        <td class="numeric">£##,###.<span class="font-xsmall">##</span></td>
+                        <td class="numeric"><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">Details</a></td>
+                      </tr>
+                      <tr class="hidden debit">
+                        <td>08 August 2018</td>
+                        <td>Cohort payment: ##########</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£##</td>
+                        <td class="numeric">£#,###</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details-cohort">Details</a></td>
+                      </tr>
+                      <tr class="hidden debit">
+                        <td>15 July 2018</td>
+                        <td>Cohort payment: ##########</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£###</td>
+                        <td class="numeric">£#,###</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details-cohort">Details</a></td>
+                      </tr>
+                      <tr class="credit">
+                        <td>20 May 2017</td>
+                        <td>Levy credit from April 2017</td>
+                        <td class="numeric">£##,###.<span class="font-xsmall">##</span></td>
+                        <td class="numeric negative">-</td>
+                        <td class="numeric">£##,###.<span class="font-xsmall">##</span></td>
+                        <td class="numeric"><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">Details</a></td>
+                    </tr>
+                      <tr class="hidden debit">
+                        <td>08 July 2018</td>
+                        <td>Cohort payment: ##########</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£##</td>
+                        <td class="numeric">£#,###</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details-cohort">Details</a></td>
+                      </tr>
+                      <tr class="hidden debit">
+                        <td>15 June 2018</td>
+                        <td>Cohort payment: ##########</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric negative">£###</td>
+                        <td class="numeric">£#,###</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">Details</a></td>
+                      </tr>
+                      <tr class="hidden debit">
+                        <td>08 June 2018</td>
+                        <td>Cohort payment: ##########</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric">£##</td>
+                        <td class="numeric">£#,###</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details-cohort">Details</a></td>
+                      </tr>
+                  
+
+                    </tbody>
+                </table>
+  </div>
+
+
+</main>
+
+<div id="debugger" style="position: fixed; z-index:9999; background: white; border: 1px solid #0b0c0c; color: black; bottom: 20px; left: 20px; display: block; padding: 30px 30px 0; width: auto; float: left;">
+    <form id="filter">
+<div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Choose which transactions you want to see
+</legend>
+
+      <label class="block-label selected" for="switch1">
+        <input id="switch1" type="radio" name="switch" value="0" checked="checked">
+          Provider level
+      </label>
+      <label class="block-label" for="switch2">
+        <input id="switch2" type="radio" name="switch" value="1">
+          Cohort level
+      </label>
+
+    </fieldset>
+  </div>    </form>
+</div>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+    
+    
+    $("#v1 table .credit-details").click(function(e){
+        e.preventDefault();
+        window.open("finance/credit-details?ab=v1","_self");
+    })
+    
+    
+    
+
+    
+   $('input:radio','#filter').change(function(e){
+
+       var filterId = $('#filter input[name=exSelect]:checked').val();
+
+       console.log("clicked on a radio")
+       
+       if ( filterId == "in" ) {
+            $("#ex1 .credit").removeClass("hidden");
+            $("#ex2 .credit").removeClass("hidden");
+            $("#ex1 .debit").addClass("hidden");
+            $("#ex2 .debit").addClass("hidden");
+        } else if ( filterId == "out") {
+            $("#ex1 .credit").addClass("hidden");
+            $("#ex2 .credit").addClass("hidden");
+            $("#ex1 .debit").removeClass("hidden");
+            $("#ex2 .debit").removeClass("hidden");
+        } else {
+            $("#ex1 .credit").removeClass("hidden");
+            $("#ex2 .credit").removeClass("hidden");
+            $("#ex1 .debit").removeClass("hidden");            
+            $("#ex2 .debit").removeClass("hidden");            
+        }
+    });
+   
+   var exID = "";
+    
+   $('input:radio','#debugger').change(function(e){
+    
+       exID = $('#filter input[name=switch]:checked').val();
+       console.log(exID);
+       
+        if ( exID == 0 ) {
+            $("#ex1").removeClass("hidden");
+            $("#ex2").addClass("hidden");
+        }   else {
+            $("#ex2").removeClass("hidden");
+            $("#ex1").addClass("hidden");            
+        }
+   });
+
+   $("#debugger").hide();
+   var down = {};
+$(document).keydown(function(e) {
+    down[e.keyCode] = true;
+}).keyup(function(e) {
+    if (down[17] && down[69]) {
+        $("#debugger").toggle();
+    }
+    down[e.keyCode] = false;
+});
+   
+   
+</script>
+
+{% endblock %}
+

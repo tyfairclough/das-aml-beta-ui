@@ -2166,3 +2166,54 @@ hr.pta-hr {
     margin-right: 0;
     font-weight: 900;
 }
+
+
+/* New global nav demo */
+#global-header-bar {
+    max-width: 100%;
+    margin: 0;
+}
+
+#content.newNav {
+    max-width: 100%;
+    margin: 0;
+    
+
+
+
+
+#globalNav {
+    background: #F8F8F8;
+    border-bottom: 1px solid #BFC1C3;
+}
+
+#globalNav #main ul {
+    list-style-type: none;
+    li {
+            display: inline-block;
+            padding: 10px 0px;
+            margin-right: 20px;
+    }
+    li.active {
+        border-bottom: 4px solid #005ea5;
+    }
+}
+
+
+
+#globalNav > div, #mainWrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+}
+@media (min-width: 641px) {
+#content.newNav {
+    #globalNav > div, #mainWrapper {
+            padding-left: 0px;
+    padding-right: 0px;
+    }
+}
+}
+    

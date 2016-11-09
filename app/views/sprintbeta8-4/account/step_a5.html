@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a class="link-back" href="/{% include "includes/sprint-link.html" %}/profile">Back to profile</a>
+
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <h1 class="heading-xlarge">Confirm organisation</h1>
+
+        
+                            
+            
+            <table class="check-your-answers">
+
+
+    <tbody>
+      <tr>
+        <td>
+          Organisation name
+        </td>
+        <td>
+          <span class="company-name">Red &amp; White Holdings Ltd</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Companies House number
+        </td>
+        <td>
+           <span class="ch-number">0736876</span>
+        </td>
+ 
+          
+      </tr>
+    </tbody>
+  </table>
+            
+       
+      <h3 class="heading-medium">Is this the correct organisation?</h3>
+   
+            <a rel="external" href="step_a6" class="button">Yes, continue</a>
+            <a class="button text-link" href="step_a4">No, search again</a>
+        
+        </div>
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+<script>
+    
+        if (flow == "addOrg") {
+        $(".link-back").replaceWith("<a class='link-back' href='../account/organisation/'>Back to organisations</a>");
+            $("a").attr("href","step_a6?flow=addOrg");
+    }
+ 
+
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+    <a href="#" class="link-back">Back</a>
+    
+<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Errors to fix
+  </h1>
+
+  <p>
+Check the following details:
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#example-personal-details">Enter a valid email address
+</a></li>
+  </ul>
+
+</div>
+    
+
+
+  <h1 class="heading-xlarge">Reset your password</h1>
+
+  <p>
+  Enter your email address to get a password reset code.
+  </p>
+
+<form action="forgot/code">
+  <fieldset>
+    <legend class="visuallyhidden">email address</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="email-address">Email
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" id="email-address" type="text">
+      </div>
+     </fieldset>
+    <input class="button" id="createAccountButton" type="submit" value="Get reset code">
+</form>
+</main>
+
+<script>
+
+    
+    $(".error-summary").hide();
+
+    
+    if ( JSON.parse(localStorage.getItem('unlockStatus')) == "unlock" ) {
+        $(".govuk-box-highlight").removeClass("hidden");
+    } else {
+        //alert("still locked")
+    } 
+  
+    
+        $("#createAccountButton").click(function(e){
+       e.preventDefault();
+        if ( $("#email-address").val() == "" ) 
+        {
+        $(".error-summary").show();
+        } else {
+        //    alert("pass");
+            window.open("forgot/code","_self")
+        }
+    })
+
+
+</script>
+
+{% endblock %}

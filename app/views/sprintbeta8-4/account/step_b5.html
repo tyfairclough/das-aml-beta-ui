@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+<a class="link-back" href="/{% include "includes/sprint-link.html" %}/account/inform">Start again</a>
+    
+    
+    <h1 class="heading-xlarge">Contecting to HMRC</h1>
+    <p>To access levy funds you need to connect your account to HMRC.</p>
+    <p>When you continue you'll be asked to:</p>
+    
+    <ol class="list list-number">
+        <li>Enter the Government Gateway login details for one of your PAYE schemes.</li>
+        <li>&lsquo;Grant&rsquo; authority to allow HMRC to access your Government Gateway account.</li>
+    </ol>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+                                    <h2 class="heading-medium">By continuing you agree to the following:</h2>
+
+            <div class="panel panel-border-thin text">
+                    <p class="font-xsmall">I have authority to add PAYE schemes to this account.</p>
+                    <p class="font-xsmall">I understand that all account users will be able to see levy funds from any PAYE schemes I add.</p>
+                    <p class="font-xsmall">All PAYE schemes I add are owned and operated by an organisation that’ll use this account, or owned and operated by a <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/308734/connected-companies.pdf">connected organisation</a></p>
+</div>
+            
+            <a href="#" class="button">Continue</a>
+        </div>
+        
+    </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+

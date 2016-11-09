@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/userControl.html" %}
+
+{% include "includes/breadcrumbStart.html" %}
+    <li><a href="/{% include "includes/sprint-link.html" %}/team">Manage team members</a></li>
+{% include "includes/breadcrumbEnd.html" %}
+    
+    
+
+    
+
+    <div class="grid-row">
+<div class="column-two-thirds">
+            
+
+
+            <h2 class="heading-xlarge">Cancel invitation
+            </h2>
+            
+          
+              <h3 class="heading-medium">
+Are you sure you want to cancel <span class="users-name">Susan Hamazaki</span>'s invitation?
+</h3>
+
+<!--<form>
+  <fieldset class="inline">
+
+    <legend class="visuallyhidden">
+  Is this the correct paye scheme?      
+      </legend>
+
+    <label class="block-label" for="radio-inline-1">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+      Yes
+    </label>
+    <label class="block-label" for="radio-inline-2">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+      No
+    </label>
+
+  </fieldset>
+</form>-->
+            
+            
+            <a rel="external" href="/{% include "includes/sprint-link.html" %}/team/?justremoved=y" class="button">Yes, cancel invitation</a>
+            <a href="/{% include "includes/sprint-link.html" %}/team/" class="button text-link">No, don't cancel invitation</a>
+        </div>
+        </div>
+    
+</main>
+
+<script>
+  if ( justadded == "y") {
+     $(".justadded").removeClass("hidden");
+  } else if ( justremoved == "y") {
+           $(".justremoved").removeClass("hidden");
+  } else if ( userdeleted == "y") {
+      $(".userdeleted").removeClass("hidden");
+  } else if ( rolechange == "y" ) {
+      $(".rolechange").removeClass("hidden");
+  }
+</script>
+
+{% endblock %}
