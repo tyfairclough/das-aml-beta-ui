@@ -28,44 +28,48 @@
 		'11'
 	]
 %}
-
-
-
+<style>
+	#sprints li {
+		padding: 3px 0;
+	}
+	
+	#sprints li:hover {
+		background: #f5f5f5;
+	}
+	
+	#sprints span {
+		display: inline-block;
+		min-width: 200px;
+	}
+	
+	#sprints a {
+		font-size: .8em;
+		display: inline-block;
+		padding: 0 0 0 10px;
+	}
+</style>
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
-
-      <h1 class="heading-xlarge">Access my levy</h1>
-
-      <p>
-        <a href="/{% include "includes/sprint-link.html" %}/start">Service start</a>
-      </p>
-        <p>
-        <a href="/{% include "includes/sprint-link.html" %}/login">Sign in to the service</a>
-      </p>
-      <p>
-        <a href="/{% include "includes/sprint-link.html" %}/account">Account home</a>
-      </p>
-       <p>
-        <a href="/proto-admin">Admin page (change sprint, name and navigation)</a>
-      </p>
-      <hr>
-      
-      
-	      <h2 class="heading-medium">Sprints</h2>
-		  <ul class="list list-bullet" id="sprints">
-			{% for item in sprints %}
-			<li>
-			  	<span>Sprint {{ item }} </span>
-			  	<a href="#" data-sprint="sprint{{ item }}" data-page="start">Start</a>
-			  	<a href="#" data-sprint="sprint{{ item }}" data-page="login">Login</a>
-			  	<a href="#" data-sprint="sprint{{ item }}" data-page="account">Account</a>
-			</li>
-			{% endfor %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">Access my levy</h1>
+			<p><a href="/{% include "includes/sprint-link.html" %}/start">Service start</a></p>
+			<p><a href="/{% include "includes/sprint-link.html" %}/login">Sign in to the service</a></p>
+			<p><a href="/{% include "includes/sprint-link.html" %}/account">Account home</a></p>
+			<p><a href="/proto-admin">Admin page (change sprint, name and navigation)</a></p>
+			<hr>
+			<h2 class="heading-medium">Sprints</h2>
+			<ul class="list list-bullet" id="sprints">
+				{% for item in sprints %}
+				<li>
+					<span>Sprint {{ item }} </span>
+					<a href="/sprint{{ item }}/start" data-sprint="sprint{{ item }}" data-page="start">Start</a>
+					<a href="/sprint{{ item }}/login" data-sprint="sprint{{ item }}" data-page="login">Login</a>
+					<a href="/sprint{{ item }}/account" data-sprint="sprint{{ item }}" data-page="account">Account</a>
+				</li>
+				{% endfor %}
 			</ul>
-
-	   </div>
-  </div>
+		</div>
+	</div>
 </main>
 
 <script>
@@ -73,8 +77,9 @@
 		
 		$('#sprints a').on('click', function(e) {
 			
-			localStorage.setItem("sprint-number", JSON.stringify($(this).data('sprint')));
-			window.location.href = "/" + $(this).data('sprint') + "/" + $(this).data('page') ;
+			e.preventDefault();
+			localStorage.setItem("sprint-number", JSON.stringify( $(this).data('sprint') ) );
+			window.location.href = "/" + $(this).data('sprint') + "/" + $(this).data('page');
 			
 		});
 			
