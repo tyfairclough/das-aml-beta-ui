@@ -6,6 +6,31 @@
 
 {% block content %}
 
+{% 
+	set sprints = [
+		'beta0',
+		'beta1',
+		'beta5',
+		'beta5a',
+		'beta5b',
+		'beta5dashboard',
+		'beta6',
+		'beta7',
+		'beta7-1',
+		'beta7-2',
+		'beta7-3',
+		'beta7-4',
+		'beta7-601',
+		'beta8-1',
+		'beta8-2',
+		'beta8-3',
+		'beta8-4',
+		'11'
+	]
+%}
+
+
+
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
@@ -24,10 +49,37 @@
        <p>
         <a href="/proto-admin">Admin page (change sprint, name and navigation)</a>
       </p>
+      <hr>
+      
+      
+	      <h2 class="heading-medium">Sprints</h2>
+		  <ul class="list list-bullet" id="sprints">
+			{% for item in sprints %}
+			<li>
+			  	<span>Sprint {{ item }} </span>
+			  	<a href="#" data-sprint="sprint{{ item }}" data-page="start">Start</a>
+			  	<a href="#" data-sprint="sprint{{ item }}" data-page="login">Login</a>
+			  	<a href="#" data-sprint="sprint{{ item }}" data-page="account">Account</a>
+			</li>
+			{% endfor %}
+			</ul>
 
 	   </div>
   </div>
 </main>
+
+<script>
+	$( document ).ready(function() {
+		
+		$('#sprints a').on('click', function(e) {
+			
+			localStorage.setItem("sprint-number", JSON.stringify($(this).data('sprint')));
+			window.location.href = "/" + $(this).data('sprint') + "/" + $(this).data('page') ;
+			
+		});
+			
+	});
+</script>
 
 {% endblock %}
 

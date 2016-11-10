@@ -4296,3 +4296,22 @@ hr.pta-hr {
     padding-right: 0px;
   }
 }
+
+#sprints li {
+	padding: 3px 0;
+}
+
+#sprints li:hover {
+	background: #f5f5f5;
+}
+
+#sprints span {
+	display: inline-block;
+	min-width: 200px;
+}
+
+#sprints a {
+	font-size: .8em;
+	display: inline-block;
+	padding: 0 0 0 10px;
+}
