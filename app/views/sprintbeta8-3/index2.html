@@ -8,7 +8,7 @@
 
 
 
-<main id="content" role="main" class="newNav">
+<main id="content" role="main" class="newNav2">
     
 <header role="globalNav" id="globalNav">    
     
@@ -16,26 +16,37 @@
 
 <div class="wrapper">    
 <div class="grid-row">
-    <div class="column-two-thirds">
-        <h2 class="heading-medium company-name">company name</h2>
-    </div>
-    <div class="column-third align-right">
-        <ul id="userNav">
-            <li><a href="#">users name</a></li>
-            <li><a href="#">sign out <span><i class="fa fa-sign-out"></i></span></a></li>
+    <div class="column-third align-right" id="userNav">
+        <ul>
+            <li><a href="#">Ty Fairclough</a></li>
+            <li><a href="#">Sign out<span><i class="fa fa-sign-out"></i></span></a></li>
         </ul>
+    </div>    
+    <div class="column-two-thirds" id="companyNav">
+        <h2 class="heading-medium company-name">company name</h2>
     </div>
 </div>
     <nav id="main">
         <ul>
-            <li class="active">Your dashboard</li>
-            <li><a href="#">Finance</a></li>
+            <li class="active">Dashboard</li>
+            <li><a href="#">Funding</a></li>
             <li><a href="#">Apprentices</a></li>
-            <li><a href="#">Help</a></li>
+            <li class="desktop"><a href="#">Team</a></li>
+            <li class="desktop"><a href="#">Organisations</a></li>
+            <li class="desktop"><a href="#">PAYE schemes</a></li>
+            <li class="desktop"><a href="#">Help</a></li>
+            <li class="mobile-only"><a href="#">More&hellip;</a></li>
         </ul>
     </nav>
 </div>    
     
+    <script>
+        $(".mobile-only").click(function(e){
+            e.preventDefault();
+            $("#main li.desktop").addClass("show-desktop").removeClass("desktop");
+            $(this).hide();
+        })
+    </script>
 
 
 </header>

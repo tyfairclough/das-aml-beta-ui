@@ -2168,13 +2168,18 @@ hr.pta-hr {
 }
 
 
+
+.align-right {
+    text-align: right;
+}
+
 /* New global nav demo */
 #global-header-bar {
     max-width: 100%;
     margin: 0;
 }
 
-#content.newNav {
+#content.newNav, #content.newNav2 {
     max-width: 100%;
     margin: 0;
     
@@ -2185,17 +2190,25 @@ hr.pta-hr {
 #globalNav {
     background: #F8F8F8;
     border-bottom: 1px solid #BFC1C3;
+    
+    h2 {
+        margin-top: 20px;
+    }
 }
 
 #globalNav #main ul {
     list-style-type: none;
     li {
-            display: inline-block;
+            display: none;
             padding: 10px 0px;
             margin-right: 20px;
     }
     li.active {
         border-bottom: 4px solid #005ea5;
+        display: inline-block;        
+    }
+    li.desktop {
+        display: inline-block;
     }
 }
 
@@ -2207,13 +2220,51 @@ hr.pta-hr {
     padding-left: 15px;
     padding-right: 15px;
 }
+    
+    #userNav {
+        float: right;
+        padding: 10px 0;
+        li {
+        display: inline-block;
+            margin-right: 10px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }    
 }
 @media (min-width: 641px) {
-#content.newNav {
+#content.newNav, #content.newNav2 {
     #globalNav > div, #mainWrapper {
             padding-left: 0px;
     padding-right: 0px;
+        #main ul li {
+            display: inline-block;
+        }
+        #main ul li.mobile-only {
+            display: none;
+        }
     }
 }
+}
+
+@media (max-width: 640px) {
+    
+    #content.newNav2 #userNav {
+        width: 100%;
+        float: left;
+        text-align: left;
+        padding: 0 20px;
+    }
+    #content.newNav2 #globalNav #main ul li.mobile-only, #content.newNav2 #globalNav #main ul li {
+        display: inline-block;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    
+    #content.newNav #globalNav #main ul li.desktop, #content.newNav2 #globalNav #main ul li.desktop {
+        display: none;
+    }
 }
     

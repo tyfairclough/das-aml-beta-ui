@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Access my levy</h1>
+
+      <p>
+        <a href="/{% include "includes/sprint-link.html" %}/start">Service start</a>
+      </p>
+        <p>
+        <a href="/{% include "includes/sprint-link.html" %}/login">Sign in to the service</a>
+      </p>
+      <p>
+        <a href="/{% include "includes/sprint-link.html" %}/account">Account home</a>
+      </p>
+       <p>
+        <a href="/proto-admin">Admin page (change sprint, name and navigation)</a>
+      </p>
+
+	   </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
