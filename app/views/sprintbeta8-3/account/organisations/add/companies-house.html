@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+
+<main id="content" role="main" class="newNav">
+{% include "includes/_authenticated-navigation.html" %}
+
+
+    <section id="mainWrapper">
+<div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <h1 class="heading-large">Search for your organisation</h1>
+<p>Explain why they need to add their organisation. It will be used on the contract and there for needs to be accurate.</p>
+            
+            <form action="">
+            
+            <fieldset>
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="bold-small">What kind of organisation are you adding?</legend>
+           
+        <div class="form-group">
+      <label class="block-label" data-target="contact-by-email" for="example-contact-by-email">
+        <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+          Limited company (Ltd) or Publically limited company (Plc)
+      </label>
+      <div class="panel panel-border-narrow" id="contact-by-email">
+           <p>Tell users they need to add the Companies House number.</p>
+            <p class="font-xsmall"><a href="https://beta.companieshouse.gov.uk" rel="external">Link to the Companies House number service</a></p>
+          
+        <label class="form-label" for="contact-email">Companies House number</label>
+        <input class="form-control" name="contact-email" type="text" id="contact-email">
+      </div>
+
+      <label class="block-label" data-target="contact-by-phone" for="example-contact-by-phone">
+        <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+        Public sector
+      </label>
+      <div class="panel panel-border-narrow" id="contact-by-phone">
+              <p>Tell users they need to add their name and address as it appears on the ONS public sector classification guide.</p>
+          <p class="font-xsmall"><a href="https://www.ons.gov.uk/economy/nationalaccounts/uksectoraccounts/datasets/publicsectorclassificationguide" rel="external">link to the ONS Public Sector Classification Guide</a></p>
+          <div class="form-group">
+
+              <label class="form-label" for="contact-phone">Name of public sector body</label>
+        <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+          </div>
+          <div class="form-group">
+                      <label class="form-label" for="contact-address">Address</label>
+          <textarea class="form-control" name="contact-address"></textarea>
+          </div>
+          
+      </div>
+            
+      <label class="block-label" data-target="contact-by-phone" for="example-contact-by-phone">
+        <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+          Registered charity
+      </label>
+      <div class="panel panel-border-narrow" id="contact-by-phone">
+                        <p>Tell users they need to add their name, charity number and address as it appears on the charities commission data.</p>
+          <p class="font-xsmall"><a href="http://apps.charitycommission.gov.uk/showcharity/registerofcharities/RegisterHomePage.aspx" rel="external">link to the Charities commission data</a></p>
+
+          <div class="form-group">
+                  <label class="form-label" for="contact-phone">Name of charity</label>
+        <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+          </div>
+          <div class="form-group">
+                            <label class="form-label" for="contact-phone">Registered charity number</label>
+        <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+          </div>
+          <div class="form-group">
+        <label class="form-label" for="contact-address">Address</label>
+          <textarea class="form-control" name="contact-address"></textarea>
+          </div>
+
+      </div>
+
+      <label class="block-label" data-target="contact-by-text" for="example-contact-by-text">
+        <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+        Other
+      </label>
+      <div class="panel panel-border-narrow" id="contact-by-text">
+             <div class="form-group">
+     <label class="form-label" for="contact-text-message">Name of organisation</label>
+        <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
+          </div>
+                 <div class="form-group">
+
+        <label class="form-label" for="contact-address">Address</label>
+          <textarea class="form-control" name="contact-address"></textarea>
+          </div>
+      </div>
+</div>
+    </fieldset>
+  </div>
+</form>
+                </fieldset>
+            </form>
+            
+            <a id="submitForm" rel="external" href="step_b2" class="button">Continue</a>
+        
+        </div>
+    </div>
+    </section>
+</main>
+
+
+
+<script>
+    
+    
+    //$("")
+</script>
+
+{% endblock %}
+

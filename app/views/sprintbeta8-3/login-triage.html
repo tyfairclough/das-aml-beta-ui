@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 {% extends "layout.html" %}
 
 {% block page_title %}
@@ -8,28 +15,33 @@
 
 
 
-<main id="content" role="main" class="newNav">
+
+<main id="content" role="main">
+    
     
 
-{% include "includes/_authenticated-navigation.html" %}
-    
+{% include "includes/phase_banner_beta.html" %}
 
-    <section id="mainWrapper">
 
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="#">Education and learning</a></li>
+      <li><a href="#">Apprenticeships, 14 to 19 education and training for work</a></li>
+      <li>Access my levy</li>
+    </ol>
+
+  </div>
     
     
 
 <div class="grid-row">
            <div class="column-two-thirds">
-             <h1 class="heading-xlarge">Have you used this service before?</h1>
-             <p>There was some text here about it being important to claim funds (this would be wrong for the invite journey, potentially)</p>
-               <p>It said get someone financial to do it, probably wrong for the invite journey potentially.</p>
-               <p>Makes me wonder should the invite journey just use the create account screen by default? Then we tweak it to include a, "done this before, sign in"</p>
-               <p></p>
 
               <form action="check">
                     <div class="form-group inline">
-                                                     <label class="form-label-bold" for="text">Have you used this service before?</label> 
+                        <h1 class="heading-xlarge"><label for="text">Have you used this service before?</label> </h1>
+                                                       <p>Claiming your levy funds is an important task that should be undertaken either by a senior manager or someone authorised by them. We would recommend a finance professional do this task.</p>
+
                         <fieldset class="inline spacingBottom" id="lower-earner" data-inline-error="inline-lower-earner-error">
                             <legend class="visuallyhidden">
                                 eligibility.check.lower.earner.h2
@@ -51,13 +63,31 @@
 
             </div>
       </div>
-    </section>
+
 </main>
 
 
-
-<script>
-</script>
-
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

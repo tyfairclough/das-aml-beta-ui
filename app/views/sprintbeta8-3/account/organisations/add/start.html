@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+
+<main id="content" role="main" class="newNav">
+{% include "includes/_authenticated-navigation.html" %}
+
+
+    <section id="mainWrapper">
+<div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <h1 class="heading-large">Start adding an organisation</h1>
+<p>Explain why they need to add their organisation. It will be used on the contract and there for needs to be accurate.</p>
+            <div role="note" aria-label="Information" class="application-notice info-notice">
+<p>Maybe you want to call something out about how adding a legal entity also needs a contract signed against it.</p>
+                <p>You will need:</p>
+                <ul class="list list-bullet">
+                    <li>Your organisations name</li>
+                    <li>address</li>
+                    <li>unique reference number if applicable</li>
+                    <li>Someone will need to sign the agreement now or at a later date</li>
+                </ul>
+</div>
+            
+            <a id="submitForm" rel="external" href="step_b2" class="button button-start">Start</a>
+        
+        </div>
+    </div>
+    </section>
+</main>
+
+
+
+<script>
+    
+    
+    //$("")
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,125 @@
+
+
+
+
+
+
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<main id="content" role="main" class="newNav">
+    
+<header role="globalNav" id="globalNav">   
+{% include "includes/phase_banner_beta.html" %}
+<div class="wrapper">    
+<div class="grid-row">
+    <div class="column-two-thirds">
+&nbsp;
+    </div>
+    <div class="column-third align-right">
+        <ul id="userNav">
+            <li><a href="#">Joe Bloggs</a></li>
+            <li><a href="#">sign out <span><i class="fa fa-sign-out"></i></span></a></li>
+        </ul>
+    </div>
+</div>
+    
+</div>    
+
+</header>
+
+
+    <section id="mainWrapper">
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+        <li><a href="#">Manage your apprenticeships</a></li>
+      <li>Joe Bloggs</li>
+    </ol>
+
+  </div>
+    
+<section id="notifications">
+        <div class="govuk-box-highlight" id="signedOut">
+        <h2 class="bold-large">
+            Invitation accepted
+        </h2>
+            <p>
+                You now have access to the <span class="bold-small">Portsmouth City Council</span> account
+            </p>
+        </div>        
+</section>
+        
+<div class="grid-row">
+           <div class="column-two-thirds">
+             <h1 class="heading-xlarge">Levy accounts</h1>
+            <p>Select an account or add a new one</p>   
+               
+                           <table> 
+                  <thead>
+                    <tr>
+                        <th>Account name</th> 
+                        <th>What you can do</th>
+                        <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                         <tr>
+                      <td class="rjTableName">Portsmouth City Council</td>
+                      <td class="">Everything — you're the owner</td>
+                      <td class=""><a href="#">Open</a></td>
+                    </tr>
+                    </tbody>
+                    
+                </table>
+               <br>
+               <a class="button" href="#">Add new account</a>
+                
+            </div>
+    
+    <div class="column-third">
+        <aside class="related">
+            <h3 class="heading-medium">Manage your account</h3>
+            <ul class="list list-links">
+                <li><a href="#">Change email address</a></li>
+                <li><a href="#">Change your password</a></li>
+            </ul>
+        </aside>
+    </div>
+      </div>
+    </section>
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

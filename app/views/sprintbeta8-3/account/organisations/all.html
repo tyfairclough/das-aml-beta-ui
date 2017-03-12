@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+
+<main id="content" role="main" class="newNav">
+{% include "includes/_authenticated-navigation.html" %}
+
+
+    <section id="mainWrapper">
+        
+        <section id="notifictions">
+        
+            <div class="govuk-box-highlight" id="agreement-signed">
+          <h2 class="bold-large"><span class="company-name">Red &amp; White Holdings Ltd</span>  has been added</h2>
+
+    <p class="asNotSigned hidden">To spend levy funds somebody needs to <a href="/sprintbeta7-3&#10;&#10;&#10;&#10;/account/organisation/view?agreementState=not-signed">sign the agreement</a></p>    
+    <p class="asSigned">This account can now spend levy funds</p>
+        </div>
+            
+            <div class="govuk-box-highlight" id="agreement-notsigned">
+          <h2 class="bold-large"><span class="company-name">Red &amp; White Holdings Ltd</span>  has been added</h2>
+
+    <p class="asNotSigned">To spend levy funds somebody needs to <a href="/sprintbeta7-3&#10;&#10;&#10;&#10;/account/organisation/view?agreementState=not-signed">sign the agreement</a></p>    
+    <p class="asSigned hidden">This account can now spend levy funds</p>
+        </div>
+            
+        </section>
+        
+        
+            <div class="grid-row">
+    <div class="column-two-thirds">
+                    <div class="hgroup">
+            <h1 class="heading-large">Your organisations</h1>
+            <p>Add the organisations that you want to hire apprentices through.</p>
+                        <p>You need to sign an agreement for each organisation before you can access levy funds and hire apprentices throughthat organisation.</p>
+  </div>
+
+        </div>
+        <div class="column-third">
+                        <a class="button rhtm" href="/sprintbeta7-3&#10;&#10;&#10;&#10;/account/step_b1?flow=addOrg">Add new organisation</a>
+        
+        </div>
+    </div>
+        <div class="grid-row">
+        <div class="column-two-thirds">
+            
+
+            
+            
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col" style="padding-top:0">Name</th>
+                                <th scope="col" style="padding-top:0">Agreement status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class=""><span class="company-name">Red &amp; White Holdings Ltd</span>
+                                </td>
+                                <td>Signed</td>
+<td><a href="/sprintbeta7-3&#10;&#10;&#10;&#10;/account/organisation/view?agreementState=signed">View</a></td>                            </tr>
+                            <tr>
+                                <td class="">Acme Ltd Bradford
+                                </td>
+                                <td>Not signed</td>
+<td><a href="/sprintbeta7-3&#10;&#10;&#10;&#10;/account/organisation/view?agreementState=not-signed">View or sign</a></td>                            </tr>
+                        </tbody>
+                    </table>            
+ 
+            
+            
+            
+        </div>
+    </div>
+        <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="notice">
+            <p class="">There are no organisations added.</p>
+                </div>
+        </div>
+    </div>
+    </section>
+</main>
+
+
+
+<script>
+</script>
+
+{% endblock %}
+

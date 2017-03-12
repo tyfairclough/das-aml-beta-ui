@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+
+<main id="content" role="main" class="newNav">
+{% include "includes/_authenticated-navigation.html" %}
+
+
+    <section id="mainWrapper">
+
+    
+        
+        <div class="grid-row">
+           <div class="column-two-thirds">
+             <h1 class="heading-xlarge" >Dashboard h1</h1>
+             <p>Introduction to your account.</p>
+
+              <section id="finance">
+   
+                  <h2 class="heading-medium">Finance</h2>
+                  <p>Something about finance here</p>
+                  <div id="finance-chart"></div>
+                  <script>
+                    var chart = c3.generate({
+                            bindto: '#finance-chart',
+    data: {
+        columns: [
+            ['data1', 688, 1376, 2064, 2752, 3440, 4128,4816,5504,6192,6880,7568,8256,8944,9632,10320,11008,11696,12384,13072,13760,14448,15136,15824,16512,16512]
+        ],
+        regions: {
+         //   'data1': [{'start':3, 'end':6, 'style':'dashed'}]
+        },
+        types: {
+            data1: 'area-step'
+        },
+        labels: {
+//            format: function (v, id, i, j) { return "Default Format"; },
+            format: {
+                data1: d3.format('$'),
+//                data1: function (v, id, i, j) { return "Format for data1"; },
+            }
+        }
+    },
+    axis: {
+        x: {
+            label: 'Tax months'
+        },
+        y: {
+            label: 'Levy pot in \(£\'s)'
+        }
+    },
+    subchart: {
+        show: true
+    },
+    zoom: {
+        enabled: true
+    }
+});
+                  </script>
+                  
+                </section>
+               
+            </div>
+      </div>
+    </section>
+</main>
+
+
+
+<script>
+</script>
+
+{% endblock %}
+

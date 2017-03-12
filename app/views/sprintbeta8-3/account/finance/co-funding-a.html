@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+
+<main id="content" role="main" class="newNav">
+{% include "includes/_authenticated-navigation.html" %}
+
+
+
+    <section id="mainWrapper">
+
+            <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="#">Finance</a></li>
+      <li>Transaction history</li>
+    </ol>
+
+  </div>
+        
+          
+        <div id="v2" class="">
+           <!--div class="column-two-thirds"-->
+             <h1 class="heading-xlarge">
+                 
+
+
+View your transactions</h1>
+
+               <!--p class="lede">
+                  On this page you can view every transaction in and out of your account.
+                </p-->
+        <div>
+            <div class="home-figures">
+                <h2 class="heading-small">This is your current levy balance:</h2>
+                <h2 class="bold-xlarge" data-bind="text: displayBalance">£5,340</h2> <!--style="color:#08c"-->
+            </div>
+              <!--div class="home-figures">
+                <h2 class="heading-small">Your English fraction is</h2>
+                <h2 class="bold-xlarge">0.81</h2>
+                <p style=" font-size:16px" class="">Since 1 April 2017</p> 
+              </div--> 
+
+            <!--div class="home-figures" style="">
+                <h2 class="heading-small">Total committed spending:</h2>
+                <h2 class="rjCashMoney">£65,000</h2>
+                <p style="margin-top:0">until 21 Jan 2021</p>
+            </div> 
+            <div class="home-figures" style="">
+                <h2 class="heading-small">Forecasted income:</h2>
+                <h2 class="rjCashMoney">£120,000</h2>
+                <p style="margin-top:0">Until 31 Jan 2019</p>
+            </div--> 
+          </div>
+            <!--h2 class="heading-medium">Account history</h2-->
+                <h2 class="heading-medium">Transactions</h2><table id="transactions">
+                  
+                    <thead>
+                      <tr>
+                        <th scope="col">Payment date</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Levy</th>
+                        <th class="" scope="col">Co-funding</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                      <tbody>
+                      <tr>
+                        <td>10 August 2018</td>
+                        <td>Levy credit</td>
+                        <td class="">£100</td>
+                        <td class=" ">&nbsp;</td>
+
+                        <td class=""><a href="#">View details</a></td>
+                      </tr>
+                      <tr>
+                        <td>15 August 2018</td>
+                        <td>Hackney Skills and Training Ltd</td>
+                        <td class="">&nbsp;</td>
+                        <td class=" ">- £100</td>
+
+                        <td class=""><a href="#">View details</a></td>
+                      </tr>
+
+                      <tr>
+                        <td>08 August 2018</td>
+                        <td>Lots of skills Ltd</td>
+                        <td class="">- £50</td>
+                        <td class=" ">- £50</td>
+
+                        <td class=""><a href="#">View details</a></td>
+                      </tr>
+                      <tr>
+                        <td>15 July 2018</td>
+                        <td>Hackney Skills and Training Ltd</td>
+                        <td class="">- £100</td>
+                        <td class=" "></td>
+
+                        <td class=""><a href="#">View details</a></td>
+                      </tr>
+                       <tr>
+                        <td>10 July 2018</td>
+                        <td>Levy credit</td>
+                        <td class="">£300</td>
+                        <td class=" negative">&nbsp;</td>
+
+                        <td class=""><a href="#">View details</a></td>
+                      </tr>
+                      <tr>
+                        <td>08 July 2018</td>
+                        <td>Lots of skills Ltd</td>
+                        <td class="">&nbsp;</td>
+                        <td class=" ">- £200</td>
+
+                        <td class=""><a href="#">View details</a></td>
+                      </tr>
+                      <tr>
+                        <td>15 June 2018</td>
+                        <td>Hackney Skills and Training Ltd</td>
+                        <td class="">&nbsp;</td>
+                        <td class=" negative">- £100</td>
+
+                        <td class=""><a href="#">View details</a></td>
+                      </tr>
+                      <tr>
+                        <td>10 June 2018</td>
+                        <td>Levy adjustment</td>
+                        <td class="">- £200</td>
+                        <td class=" negative">&nbsp;</td>
+
+                        <td class=""><a href="#">View details</a></td>
+                      </tr>
+                      <tr>
+                        <td>08 June 2018</td>
+                        <td>Co-funding refund</td>
+                        <td class="">&nbsp;</td>
+                        <td class="">£100</td>
+
+                        <td class=""><a href="#">View details</a></td>
+                      </tr>
+                      <td>08 June 2018</td>
+                        <td>Lots of Skills Ltd</td>
+                        <td class="">&nbsp;</td>
+                        <td class="">- £200</td>
+
+                        <td class=""><a href="#">View details</a></td>
+                      </tr>
+                    </tbody>
+                </table>
+    
+    <div class="page-navigation">
+                    <a href="/Apprenticeship/SearchResults?keywords=engineer&amp;page=1&amp;order=1&amp;take=10" style="visibility: visible" class="page-navigation__btn prev">
+        <i class="arrow-button fa fa-angle-left"></i>
+        <span class="description">Previous <span class="hide-mob">page</span></span>
+        <span class="counter">1 of 18</span>
+    </a>
+
+                    <a href="/Apprenticeship/SearchResults?keywords=engineer&amp;page=3&amp;order=1&amp;take=10" style="visibility: visible" class="page-navigation__btn next">
+        <i class="arrow-button fa fa-angle-right"></i>
+        <span class="description">Next <span class="hide-mob">page</span></span>
+        <span class="counter">3 of 18</span>
+    </a>
+
+                </div>
+  </div>       
+          
+  
+        
+
+         
+        
+    </section>
+</main>
+
+
+
+<script>
+</script>
+
+{% endblock %}
+
